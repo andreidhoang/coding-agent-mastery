@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "status": "passed_for_dependency_step_3_scripted_broker",
+  "scope": {
+    "delivered": "broker-controlled one-package load, bounded ordinary intent/result/receipt validation, failure and duplicate handling, ephemeral receipt-derived membership",
+    "parent_dependency_step": 3,
+    "supported_source": "persisted model.scripted response with context-v1 acceptance plus explicitly configured immutable capture; no advertised-catalog proof",
+    "derived_state_kind": "broker_skill_loads_v1",
+    "record_bound": 64,
+    "runtime_schema": 2,
+    "resource_calls": "valid package returns failed-known not_disclosed; no resource chunk authority",
+    "next": "step4 accepted catalog/tool/prompt/context/provider request identity and disclosure; step5 post-turn checkpoint and fresh-owner recovery",
+    "pending": [
+      "skills-aware Harness/provider sends",
+      "native skill source import",
+      "accepted catalog/body disclosure",
+      "resource read authority",
+      "typed skills checkpoint/recovery"
+    ]
+  },
+  "frozen_before_implementation": {
+    "path": "runs/skills-broker-2026-10-11/spec-before-code.json",
+    "sha256": "fe49f4076bb1aaa2ca579840d14a1c50588c72d8fdd5461535c8d3e73780cb8e"
+  },
+  "source": {
+    "new": {
+      "service/skill_runtime.py": "55ca9a40cc7b534195666171cb192db141ff8d2cee333197047f107e84cd03f9",
+      "scripts/skills_broker_demo.py": "2b28ed68acd5c9d6735e60d5c3dee3220c54a936200f57362dbef551ac52f4cd",
+      "tests/test_skills_broker.py": "ae6f17f71c6af405469fff35742bf938a1d726b50fe2e542d7d3812a45315a41",
+      "tests/test_skills_broker_store.py": "1c19ef97b48586f23c9aecb0746c7af31555f8d65bb0f186b1581f01f49cac25"
+    },
+    "changed_existing": {
+      "service/harness.py": "3ce485d2c2cb91da6a06a7fbdb873d976366768d1cacde18195eaa6038e79adc",
+      "service/protocol.py": "98b490eb78f5a07988b8353782e72bcc35d4b590a8ac7aa015d0c02fef11f016",
+      "service/storage.py": "b4754225d43445667e630b29a58f3a2235a1ac8916e128ca91f9df5ececacb16",
+      "tests/test_postgres.py": "d6a3f0ea89d544c41ddef6d971f23add39b3c61e52c2a3b24505b92284a3c167"
+    },
+    "integrated_check_files": 203,
+    "unchanged_during_final_checks": true,
+    "structural_preservation": {
+      "path": "runs/skills-broker-2026-10-11/structural-preservation.json",
+      "sha256": "d19197f6d172c22378a8eaee14aad26a02bd81fec1e5a79593b8d4c4052422bc"
+    }
+  },
+  "independent_testing": {
+    "sqlite_passed": 69,
+    "postgres_passed": 5,
+    "reviewer_passed": 74,
+    "reviewer_breakdown": "69 maintained SQLite tests plus five independent controls; overlaps independent and integrated results",
+    "primary_result_mutation_rejected": true,
+    "records": [
+      {
+        "path": "runs/skills-broker-2026-10-11/tests/independent-verification.json",
+        "sha256": "4f0de00ffbb70389f9a63075a56a74ac50b0918e179302958282e69bc944f3c0"
+      },
+      {
+        "path": "runs/skills-broker-2026-10-11/tests/postgres-verification.json",
+        "sha256": "7c3c962ba1c755374d9270548a03214dc824a33f852a62b75b5a681f210f0c96"
+      },
+      {
+        "path": "runs/skills-broker-2026-10-11/review/review-verification.json",
+        "sha256": "1d24a18e2aed626f148f674b2821a044f108c140ee8bdeabe976349e6d7dc395"
+      }
+    ]
+  },
+  "integration": {
+    "command": "CAM_TEST_POSTGRES_URL=<task-owned loopback PostgreSQL> CONTEXT_TEST_POSTGRES_URL=<same PostgreSQL> CAM_TEST_SANDBOX_IMAGE=sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9 .venv/bin/python -m pytest -q --junitxml=runs/skills-broker-2026-10-11/integrated-final-tests.xml",
+    "passed": 1730,
+    "subtests_passed": 156,
+    "skipped": 3,
+    "skip_details": [
+      {
+        "test": "tests.test_skills_capture.test_case_collision",
+        "reason": "case-insensitive filesystem cannot express collision fixture"
+      },
+      {
+        "test": "tests.test_workflows.test_real_local_temporal_workflow_continue_as_new_and_history_replay",
+        "reason": "requires explicit local Temporal dev-server opt-in"
+      },
+      {
+        "test": "tests.test_workflows.test_real_temporal_duplicate_start_memo_and_stop_before_rollover",
+        "reason": "requires explicit local Temporal dev-server opt-in"
+      }
+    ],
+    "warnings": 1,
+    "warning_detail": "existing Starlette httpx test-client deprecation; dependency migration outside this slice",
+    "duration_seconds": 194.42,
+    "exit_code": 0,
+    "ruff": "passed",
+    "backends": "real task-owned local PostgreSQL and existing immutable Docker image; no image pull; Temporal not opted in",
+    "counts_overlap": true,
+    "first_run": {
+      "passed": 1728,
+      "failed": 1,
+      "skipped": 4,
+      "subtests_passed": 156,
+      "cause": "existing PostgreSQL test 200ms deadline expired during setup before intended assertions",
+      "repair": "only that test now uses database-relative setup/wait and independently asserts expired DB time while host time is before cutoff",
+      "runtime_changed_for_repair": false,
+      "test_repair_and_host_clock_mutation": {
+        "path": "runs/skills-broker-2026-10-11/tests/postgres-clock-repair-verification.json",
+        "sha256": "6e540be7d157bbda23c6f52dffa55f7828f78899766a9ab96dec53308c448722"
+      },
+      "negative_evidence_preserved": true
+    }
+  },
+  "repairs": [
+    {
+      "finding": "duplicate returned by concurrent intent creation was ignored",
+      "resolution": "revalidate durable winner, reuse committed receipt or refuse unresolved retry"
+    },
+    {
+      "finding": "typed new-intent lookup materialized task-wide dispatches",
+      "resolution": "bounded scoped SQL action lookup"
+    },
+    {
+      "finding": "nonobject successful-result JSON escaped through AttributeError",
+      "resolution": "explicit object validation and sanitized rejection"
+    },
+    {
+      "finding": "closed metadata and receipt-integrity review",
+      "resolution": "bounded lexical resource paths and exact dispatch/receipt alias comparison"
+    }
+  ],
+  "demo": {
+    "record": {
+      "path": "runs/skills-broker-2026-10-11/demo-final/summary.json",
+      "sha256": "15233742ea1d46690213a6b7ee71efc67497aadbd99700259100897a287ae654"
+    },
+    "source_sha256": "2b28ed68acd5c9d6735e60d5c3dee3220c54a936200f57362dbef551ac52f4cd",
+    "loaded_counts": {
+      "normal": 1,
+      "orphan": 0,
+      "lost_ack": 1
+    },
+    "provider_sends": 0,
+    "independent_artifact_database_check": {
+      "path": "runs/skills-broker-2026-10-11/review/demo-artifact-verification.json",
+      "sha256": "e450d465e0d0d7d74ad75a6e0ad709de545ce99ab070381b7a10aba2654eec76"
+    }
+  },
+  "documentation": {
+    "check": {
+      "path": "runs/skills-broker-2026-10-11/documentation-check.json",
+      "sha256": "7de2cb09c30fcdae32a1261d2693e2091f198d414c73a386ba095a0f62b058a1"
+    },
+    "documents": 48,
+    "local_links": 1021,
+    "line_anchors": 235,
+    "heading_fragments": 61,
+    "errors": [],
+    "human_mastery_tracker_unchanged": true
+  },
+  "preservation": {
+    "path": "runs/skills-broker-2026-10-11/preservation-check.json",
+    "sha256": "c2dd4cb121ec7bb5e51b80dd99605448063f1e41d9e48712c4a0a5dfa99cee28"
+  },
+  "independent_review": {
+    "path": "research/skills-broker-independent-review-2026-10-11.md",
+    "sha256": "716e0737cb91b584882313a25774c826eb279560c8231eb6c399aa3122cc1c22"
+  },
+  "packaging": "no new release or installed-package acceptance in this slice; October10 artifacts preserved",
+  "cleanup": {
+    "path": "runs/skills-broker-2026-10-11/local-backend-cleanup.json",
+    "sha256": "2e2342c9ed5a93113a4b41749ddc51ba7a656db8315d297b880166650052390e"
+  },
+  "limits": [
+    "offline scripted current-attempt broker only; no live-model usefulness or provider send demonstrated",
+    "receipt-derived membership cannot silently promote into future accepted SkillsState",
+    "64 combined current-attempt dispatch/direct receipt records; conservative bound includes ordinary dispatches",
+    "trusted quiescent capture fixtures; no hostile-code/distributed-recovery/production readiness claim",
+    "Temporal integration and physical case-collision test skipped in this run",
+    "no GPU performance, hiring readiness or human mastery claim"
+  ],
+  "paid_execution": false,
+  "paid_hold_unchanged": true,
+  "account_actions": false,
+  "promo_redemption": false,
+  "publication": false,
+  "gpu_execution": false,
+  "evidence": [
+    {
+      "path": "research/skills-broker-spec-2026-10-11.md",
+      "sha256": "17bad1776f614d9ecf41e8f42ab5cea182f68ec1526ee285cb2c85aeeb311c9c"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/before.json",
+      "sha256": "2b5e8c8ca78a5f1425baa403ea95ce3d74fe0d51dae56d2b24e3552e2e5a940a"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/spec-before-code.json",
+      "sha256": "fe49f4076bb1aaa2ca579840d14a1c50588c72d8fdd5461535c8d3e73780cb8e"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/spec-frozen.md",
+      "sha256": "17bad1776f614d9ecf41e8f42ab5cea182f68ec1526ee285cb2c85aeeb311c9c"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/legacy-tool-schemas.json",
+      "sha256": "5d501b7f60cdf36df4c1bed5b211cbd648e48ed52af0b57675b67cb7e49f0f50"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/structural-preservation.json",
+      "sha256": "d19197f6d172c22378a8eaee14aad26a02bd81fec1e5a79593b8d4c4052422bc"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/preservation-check.json",
+      "sha256": "c2dd4cb121ec7bb5e51b80dd99605448063f1e41d9e48712c4a0a5dfa99cee28"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/documentation-check.json",
+      "sha256": "7de2cb09c30fcdae32a1261d2693e2091f198d414c73a386ba095a0f62b058a1"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/anchor-rebase.json",
+      "sha256": "e8bbc4e0a6a495a100c3258d1050ddee22ce6d9aa3fcc96e2574f44d410f44bd"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-tests.txt",
+      "sha256": "a40efdae7ba8249b2110d045fd0c832218965bc2e72e0d67c1c41de8fbaf1002"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-tests.xml",
+      "sha256": "20e7eba4f3c1f2ddb660891d09884611f80a174b000fbd232e8e9f97f2260781"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-source-before.json",
+      "sha256": "a9e367fe7d0aff905d91d4468625e9d5a3928cdb745548238766181d5eb1a76a"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-source-after.json",
+      "sha256": "0a6e54c568d1d45245ac468cc14444e761500015bb309bb1925cc282f2258b18"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-final-tests.txt",
+      "sha256": "ca4c90d5cb469e0ce087d5833aabc11f1f922056d3ac045ce618fd25a4c2b5a5"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-final-tests.xml",
+      "sha256": "9e3ae3a1a32f81054cb0c822e3f1c1951cd54afabb859d2e3c35f6ee0e24e4bd"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-source-final-before.json",
+      "sha256": "8f450c21c796eebe5abe30c68d14d87924ce25344843323f5756a6fe69db6cf3"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/integrated-source-final-after.json",
+      "sha256": "8f450c21c796eebe5abe30c68d14d87924ce25344843323f5756a6fe69db6cf3"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/ruff-final.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/local-backends.json",
+      "sha256": "eedadd7a7d56f4a09c9857f5e38d00103c65ed3cab9b057c334f032da6c26125"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/local-backend-cleanup.json",
+      "sha256": "2e2342c9ed5a93113a4b41749ddc51ba7a656db8315d297b880166650052390e"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/independent-verification.json",
+      "sha256": "4f0de00ffbb70389f9a63075a56a74ac50b0918e179302958282e69bc944f3c0"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/focused.log",
+      "sha256": "db321ea223448051b72b2a9c192a36fae93761c251cc025209cb1f7fa0d7338a"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/mutation-primary-result.log",
+      "sha256": "b0fc694cb99af1a3acccd64e81ee2a18b3a6529fcfac534b56d4dab1501049d8"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/postgres-verification.json",
+      "sha256": "7c3c962ba1c755374d9270548a03214dc824a33f852a62b75b5a681f210f0c96"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/postgres-focused.log",
+      "sha256": "b7aaed19050c7e88b3335b9d8fdbf7bdf5c94e4f97e8d6617d8ca01bcbfa3aef"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/postgres-clock-repair-verification.json",
+      "sha256": "6e540be7d157bbda23c6f52dffa55f7828f78899766a9ab96dec53308c448722"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/postgres-clock-repair-final.log",
+      "sha256": "c4a1731913c21d63384fe6a7e1d4887b52254a59035a5b5848eed6e6dfc36960"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/tests/postgres-clock-host-mutation.log",
+      "sha256": "94811a680de3658fe50deeeecbfe304da1b359c05ae641cb9cccf9d4e7c75f1a"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/postgres-test-before.py",
+      "sha256": "4ef3ec0e58afc2d4ac50eb59b0bfb574b493c09981707ec768ae7ca2bd34da96"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/postgres-test-repair.patch",
+      "sha256": "d9e1216ab53fcd5ae2be5ed56222a4ddf6d824a4b1f9ed9c0fcbc61c15ea1c88"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/review-verification.json",
+      "sha256": "1d24a18e2aed626f148f674b2821a044f108c140ee8bdeabe976349e6d7dc395"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/reviewer-final.txt",
+      "sha256": "87545a3d61215ddbcc091cf54381450c0a8fed688e15ccc8f8c48be7ad706b92"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/reviewer-final.xml",
+      "sha256": "251f2b9786155904d57a9d16b4bb21e6da980f3831da7d80a72b6d32d93033a5"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/review_controls.py",
+      "sha256": "f639e2636449ead485233b02efd659ef184ecec03389b16594dba45672586ad3"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/nonobject-before.txt",
+      "sha256": "d2b2a5d7bab74d7ff984241c76a424d422cddfe7c54d611eabaf1a10f7e67c5f"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/nonobject-after.txt",
+      "sha256": "7abac67c3cceb2084525d7ddb489e8f7971a0c333e0a75d67d8c7219a6e9627b"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/controls-after.txt",
+      "sha256": "3aff7d7182e148152b066c0d3e721e0b2e55afcb3baf6501cc9ce4eb5593a5bd"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/demo-artifact-verification.json",
+      "sha256": "e450d465e0d0d7d74ad75a6e0ad709de545ce99ab070381b7a10aba2654eec76"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/review/verify_demo_artifacts.py",
+      "sha256": "0840588206a7fbfe4553a9c31793dd625f09d3abfedbe4120c2b008206612db4"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final.txt",
+      "sha256": "2b6788447496094b9344437b875b99093057c2c94cf035fec23fd718f7038473"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final/summary.json",
+      "sha256": "15233742ea1d46690213a6b7ee71efc67497aadbd99700259100897a287ae654"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final/trace.md",
+      "sha256": "8e7323b60a121ead4c9c899c751d66832dce7ed768437602bd971eed2da9e13a"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final/normal/observation.json",
+      "sha256": "79c8eece6eef4ee82ad79ef8098ce8e420584cfdb286fb3df51f23042dcfc1ea"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final/orphan/observation.json",
+      "sha256": "638f2fe081ac7d065aecc1f39932fc7b9bcc3ce7188a6d42024217c71764f06e"
+    },
+    {
+      "path": "runs/skills-broker-2026-10-11/demo-final/lost_ack/observation.json",
+      "sha256": "74ff8fedecc780afc030fe8abc944ca650fe6ecedeabf130a8ef62f09b3fb28b"
+    }
+  ]
+}

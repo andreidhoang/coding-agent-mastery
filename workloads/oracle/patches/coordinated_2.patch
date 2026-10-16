@@ -1,0 +1,22 @@
+--- a/client.py
++++ b/client.py
+@@ -11,7 +11,7 @@
+ 
+     def import_csv(self, csv_text, request_key="legacy"):
+         job_id = self.submit(request_key, csv_text)
+-        if self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
++        while self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
+             self.tracker.process_batch(self.tenant, job_id)
+         if self.tracker.status(self.tenant, job_id)["status"] == "cancelled":
+             raise ValueError("import was cancelled")
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -126,7 +126,7 @@
+             job = self._job(tenant, job_id)
+             if job["status"] in ("complete", "cancelled"):
+                 return job
+-            start = 0
++            start = job["processed"]
+             rows = self.db.execute("SELECT * FROM staged_rows WHERE job_id=? AND position>=? ORDER BY position LIMIT ?", (job_id, start, batch_size)).fetchall()
+             for row in rows:
+                 self.db.execute("INSERT INTO issues VALUES(?,?,?) ON CONFLICT(tenant,issue_id) DO NOTHING", (tenant, row["issue_id"], row["title"]))

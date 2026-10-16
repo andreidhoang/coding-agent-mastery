@@ -1,0 +1,3449 @@
+{
+  "counts": {
+    "calibration": 6,
+    "diagnostic": 36,
+    "diagnostic_tiers": {
+      "T1": 12,
+      "T2": 12,
+      "T3": 12
+    },
+    "repository_families": 1,
+    "unique_defect_templates": 13
+  },
+  "provenance": "AI-authored synthetic controlled fixture; no public benchmark or independent task-population claim",
+  "registry_id": "synthetic-issue-tracker-v1-2026-10-08",
+  "schema_version": 1,
+  "split_note": "Calibration and diagnostic IDs are operationally separate but structurally related; no held-out confirmation set exists.",
+  "tasks": [
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994",
+      "baseline_id": "repair_1",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "88947d697cdafd78b4aff5734e6bf0878973ef80985205a136d16b6f480f8e4a",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "2d04757b2d54fdf05d1a7d95c94f4cf31a37f965c1d314c8634a6d8cc30a81d0",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "b69aafe6db10e98c3c08ce6a3d74d70d9bd60c656716c7d1b01574c9483980ba",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-01",
+      "template_group": "repair_1",
+      "tier": "T1",
+      "variant": 0,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 0",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          }
+        ],
+        "task_id": "calibration-01",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 0"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744",
+      "baseline_id": "repair_2",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "379f44b09501c6cc4ad22bbd710adf1b3ab4658407568152c2a4c259b8129a1d",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "20bf5866fc917f72c05e594061e32e561dc176f6e6c2bfe10367c5f4fb87ae02",
+      "incorrect_tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d96177c4cf9e5c3ff4658bb49ec059c1bc7141498f35b4625255ecd8358005ec",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "resume_atomicity"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-02",
+      "template_group": "repair_2",
+      "tier": "T1",
+      "variant": 1,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 1",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          }
+        ],
+        "task_id": "calibration-02",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 1"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60",
+      "baseline_id": "repair_3",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "fef0b375421f3965f89580c6b0267d6966c43f97b5a30374e3fea208b8133cd9",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "834fd54225ec40e1e1272747b369156e062156a9c85f492545d2cf08b514c0f9",
+      "incorrect_tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "45d19bc9b8a2f35ee22d229b6c64bcc446fa135010c4514f86db25102927ff18",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cancellation"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-03",
+      "template_group": "repair_3",
+      "tier": "T1",
+      "variant": 2,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 2",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          }
+        ],
+        "task_id": "calibration-03",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 2"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9",
+      "baseline_id": "repair_4",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "9462e32dffd35b72a6af5830063d9278189500e303848ba14981aa0538f84574",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "82cd34e3c9e2c846c52df9ceee88a3ad1c3b9dd4d73a363579717ea14108a32d",
+      "incorrect_tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "7754f6415c74601b493bcc31e0286ebe4e9425c446ad03f5b7e3abf14d8a2a06",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cursor_binding"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-04",
+      "template_group": "repair_4",
+      "tier": "T1",
+      "variant": 3,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 3",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          }
+        ],
+        "task_id": "calibration-04",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 3"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45",
+      "baseline_id": "repair_5",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "8bf401f98522830b2655959826d1241f0221ba525703b3ece41466e2bd0bc492",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "00394bf089bca40044a673cb008db842fa05fa2a0a28b029bf00897f685b1377",
+      "incorrect_tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "44c33af832b660ba5101f5257cb335630c890eab614e22d287da59f70573b57b",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "pagination"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-05",
+      "template_group": "repair_5",
+      "tier": "T1",
+      "variant": 4,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 4",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          }
+        ],
+        "task_id": "calibration-05",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 4"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b",
+      "baseline_id": "repair_6",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "d54c2fc674924eadfb875581f1559f18202830157d42352be73b952fae492bf7",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "7b31390f758b7bd4bf3477f50677f52f4c9b244b5ad7a00c0ad6b24004131274",
+      "incorrect_tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "919d21db674959025ac5092584b1c8771fae41fc84345e78b33c3c2ea2abcbf9",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "sync_compatibility"
+      ],
+      "split": "calibration",
+      "task_id": "calibration-06",
+      "template_group": "repair_6",
+      "tier": "T1",
+      "variant": 5,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 5",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "calibration-06",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 5"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994",
+      "baseline_id": "repair_1",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "6ca80fe04731152de5b6d92cf0fe49b92370ceba9010f5398b29c99615c7d896",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "2d04757b2d54fdf05d1a7d95c94f4cf31a37f965c1d314c8634a6d8cc30a81d0",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "b69aafe6db10e98c3c08ce6a3d74d70d9bd60c656716c7d1b01574c9483980ba",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-01",
+      "template_group": "repair_1",
+      "tier": "T1",
+      "variant": 100,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 100",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          }
+        ],
+        "task_id": "diagnostic-t1-01",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 100"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744",
+      "baseline_id": "repair_2",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "4514d549686900eec43c7845616354974326c047c4187fa4c632bb91dc012828",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "20bf5866fc917f72c05e594061e32e561dc176f6e6c2bfe10367c5f4fb87ae02",
+      "incorrect_tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d96177c4cf9e5c3ff4658bb49ec059c1bc7141498f35b4625255ecd8358005ec",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "resume_atomicity"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-02",
+      "template_group": "repair_2",
+      "tier": "T1",
+      "variant": 101,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 101",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          }
+        ],
+        "task_id": "diagnostic-t1-02",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 101"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60",
+      "baseline_id": "repair_3",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "03cb9d30050f45ba65496d4d12bfd9f961aa636dce98fbb8efe399d6995a3ce3",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "834fd54225ec40e1e1272747b369156e062156a9c85f492545d2cf08b514c0f9",
+      "incorrect_tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "45d19bc9b8a2f35ee22d229b6c64bcc446fa135010c4514f86db25102927ff18",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cancellation"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-03",
+      "template_group": "repair_3",
+      "tier": "T1",
+      "variant": 102,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 102",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          }
+        ],
+        "task_id": "diagnostic-t1-03",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 102"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9",
+      "baseline_id": "repair_4",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "d9e3ff395c19a60405967fff800040ecaa75b98d8a49ac715a96065fd1bf0b34",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "82cd34e3c9e2c846c52df9ceee88a3ad1c3b9dd4d73a363579717ea14108a32d",
+      "incorrect_tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "7754f6415c74601b493bcc31e0286ebe4e9425c446ad03f5b7e3abf14d8a2a06",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cursor_binding"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-04",
+      "template_group": "repair_4",
+      "tier": "T1",
+      "variant": 103,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 103",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          }
+        ],
+        "task_id": "diagnostic-t1-04",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 103"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45",
+      "baseline_id": "repair_5",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "3988402744de56fa145c949b11b2ebf5462626dab88b0d15fd39e7ecf1ce082f",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "00394bf089bca40044a673cb008db842fa05fa2a0a28b029bf00897f685b1377",
+      "incorrect_tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "44c33af832b660ba5101f5257cb335630c890eab614e22d287da59f70573b57b",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "pagination"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-05",
+      "template_group": "repair_5",
+      "tier": "T1",
+      "variant": 104,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 104",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          }
+        ],
+        "task_id": "diagnostic-t1-05",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 104"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b",
+      "baseline_id": "repair_6",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "d103ec7fb6568a0ac833affc76101b9d7c8f01477df39d4ac894e26311c1f5d2",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "7b31390f758b7bd4bf3477f50677f52f4c9b244b5ad7a00c0ad6b24004131274",
+      "incorrect_tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "919d21db674959025ac5092584b1c8771fae41fc84345e78b33c3c2ea2abcbf9",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-06",
+      "template_group": "repair_6",
+      "tier": "T1",
+      "variant": 105,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 105",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t1-06",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 105"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994",
+      "baseline_id": "repair_1",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "8dbdcc2c2ac929f13aed643cba792d29feef839de0ccb6fef310ddcc564ce16f",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "2d04757b2d54fdf05d1a7d95c94f4cf31a37f965c1d314c8634a6d8cc30a81d0",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "b69aafe6db10e98c3c08ce6a3d74d70d9bd60c656716c7d1b01574c9483980ba",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-07",
+      "template_group": "repair_1",
+      "tier": "T1",
+      "variant": 106,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 106",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          }
+        ],
+        "task_id": "diagnostic-t1-07",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 106"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744",
+      "baseline_id": "repair_2",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "a1380b09d0cd8ce7757894d379d0476e16ac78f452ba9580371f8feaf9835559",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "20bf5866fc917f72c05e594061e32e561dc176f6e6c2bfe10367c5f4fb87ae02",
+      "incorrect_tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d96177c4cf9e5c3ff4658bb49ec059c1bc7141498f35b4625255ecd8358005ec",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "resume_atomicity"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-08",
+      "template_group": "repair_2",
+      "tier": "T1",
+      "variant": 107,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 107",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          }
+        ],
+        "task_id": "diagnostic-t1-08",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 107"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60",
+      "baseline_id": "repair_3",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "0068cf57425a4897b5a17fdc061046e04771a3f481ca9bb2cd0a7709a171eedf",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "834fd54225ec40e1e1272747b369156e062156a9c85f492545d2cf08b514c0f9",
+      "incorrect_tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "45d19bc9b8a2f35ee22d229b6c64bcc446fa135010c4514f86db25102927ff18",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cancellation"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-09",
+      "template_group": "repair_3",
+      "tier": "T1",
+      "variant": 108,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 108",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          }
+        ],
+        "task_id": "diagnostic-t1-09",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 108"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9",
+      "baseline_id": "repair_4",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "7906e3ee912e073fcf8231c77aaa4e88cfa0cd2e1ca4dee717cb6b24ae4818bd",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "82cd34e3c9e2c846c52df9ceee88a3ad1c3b9dd4d73a363579717ea14108a32d",
+      "incorrect_tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "7754f6415c74601b493bcc31e0286ebe4e9425c446ad03f5b7e3abf14d8a2a06",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cursor_binding"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-10",
+      "template_group": "repair_4",
+      "tier": "T1",
+      "variant": 109,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 109",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          }
+        ],
+        "task_id": "diagnostic-t1-10",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 109"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45",
+      "baseline_id": "repair_5",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "86bbf84d54255019340e9525655bb0ac3b2e254539e5248e3d7886add7b5d1f3",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "00394bf089bca40044a673cb008db842fa05fa2a0a28b029bf00897f685b1377",
+      "incorrect_tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "44c33af832b660ba5101f5257cb335630c890eab614e22d287da59f70573b57b",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "pagination"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-11",
+      "template_group": "repair_5",
+      "tier": "T1",
+      "variant": 110,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 110",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          }
+        ],
+        "task_id": "diagnostic-t1-11",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 110"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b",
+      "baseline_id": "repair_6",
+      "budget_ceilings": null,
+      "deadline_seconds": 900,
+      "definition_digest": "121b81814426047c4244155f7e9e2407bc44d5380946a9206dc5ae714716d8fb",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "7b31390f758b7bd4bf3477f50677f52f4c9b244b5ad7a00c0ad6b24004131274",
+      "incorrect_tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "919d21db674959025ac5092584b1c8771fae41fc84345e78b33c3c2ea2abcbf9",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t1-12",
+      "template_group": "repair_6",
+      "tier": "T1",
+      "variant": 111,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 111",
+        "milestones": [
+          "Repair and regress the stated behavior"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t1-12",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T1 synthetic import contract 111"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "9565168600e92cb44e8be8a9f3249185eb221f3e2fa81b8bf65aaaaf42175e7a",
+      "baseline_id": "coordinated_1",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "bafb3677cf23f96691e71c7ede906c2206ec9db8ac29211119ca5ff41e90a559",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "7c7e7b6604a498821baee5e7b9850d1e1faca102c95fdd0c286ed8176ffcfe69",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "08076bb373e3330a2d7bddead00d7b4358b5e682e34290fe10b7d815fb6ca9e7",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-01",
+      "template_group": "coordinated_1",
+      "tier": "T2",
+      "variant": 200,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 200",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-01",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 200"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "2cae518b118bde9d0aa2f7c14bc48a4dfcd057a7d33175124e5ab7ec3616dc92",
+      "baseline_id": "coordinated_2",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "e0c63d511a0b7238940b950cb26dea6f204441b6e3df0fd1643ff97b1a773d20",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "72b7cc1aa123fe9d8e878f1e8aa80af2aa7762b6f0f6e09a1acb35d85ceae09e",
+      "incorrect_tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "5a230c5e3ca5583331d9fa653886117a974fcc260db4655dbb40dcde6961b628",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "resume_atomicity",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-02",
+      "template_group": "coordinated_2",
+      "tier": "T2",
+      "variant": 201,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 201",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-02",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 201"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "9c7239801a894bec9e8cc705c3ad4e36742479b7891fa54490cff2c862221029",
+      "baseline_id": "coordinated_3",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "bb422ce9b082b09c38b359fecfe298a631e6b0d07423ae070104cafe58db3063",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "97f36a1aa3e4d399b5ee2ad78b41cde12741fb31be979a1e200f36907790d00d",
+      "incorrect_tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "38ffb46f8e78ed11372012a532f6f2ca8456d5a46109e52a5c3ecd843a89c054",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cancellation",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-03",
+      "template_group": "coordinated_3",
+      "tier": "T2",
+      "variant": 202,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 202",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-03",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 202"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "1c4ca20d08d258f71c7e5d1758f40436ce40732ec56ec04a526011e5649c49ad",
+      "baseline_id": "coordinated_4",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "0360009805cf93c094a6eaf53fb8205770c7cc7cd5b891b44898dc23a940a441",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "1dc456761dea3ae7948d320274d6459fb4ac4bb1da4204d9ee1fe9ff575edd5f",
+      "incorrect_tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "0d73fc3313668e8b185a368ad6560162c0cf1f795fbd91675437e1abcd98e747",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cursor_binding",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-04",
+      "template_group": "coordinated_4",
+      "tier": "T2",
+      "variant": 203,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 203",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-04",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 203"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6eddef8991038a721ff9de07be33e7bb84f369a81a76bfee50c2ec31752585dc",
+      "baseline_id": "coordinated_5",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "2e6a17180d5330a6ef2c96cf287edf30353e86b3e3b8c0be5746a699c1248df9",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "56cf4ca2c914e27607636162ba8bc0bd6637a54bc77ab79c1075ab55a0f36d64",
+      "incorrect_tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "01d75db6895f6a502a5e9b0a310a06a4cbe48743341f853270116276d2e6e956",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-05",
+      "template_group": "coordinated_5",
+      "tier": "T2",
+      "variant": 204,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 204",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-05",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 204"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6ce3545587536c144cf243418edb29963632634861e6b305ecbb32acdb412aeb",
+      "baseline_id": "coordinated_6",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "1f53b146f26e534d38a63f2dcf215cb5451c7da057a7b11b310c9c64255029c9",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "4f39873816956514b6881d456091a89362d960fad50644b71e5e422811c7ff94",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "bd837f8c7e8b5d0ec50cb7d343fcad05aa6b59a5e88d727b538bb3539d3b63f1",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-06",
+      "template_group": "coordinated_6",
+      "tier": "T2",
+      "variant": 205,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 205",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-06",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 205"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "9565168600e92cb44e8be8a9f3249185eb221f3e2fa81b8bf65aaaaf42175e7a",
+      "baseline_id": "coordinated_1",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "e3d82209f5c9d917217a8be5f02d99f9091e71a19044f7620b08a62e45fdf73e",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "7c7e7b6604a498821baee5e7b9850d1e1faca102c95fdd0c286ed8176ffcfe69",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "08076bb373e3330a2d7bddead00d7b4358b5e682e34290fe10b7d815fb6ca9e7",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-07",
+      "template_group": "coordinated_1",
+      "tier": "T2",
+      "variant": 206,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 206",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-07",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 206"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "2cae518b118bde9d0aa2f7c14bc48a4dfcd057a7d33175124e5ab7ec3616dc92",
+      "baseline_id": "coordinated_2",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "9bbe292e19573b5fd8041a685d5a710790de0974f6a1ad34b90a30f37cfc6ab5",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "72b7cc1aa123fe9d8e878f1e8aa80af2aa7762b6f0f6e09a1acb35d85ceae09e",
+      "incorrect_tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "5a230c5e3ca5583331d9fa653886117a974fcc260db4655dbb40dcde6961b628",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "resume_atomicity",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-08",
+      "template_group": "coordinated_2",
+      "tier": "T2",
+      "variant": 207,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 207",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-08",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 207"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "9c7239801a894bec9e8cc705c3ad4e36742479b7891fa54490cff2c862221029",
+      "baseline_id": "coordinated_3",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "7402bfea734e1935d8059c6a5c076a32f256c4ade551f465a0e1652d36565e4c",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "97f36a1aa3e4d399b5ee2ad78b41cde12741fb31be979a1e200f36907790d00d",
+      "incorrect_tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "38ffb46f8e78ed11372012a532f6f2ca8456d5a46109e52a5c3ecd843a89c054",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cancellation",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-09",
+      "template_group": "coordinated_3",
+      "tier": "T2",
+      "variant": 208,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 208",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-09",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 208"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "1c4ca20d08d258f71c7e5d1758f40436ce40732ec56ec04a526011e5649c49ad",
+      "baseline_id": "coordinated_4",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "bb47569efdb9c7701fe80e86664b54f4204821c6088a55efe6a341a50058457f",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "1dc456761dea3ae7948d320274d6459fb4ac4bb1da4204d9ee1fe9ff575edd5f",
+      "incorrect_tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "0d73fc3313668e8b185a368ad6560162c0cf1f795fbd91675437e1abcd98e747",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "cursor_binding",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-10",
+      "template_group": "coordinated_4",
+      "tier": "T2",
+      "variant": 209,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 209",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-10",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 209"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6eddef8991038a721ff9de07be33e7bb84f369a81a76bfee50c2ec31752585dc",
+      "baseline_id": "coordinated_5",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "79ebf8dbba35416b851daf45b3090e3f5cfba20c9696827884685910588de376",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "56cf4ca2c914e27607636162ba8bc0bd6637a54bc77ab79c1075ab55a0f36d64",
+      "incorrect_tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "01d75db6895f6a502a5e9b0a310a06a4cbe48743341f853270116276d2e6e956",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-11",
+      "template_group": "coordinated_5",
+      "tier": "T2",
+      "variant": 210,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 210",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-11",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 210"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6ce3545587536c144cf243418edb29963632634861e6b305ecbb32acdb412aeb",
+      "baseline_id": "coordinated_6",
+      "budget_ceilings": null,
+      "deadline_seconds": 3600,
+      "definition_digest": "ab24d87f03e319cc06fc280813710b6a9f822f0730db4cec9c2b0fd2b8f642e9",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "4f39873816956514b6881d456091a89362d960fad50644b71e5e422811c7ff94",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "bd837f8c7e8b5d0ec50cb7d343fcad05aa6b59a5e88d727b538bb3539d3b63f1",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t2-12",
+      "template_group": "coordinated_6",
+      "tier": "T2",
+      "variant": 211,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 211",
+        "milestones": [
+          "Freeze the shared interface and reproduce",
+          "Integrate implementation and client regression checks"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t2-12",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T2 synthetic import contract 211"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "3a8ba2122acc613ebcc8c8e22ec118f8aa9f6ef981f813e2abc52d6a415f9096",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-01",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 300,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 300",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-01",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 300"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "ca559fa0ad725395d326d903463521dea89ca75987a82784ed8a6f5a37a52c92",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-02",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 301,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 301",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-02",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 301"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "83cde56ec9396ddcb3eec8197104fac48a3aa7c1c6de73d1b4089ca8db7ad751",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-03",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 302,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 302",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-03",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 302"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "183f9ce82f4a50b66b4ab685ef1c98d11bc6200673a29bee726f456840025dc8",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-04",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 303,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 303",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-04",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 303"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "a889d887aa8f5176aa73c3686b7f02e1cf10c0768e286d352d9f3cc825660ef4",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-05",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 304,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 304",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-05",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 304"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "1147cdce1537b10bf30851a9aa4c6339af7e73168d22383c85c4d582e34a986b",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-06",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 305,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 305",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-06",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 305"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "e980c6121fe66439140628eb82b2ea51b3ab1c5c739603371bfff19453e246ed",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-07",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 306,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 306",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-07",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 306"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "13715c6a0a780fdb328806ee23060854bbce537c0fe2b7d0767e23536dcc8e35",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-08",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 307,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 307",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-08",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 307"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "d916dc6796239f21ae84c0e762211d4246306f567390ebeb30890883fc4e3391",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-09",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 308,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 308",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-09",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 308"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "4ec68b02e66fd83ea5cf6d7167996cd7857f81f286c30c9aa45c6cabb01dbf5c",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-10",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 309,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 309",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-10",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 309"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "bfa983d889c0af25225e7e9c89cc6b0fa1597f4c92c798080c0804152d9d1cb8",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-11",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 310,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 310",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-11",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 310"
+      }
+    },
+    {
+      "allowed_paths": [
+        "client.py",
+        "issue_tracker.py"
+      ],
+      "baseline_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a",
+      "baseline_id": "full_import_contract",
+      "budget_ceilings": null,
+      "deadline_seconds": 10800,
+      "definition_digest": "189643897b15981a539c829ae2576f90919a9ee544124be8c199e6dd59410da7",
+      "environment": {
+        "architecture": null,
+        "credentials": "none",
+        "dependency_lock": "stdlib-only-v1",
+        "image_digest": null,
+        "network": "disabled",
+        "python": ">=3.11",
+        "resource_caps": null
+      },
+      "grader_sha256": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "harness_revision": null,
+      "incorrect_patch_sha256": "3c7e16621175d0d0f706393409f03f337c4cd16fe0c050303eb004f0b4c280ac",
+      "incorrect_tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268",
+      "intentional_added_files": [],
+      "live_run_ready": false,
+      "model": null,
+      "provenance": {
+        "author": "Codex AI",
+        "data": "synthetic issue labels and IDs only",
+        "date": "2026-10-08",
+        "held_out_eligible": false,
+        "independent_task_claim": false,
+        "kind": "template_variant",
+        "known_contamination": "all variants share one published fixture and grader family"
+      },
+      "reference_patch_sha256": "d55e6148a3bdc545b796e98bc9b98e42e2fb3fa35389963f6f320571998a429d",
+      "reference_tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85",
+      "repository": {
+        "base_commit": null,
+        "family": "synthetic-issue-tracker-v1",
+        "identity_kind": "sha256-canonical-file-pairs-v1"
+      },
+      "requirements": [
+        "tenant_idempotency",
+        "resume_atomicity",
+        "cancellation",
+        "cursor_binding",
+        "pagination",
+        "sync_compatibility"
+      ],
+      "split": "diagnostic",
+      "task_id": "diagnostic-t3-12",
+      "template_group": "full_import_contract",
+      "tier": "T3",
+      "variant": 311,
+      "visible_spec": {
+        "allowed_paths": [
+          "client.py",
+          "issue_tracker.py"
+        ],
+        "data_label": "Synthetic 311",
+        "milestones": [
+          "Persist resumable submission and batch state",
+          "Integrate terminal cancellation and bound progress cursors",
+          "Preserve sync clients and verify fresh reopen end-to-end"
+        ],
+        "misleading_hypothesis": "Skipping duplicate issue inserts alone makes import retries safe; check progress/events separately.",
+        "preserve": "CSV headers issue_id,title; stable tenant-scoped issues; stdlib-only; no network or credentials.",
+        "requirements": [
+          {
+            "description": "Same tenant/key and canonical CSV rows return one import; changed rows conflict; another tenant may reuse the key.",
+            "id": "tenant_idempotency"
+          },
+          {
+            "description": "A bounded batch atomically commits issues, processed checkpoint and event; rollback/reopen/retry neither skips nor repeats committed rows.",
+            "id": "resume_atomicity"
+          },
+          {
+            "description": "Cancellation is terminal for an incomplete import; repeated cancellation and processing preserve progress; completed imports remain complete.",
+            "id": "cancellation"
+          },
+          {
+            "description": "Malformed, future-sequence, different-tenant and different-import progress cursors are rejected.",
+            "id": "cursor_binding"
+          },
+          {
+            "description": "Progress pages advance strictly past the previous sequence, contain no repeats and reach an empty tail.",
+            "id": "pagination"
+          },
+          {
+            "description": "Legacy synchronous clients return their tenant's list of issues after full import completion, including imports requiring multiple batches.",
+            "id": "sync_compatibility"
+          }
+        ],
+        "task_id": "diagnostic-t3-12",
+        "tier_limitation": "Nominal curriculum tier; task hardness and active long-horizon duration are not established.",
+        "title": "T3 synthetic import contract 311"
+      }
+    }
+  ]
+}

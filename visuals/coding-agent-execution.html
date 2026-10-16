@@ -1,0 +1,107 @@
+<div id="coding-agent-execution">
+  <style>
+    #coding-agent-execution .stages {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0;list-style:none;margin:18px 0}
+    #coding-agent-execution .stages li {padding:8px 0;border-bottom:3px solid var(--border);overflow-wrap:anywhere}
+    #coding-agent-execution .stages li.current {border-color:var(--viz-series-1);font-weight:500}
+    #coding-agent-execution .stage-number {display:block;color:var(--muted-foreground)}
+    #coding-agent-execution pre {white-space:pre-wrap;overflow-wrap:anywhere}
+    #coding-agent-execution td,#coding-agent-execution th {overflow-wrap:anywhere}
+    #coding-agent-execution .state-value {font-family:monospace}
+    @media(max-width:480px) {#coding-agent-execution .stages {grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+  <h3>One coding action through the system</h3>
+  <div class="viz-controls">
+    <label class="form-label">Scenario
+      <select class="form-select" id="ca-scenario">
+        <option value="normal">Verified repair</option>
+        <option value="stale">File changed after read</option>
+        <option value="crash">Crash after write</option>
+      </select>
+    </label>
+  </div>
+  <ol class="stages" aria-label="Execution stages">
+    <li><span class="stage-number">1</span>Context</li>
+    <li><span class="stage-number">2</span>Tokens</li>
+    <li><span class="stage-number">3</span>KV and output</li>
+    <li><span class="stage-number">4</span>Typed call</li>
+    <li><span class="stage-number">5</span>Authorize</li>
+    <li><span class="stage-number">6</span>File effect</li>
+    <li><span class="stage-number">7</span>Result</li>
+    <li><span class="stage-number">8</span>Verification</li>
+  </ol>
+  <div class="viz-row">
+    <button type="button" class="btn" id="ca-prev">Previous</button>
+    <span id="ca-position" class="tabular-nums">1 / 8</span>
+    <button type="button" class="btn btn-primary" id="ca-next">Next</button>
+  </div>
+  <table class="table table-sm" aria-label="Three separately owned states">
+    <thead><tr><th>Owner</th><th>Current state</th></tr></thead>
+    <tbody>
+      <tr><td>Durable journal</td><td class="state-value" id="ca-journal"></td></tr>
+      <tr><td>Workspace bytes</td><td class="state-value" id="ca-file"></td></tr>
+      <tr><td>Verifier</td><td class="state-value" id="ca-verifier"></td></tr>
+    </tbody>
+  </table>
+  <pre><code id="ca-object"></code></pre>
+  <div id="ca-status" aria-live="polite"></div>
+  <div class="text-small text-muted">Illustrative state machine. Token IDs, tensor dimensions and h0/h1/h2 digests are teaching values.</div>
+  <script>
+  (() => {
+    const root = document.getElementById('coding-agent-execution');
+    const get = id => root.querySelector('#' + id);
+    const scenario = get('ca-scenario');
+    const stages = Array.from(root.querySelectorAll('.stages li'));
+    let step = 0;
+    const data = [
+      ['read(h0) recorded', 'return a - b  [h0]', 'No evidence', 'context = instructions + read_result(h0)\nrequest = render(context, tools, model_config)', 'Context is a view; the durable history remains separate.'],
+      ['read(h0) recorded', 'return a - b  [h0]', 'No evidence', 'illustrative IDs = [31, 42, 17, 9]\nshape = [batch=1, tokens=4]\npositions = [0, 1, 2, 3]', 'A JSON request is rendered and tokenized before inference.'],
+      ['read(h0) recorded', 'return a - b  [h0]', 'No evidence', 'L=2, KV_heads=1, head_dim=2, bytes=2\nKV = 2 × 2 × 4 × 1 × 2 × 2 = 64 bytes\ncompatible prefix → reuse; new suffix → compute', 'Cached keys and values still participate in later attention.'],
+      ['read(h0) recorded', 'return a - b  [h0]', 'No evidence', '{"id":"edit-1","name":"edit",\n "args":{"expected":"h0",\n "old":"return a - b",\n "new":"return a + b"}}', 'Dispatch only after arguments are complete and validated.'],
+      ['edit-1: started', 'return a - b  [h0]', 'No evidence', 'validate schema → authorize capability\ncommit action intent → check file precondition', 'Authorization and journaling occur before the file effect.'],
+      ['edit-1: started', 'return a + b  [h2]', 'No evidence', 'actual_digest == expected_digest\nunique match → write temporary → atomic rename', 'The file can change before the result reaches the journal.'],
+      ['edit-1: completed', 'return a + b  [h2]', 'No evidence', '{"id":"edit-1","ok":true,"digest":"h2"}\ncommit result → append correlated observation', 'A completed result can be replayed without reapplying the edit.'],
+      ['test-1: completed', 'return a + b  [h2]', 'Passed for h2', 'verify immutable candidate h2\nnormal completion + assertions + digest match\nstatus = VERIFIED', 'A verification result is valid only for the tested artifact.']
+    ];
+    function save() {
+      if(window.openai && window.openai.setWidgetState) {
+        window.openai.setWidgetState({modelContent:{scenario:scenario.value,stage:step+1},privateContent:null}).catch(()=>{});
+      }
+    }
+    function draw() {
+      const d = [...data[step]];
+      if(scenario.value === 'stale' && step >= 4) {
+        d[1] = 'human modification  [h1]';
+        if(step >= 5) {
+          d[0] = step >= 6 ? 'edit-1: stale_read' : 'edit-1: started';
+          d[2] = 'Unverified';
+          d[3] = 'expected h0 ≠ current h1\nreject edit → preserve human bytes\nnext action: read current revision';
+          d[4] = 'The old read is evidence of h0, not authority to overwrite h1.';
+        }
+      }
+      if(scenario.value === 'crash' && step >= 5) {
+        d[0] = step >= 6 ? 'edit-1: outcome_unknown' : 'edit-1: started';
+        d[1] = 'return a + b  [h2]';
+        d[2] = 'Unverified';
+        d[3] = step === 5 ? 'rename succeeds\nWORKER CRASHES before result commit' : 'restart → intent exists, result absent\nrecord UNKNOWN → reconcile actual effect\ndo not blindly replay mutation';
+        d[4] = 'Missing acknowledgement does not prove that the action never ran.';
+      }
+      stages.forEach((el,i) => {el.classList.toggle('current',i===step); if(i===step)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');});
+      get('ca-position').textContent = `${step+1} / 8`;
+      get('ca-prev').disabled = step === 0;
+      get('ca-next').disabled = step === 7;
+      ['ca-journal','ca-file','ca-verifier','ca-object','ca-status'].forEach((id,i)=>get(id).textContent=d[i]);
+    }
+    function restore(state) {
+      const s = state && state.modelContent;
+      if(s && ['normal','stale','crash'].includes(s.scenario)) scenario.value=s.scenario;
+      if(s && Number.isInteger(s.stage))step=Math.max(0,Math.min(7,s.stage-1));
+      draw();
+    }
+    get('ca-prev').addEventListener('click',()=>{step=Math.max(0,step-1);draw();save();});
+    get('ca-next').addEventListener('click',()=>{step=Math.min(7,step+1);draw();save();});
+    scenario.addEventListener('change',()=>{draw();save();});
+    window.addEventListener('openai:set_globals',event=>{if(event.detail && event.detail.globals && event.detail.globals.widgetState)restore(event.detail.globals.widgetState);});
+    restore(window.openai && window.openai.widgetState);
+  })();
+  </script>
+</div>

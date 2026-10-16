@@ -1,0 +1,425 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "status": "passed_for_dependency_step_2_capture_foundation",
+  "scope": {
+    "delivered": "one-package bounded capture, strict metadata parsing, immutable scoped artifact catalog validation and exact resource byte helpers",
+    "full_skills_runtime": "pending",
+    "parent_dependency_step": 2,
+    "pure_checks": "partial S1/S6 only; no broker authorization claim",
+    "next": "step3 broker tools and receipt-derived loaded-state validation; then step4 accepted context/provider dispatch and step5 checkpoint/fresh-owner recovery"
+  },
+  "frozen_before_implementation": {
+    "path": "runs/immutable-skills-2026-10-11/spec-before-code.json",
+    "sha256": "cae5c1e7e05ab84c945561ea2734d8ad2f9526202ba5ec59624d8aa720b8ee22"
+  },
+  "source": {
+    "new": {
+      "service/skills.py": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+      "scripts/skills_capture_demo.py": "497178f0d26c35c9c4a3276f12c2f14c1b61654516d5293dd6820b6c80f31b36",
+      "tests/test_skills_capture.py": "3b2f1ed700c874cba5a08a64ca16844f080d9aea831fd4413f748730f4168f20",
+      "tests/test_skills_artifact_bounds.py": "f5b600e860154ddde9bcc7ad3ccdab15fe0bf82939d4511f99f79ec5cd9a281e",
+      "workloads/skills/verified-repair-guide/SKILL.md": "1f38956d1150d2aeabd61772abb6db429976e3093d2ea82f42b89b5011070d66",
+      "workloads/skills/verified-repair-guide/references/checklist.md": "8b3256e5ccf422f9fa5de2c7903c97b1c10aa3808adb1d7c385b101d1a85e22e",
+      "workloads/skills/verified-repair-guide/assets/example.json": "d86f3d5f41fa2e41fa4bc9693064f64fdd31656b78c37ee83ecdd70cdb82fdfe"
+    },
+    "changed_existing": {
+      "pyproject.toml": "ad75fd1f3cd5e8a574c67382eee04fcdafbe9e6053d119728e47a7e5f85dbc7b",
+      "scripts/build_offline_release.py": "6d711cf7129149769a6e1ad0722df0cf7adfbe418dec948b6db2f1d50f31d628",
+      "service/artifacts.py": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2",
+      "tests/test_offline_release.py": "83e9ac5411e36cf593dda6f7c9413f7be26bb32de48eee9e4658501954ad28c1",
+      "uv.lock": "9e80b9a78d1965e5691625661e72172a53d378dc09fa4ace230b105726b238b7"
+    },
+    "integrated_check_files": 196,
+    "unchanged_during_checks": true,
+    "runtime_store_schema": 2,
+    "harness_storage_context_recovery_protocol_unchanged": true
+  },
+  "independent_testing": {
+    "schema": 1,
+    "stage": "dependency_step_2_pure_capture_only",
+    "status": "independent_tests_complete",
+    "paid_execution": false,
+    "provider_calls": false,
+    "runtime_authority_claim": false,
+    "python_version": "3.12.11",
+    "pyyaml_version": "6.0.3",
+    "focused_result": {
+      "passed": 429,
+      "skipped": 1,
+      "log": "capture-after-hygiene.log",
+      "junit": "capture-after-hygiene.xml"
+    },
+    "final_changed_test_result": {
+      "passed": 1,
+      "log": "authority-guard-final.log",
+      "junit": "authority-guard-final.xml"
+    },
+    "physical_skip": "case-insensitive local filesystem cannot express two file names differing only in case; rehashed manifest case collisions separately exercised",
+    "lint": "Ruff passed for both owned test files",
+    "mutations": {
+      "schema": 1,
+      "reference_sha256": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+      "reference_unchanged": true,
+      "mutations": {
+        "json_recursion_escape": {
+          "target": "tests/test_skills_capture.py::test_config_json_decoder_recursion_is_sanitized",
+          "exit_code": 1,
+          "falsified": true,
+          "mutant_sha256": "93327d96fa4fb113f90ad7a3d3a35b8db446a765bb7bb92bb6ab972398610e33"
+        },
+        "allocation_before_length_refusal": {
+          "target": "tests/test_skills_capture.py::test_oversized_strings_refuse_before_encoding_or_splitting",
+          "exit_code": 1,
+          "falsified": true,
+          "mutant_sha256": "c26cb1781d4e44c9e93d38b3eec2a96d1a2057d218d48659bc49c8db7e8d0bf8"
+        },
+        "declared_size_integrity_waiver": {
+          "target": "tests/test_skills_capture.py::test_all_closed_ref_fields_checked",
+          "exit_code": 1,
+          "falsified": true,
+          "mutant_sha256": "67456ee799dc7609ac3c691d2531c9c6459b10f3e3c570369e8c3013176a8bcb"
+        },
+        "private_exception_context_escape": {
+          "target": "tests/test_skills_capture.py::test_public_formatted_traceback_suppresses_private_exception_context",
+          "exit_code": 1,
+          "falsified": true,
+          "mutant_sha256": "adba1309222f19a4659e7ed19112934d21643ede1fe5591fa916fbbc376894f3"
+        }
+      }
+    },
+    "source_sha256": {
+      "service/skills.py": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+      "service/artifacts.py": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2",
+      "tests/test_skills_capture.py": "3b2f1ed700c874cba5a08a64ca16844f080d9aea831fd4413f748730f4168f20",
+      "tests/test_skills_artifact_bounds.py": "f5b600e860154ddde9bcc7ad3ccdab15fe0bf82939d4511f99f79ec5cd9a281e"
+    },
+    "test_oracle_repairs": [
+      "First run socket fixture exceeded macOS UNIX socket path bound; replaced with short disposable actual path.",
+      "First run proposed second YAML document used a frontmatter closing delimiter, so following text was legitimate body; corrected invalid YAML fixture.",
+      "Pure unrelated-package resource read uses resource_denied; stale_catalog reserved for catalog/config identity drift."
+    ],
+    "caps_not_claimed_reachable": [
+      "max_skill_bytes valid boundary dominated by frontmatter/body caps",
+      "max_path_bytes valid resource boundary dominated by depth/component/root namespace caps",
+      "max_result_bytes valid pure result boundary dominated by max_read_bytes and bounded metadata",
+      "max_loaded_packages runtime enforcement pending"
+    ],
+    "pending": [
+      "broker loaded/disclosed/current-owner validation",
+      "provider actual send",
+      "receipt/load wrapper cap",
+      "checkpoint/recovery",
+      "device crossing with real mounted filesystem"
+    ]
+  },
+  "integration": {
+    "command": "CAM_TEST_SANDBOX_IMAGE=sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9 .venv/bin/python -m pytest -q --junitxml=runs/immutable-skills-2026-10-11/integrated-tests.xml",
+    "passed": 1646,
+    "subtests_passed": 156,
+    "skipped": 13,
+    "skip_details": [
+      {
+        "test": "tests.test_context_integration.test_real_postgres_projected_atomicity_and_exact_retry",
+        "reason": "explicit local disposable PostgreSQL URL required"
+      },
+      {
+        "test": "tests.test_failure_capture.test_postgres_repeatable_read_barrier_real_committed_writer",
+        "reason": "CAM_TEST_POSTGRES_URL is not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_row_lock_serializes_shared_budget_and_one_node",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_uncertain_cancel_late_receipt_restore",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_database_time_final_cutoff",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_explicit_migration_rekeys_and_blocks_already_open_legacy_writer",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_migration_failure_rolls_back_data_version_and_triggers",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_concurrent_initializers_on_precreated_empty_schema",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_populated_unversioned_legacy_rejected_without_row_or_ddl_changes[empty]",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_postgres.test_postgres_populated_unversioned_legacy_rejected_without_row_or_ddl_changes[missing]",
+        "reason": "CAM_TEST_POSTGRES_URL not configured"
+      },
+      {
+        "test": "tests.test_skills_capture.test_case_collision",
+        "reason": "case-insensitive filesystem cannot express collision fixture"
+      },
+      {
+        "test": "tests.test_workflows.test_real_local_temporal_workflow_continue_as_new_and_history_replay",
+        "reason": "requires explicit local Temporal dev-server opt-in"
+      },
+      {
+        "test": "tests.test_workflows.test_real_temporal_duplicate_start_memo_and_stop_before_rollover",
+        "reason": "requires explicit local Temporal dev-server opt-in"
+      }
+    ],
+    "warning": "StarletteDeprecationWarning: httpx with starlette.testclient is deprecated; dependency migration outside this slice",
+    "duration_seconds": 131.07,
+    "exit_code": 0,
+    "docker": "existing local immutable image; no pull",
+    "postgres": "not opted in this run",
+    "temporal": "not opted in this run",
+    "ruff": "service compute evals workloads tests scripts release: passed",
+    "affected_regressions": {
+      "passed": 123,
+      "includes": [
+        "release selection",
+        "artifacts",
+        "existing context"
+      ],
+      "docker_enabled": true
+    },
+    "counts_overlap": true
+  },
+  "repairs": [
+    {
+      "finding": "deep bounded JSON decoder recursion escaped sanitized public error",
+      "fixed": true
+    },
+    {
+      "finding": "path/text allocation before bound refusal",
+      "fixed": true
+    },
+    {
+      "finding": "implicit exception context exposed private diagnostics",
+      "fixed": true
+    }
+  ],
+  "demo": {
+    "run": "runs/immutable-skills-2026-10-11/demo-final",
+    "source_sha256": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+    "summary_sha256": "89506c0b607132040d05c80eb08013b486160054c34dc48e8d43ff69278dc9ae",
+    "same_summary_as_independently_checked_initial_demo": true,
+    "resource_bytes": 193,
+    "chunks": 97,
+    "chunks_splitting_utf8": 8,
+    "origin_mutation_preserves_snapshot": true,
+    "separate_artifact_corruption_rejected": true,
+    "exact_eof_empty": true,
+    "provider_requests": 0,
+    "original_evidence_preserved": true
+  },
+  "packaging": {
+    "status": "passed",
+    "artifact_kind": "scratch_build_only_not_new_release_acceptance",
+    "wheel": "runs/immutable-skills-2026-10-11/package-check/dist/coding_agent_mastery-0.1.0-py3-none-any.whl",
+    "wheel_sha256": "1651bc8b5a46c67e428d0999cb408cd9de660e86c31eb428d9242c492ffd7d12",
+    "selected_source_entries": 152,
+    "fixture_assets": {
+      "workloads/skills/verified-repair-guide/SKILL.md": "1f38956d1150d2aeabd61772abb6db429976e3093d2ea82f42b89b5011070d66",
+      "workloads/skills/verified-repair-guide/assets/example.json": "d86f3d5f41fa2e41fa4bc9693064f64fdd31656b78c37ee83ecdd70cdb82fdfe",
+      "workloads/skills/verified-repair-guide/references/checklist.md": "8b3256e5ccf422f9fa5de2c7903c97b1c10aa3808adb1d7c385b101d1a85e22e"
+    },
+    "skills_source_sha256": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+    "pyyaml_requirement": "PyYAML==6.0.3",
+    "historical_rc1_untouched": true
+  },
+  "dependency": {
+    "exact_added_package": "PyYAML==6.0.3",
+    "parser": "pure Python BaseLoader scanner/events; no YAML object construction",
+    "resolution_install": "offline existing cache",
+    "existing_third_party_lock_records_unchanged": true,
+    "project_record_changed_for_new_dependency": true,
+    "lock_sha256": "9e80b9a78d1965e5691625661e72172a53d378dc09fa4ace230b105726b238b7"
+  },
+  "preservation": {
+    "path": "runs/immutable-skills-2026-10-11/preservation-check.json",
+    "sha256": "4679c0fca11de11c2dfafa56f875a510d87d3a4b5103cb65930e745e7e7c67bb"
+  },
+  "documentation": {
+    "check": {
+      "path": "runs/immutable-skills-2026-10-11/documentation-check.json",
+      "sha256": "996babc32ceba8ee2f126c67c6c213ef8b60c1862bc61c048cd5c086698448a9"
+    },
+    "documents": 46,
+    "local_links": 944,
+    "line_anchors": 222,
+    "heading_fragments": 59,
+    "errors": [],
+    "human_mastery_tracker_unchanged": true
+  },
+  "limits": [
+    "trusted quiescent local fixture capture; no hostile concurrent atomic multi-file snapshot",
+    "declared provenance is not authenticated publisher identity",
+    "physical case-collision fixture skipped on local case-insensitive volume; serialized collisions tested",
+    "real mounted filesystem device crossing experiment pending; comparison source-reviewed",
+    "outer cap valid boundaries dominated by tighter inner caps are not claimed",
+    "partial format compatibility; no automatic scripts, install or hot reload",
+    "broker current-owner/loading/disclosure and S7/A1-A4/R1-R4 pending",
+    "scratch wheel byte check is not new installed-package acceptance; October10 rc1 unchanged",
+    "no live-model quality/performance, GPU result, operated production, job readiness or human mastery claim"
+  ],
+  "paid_execution": false,
+  "paid_hold_unchanged": true,
+  "hackathon_required_profile_unchanged": true,
+  "publication": false,
+  "evidence": [
+    {
+      "path": "research/immutable-skills-capture-spec-2026-10-11.md",
+      "sha256": "ae2310d24bed7fd29fed40dd729434046064029bd9cec1fb91e9ec209d2a8feb"
+    },
+    {
+      "path": "research/immutable-skills-independent-review-2026-10-11.md",
+      "sha256": "a5e72c6b32e0889cdc65ec2859bfc42743b243b2e546f84ae8d2f78df72c8f52"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/before.json",
+      "sha256": "ecfcacd4a4143699d56e89a59d1d7686696f34d501b952f16fff758e5547d536"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/spec-before-code.json",
+      "sha256": "cae5c1e7e05ab84c945561ea2734d8ad2f9526202ba5ec59624d8aa720b8ee22"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/spec-frozen.md",
+      "sha256": "ae2310d24bed7fd29fed40dd729434046064029bd9cec1fb91e9ec209d2a8feb"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/dependency-delta.json",
+      "sha256": "383a6eac3aea39734a27304e110d79b17886e56af388ab08a981ea32fbf1670b"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/dependency-lock.txt",
+      "sha256": "1fe44ef057330886f6660249df81dbe2e3e73161b8d142f167c53e5cf12a8d61"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/dependency-install.txt",
+      "sha256": "6b1bbb9cf37d9809f96ea76e3accaa434e7548bcf4d3cb14fd0c63449aad1db3"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/parser-environment.json",
+      "sha256": "7cc6fee82d91e2a9ef484fe7606e5fa882606bb0d090b72421b92288775a0875"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/root-shared-tests.txt",
+      "sha256": "f17fd44967a88112057f3db256a5d8caf113f41cdd4907cb17aa609f0833de08"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/root-shared-tests.xml",
+      "sha256": "4da9270b6a2d92c6fcbb9434e8219d4fca69a3b8f139a09299d2f2ab0cd554bd"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/root-affected-tests.txt",
+      "sha256": "7482c3d0a2efba0090a512105e8b2019dadf4dce121d4e3940d9cc914d8a663a"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/root-affected-tests.xml",
+      "sha256": "edb7e95de183f7fd0675f62fb0b247bf49fc05a691725ce5f76856562c2af235"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/integrated-tests.txt",
+      "sha256": "05d175061d6a8983ddf1a4f5068d61ee1fa2478fdbb1852a78e54d139a6351b6"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/integrated-tests.xml",
+      "sha256": "4e1754be42b0799ed79d578f877f574e5ebef7943d4165dc512f94336d95913c"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/integrated-source-before.json",
+      "sha256": "abc4b8947c305403bb91612e0d5fc249491e88b3489c98b9b9a011dee51556de"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/integrated-source-after.json",
+      "sha256": "71c5f3c8fd28753588fe3146ce5fbcf5d562df120d87ab2c596405e77a9bd49b"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/ruff.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/package-manifest.json",
+      "sha256": "0b690e2ca3f742d22d0ff0cf15a2e11dd6a49a760557f1c6c2ef13302e053d69"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/package-verification.json",
+      "sha256": "7d3632992470510399e68cfe188239635d37944c3a2868d55277f3ecf3306c8d"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/package-check/build-evidence.json",
+      "sha256": "0a399e2fbf3bf9d5225a3920495ecb13d7bac9df1837c78f9dbe3d8c1de82013"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/independent-test-verification.json",
+      "sha256": "e9d383e6b7b068308cd2b26bf47dd74ed38c5709b511c6936407546ccf7abe4e"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/mutation-results.json",
+      "sha256": "e8c61428b77028bcf33b0b833cf837671f9d9648b54ff689ae1150a381a60f13"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/capture-first.log",
+      "sha256": "d2de99bc06abec117282eded5efd62f5497d45eb73eced0433dae60f6993da8f"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/capture-after-hygiene.log",
+      "sha256": "db150fe7d8c3e10d5e6a9068196adfdcbc8dc11b8c7109d5e9f71d54538ea3ed"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/capture-after-hygiene.xml",
+      "sha256": "8a9ab0c812f5bf58e9b1d5e5bdad307f389ca500f2b8d99f415edf2d8b6590c4"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/tests/authority-guard-final.log",
+      "sha256": "c91dad03511eb111dba9f317cdb7962c64ec389c7d259de488e167c78aac1b31"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/review/controls-final.json",
+      "sha256": "3f407da5023b3963a16d325cf8aab27a795e24eb7ebbbbb460d88a08ce54231a"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/review/demo-validation.json",
+      "sha256": "75300942c27dc8afa63418b44f1b47d4a4424160f9566aba26764f9b406a2b36"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-initial/summary.json",
+      "sha256": "89506c0b607132040d05c80eb08013b486160054c34dc48e8d43ff69278dc9ae"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-final/summary.json",
+      "sha256": "89506c0b607132040d05c80eb08013b486160054c34dc48e8d43ff69278dc9ae"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-final/trace.md",
+      "sha256": "75f7af15968b16b7d5c4a62affb3fbd2b7f05191258bbef1b683055db43e52e5"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-final/catalog.json",
+      "sha256": "eb387314677ee656bc2f839aa2ddb7a15b29f957f20607f60d5124862a45505e"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-final/package.json",
+      "sha256": "64b2f3b520c788eb0a3587b0b380ddded3a747d79576ae9642256b8eb1414032"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/demo-final-command.txt",
+      "sha256": "3e916fd1c35cd009cf5e155c96085e4fc39b001c29f4fa846afd127c531b6069"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/preservation-check.json",
+      "sha256": "4679c0fca11de11c2dfafa56f875a510d87d3a4b5103cb65930e745e7e7c67bb"
+    },
+    {
+      "path": "runs/immutable-skills-2026-10-11/documentation-check.json",
+      "sha256": "996babc32ceba8ee2f126c67c6c213ef8b60c1862bc61c048cd5c086698448a9"
+    }
+  ]
+}

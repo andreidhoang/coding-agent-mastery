@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-08",
+  "original_files_sha256": "all matched",
+  "source_snapshots_sha256_checked": 18,
+  "new_markdown_documents_checked": 11,
+  "local_links_checked": 111,
+  "missing_local_links": 0,
+  "canonical_curriculum_modules": 16,
+  "lab_contract_tests_passed": 15,
+  "lab_live_model_used": false,
+  "cloud_or_gpu_runs": false,
+  "visual_scenarios_checked": [
+    "verified repair",
+    "stale edit",
+    "crash after write"
+  ],
+  "lab_source_sha256": {
+    "harness.py": "fd1c7264cd578826a9eb20ecbbc79672ed618cc6dce0da79efe3423c574d04ad",
+    "test_harness.py": "abff48cf4e50f72b3fee65c10712b1ae23d224321f69c83b6275ff11be7a92fe"
+  }
+}

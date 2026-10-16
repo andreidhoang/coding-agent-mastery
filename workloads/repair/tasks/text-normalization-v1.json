@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "repo_id": "owned-text-normalization-v1",
+  "repository": "../repositories/text-normalization",
+  "source_paths": ["slug.py"],
+  "allowed_paths": ["slug.py"],
+  "recipe": "../recipes/text-normalization-v1.json",
+  "issue": "normalize_slug must return lowercase ASCII alphanumeric words separated by one hyphen. Treat punctuation, underscores, and arbitrary whitespace as word separators, omit leading/trailing separators, and return an empty string when no words remain. Non-string input must raise TypeError. Repair the declared source and use the fixed public tests before proposing completion.",
+  "evidence_kind": "owned-authored-demo; not held-out real-world coding capability"
+}

@@ -1,0 +1,20 @@
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -124,7 +124,7 @@
+             raise ValueError("invalid batch size")
+         with self._transaction():
+             job = self._job(tenant, job_id)
+-            if job["status"] == "complete":
++            if job["status"] in ("complete", "cancelled"):
+                 return job
+             start = job["processed"]
+             rows = self.db.execute("SELECT * FROM staged_rows WHERE job_id=? AND position>=? ORDER BY position LIMIT ?", (job_id, start, batch_size)).fetchall()
+@@ -141,7 +141,7 @@
+     def cancel(self, tenant, job_id):
+         with self._transaction():
+             job = self._job(tenant, job_id)
+-            if job["status"] not in ("complete", "cancelled"):
++            if job["status"] == "queued":
+                 self.db.execute("UPDATE jobs SET status='cancelled' WHERE id=?", (job_id,))
+                 self._event(job_id, "cancelled", job["processed"])
+             return self._job(tenant, job_id)

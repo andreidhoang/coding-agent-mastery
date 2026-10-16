@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-08",
+  "scope": "Learn-first folder and context setup",
+  "markdown_files_checked": 22,
+  "local_links_checked": 146,
+  "local_line_anchors_checked": 48,
+  "study_test_selectors_validated_statically": 3,
+  "agent_instruction_bytes": 3125,
+  "current_state_bytes": 2139,
+  "errors": [],
+  "archives": [
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-mastery-plan-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-harness-research-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/previous-handoff-2026-10-08.txt",
+      "unchanged": true
+    }
+  ],
+  "learning_experiments_run": false,
+  "new_production_code_written": false,
+  "human_mastery": "not demonstrated",
+  "next_step": "H0 purpose/state map then human predictions",
+  "instruction_discovery_verified_in_new_agent_run": false
+}

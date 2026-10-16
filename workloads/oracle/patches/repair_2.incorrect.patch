@@ -1,0 +1,11 @@
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -126,7 +126,7 @@
+             job = self._job(tenant, job_id)
+             if job["status"] in ("complete", "cancelled"):
+                 return job
+-            start = 0
++            start = max(0, job["processed"] - 1)
+             rows = self.db.execute("SELECT * FROM staged_rows WHERE job_id=? AND position>=? ORDER BY position LIMIT ?", (job_id, start, batch_size)).fetchall()
+             for row in rows:
+                 self.db.execute("INSERT INTO issues VALUES(?,?,?) ON CONFLICT(tenant,issue_id) DO NOTHING", (tenant, row["issue_id"], row["title"]))

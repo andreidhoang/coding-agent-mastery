@@ -1,0 +1,193 @@
+{
+  "repository": "https://github.com/decodingai-magazine/building-a-coding-agent-from-scratch-course",
+  "commit": "4691f51e0f4977be0d3f0fc9a4667e75366f22ee",
+  "retrieved_on": "2026-10-10",
+  "selection": "Reading-only partial snapshot; not installed, run, or imported by project",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 11347,
+      "sha256": "ca6f9ffc296022566a905a7c9300874201977579382f4a193a9520cdb5db62e7"
+    },
+    {
+      "path": "src/decode/context/compaction.py",
+      "bytes": 13991,
+      "sha256": "4bb6f0b558f43bfa40f49ccc4c90e2534c3d3743f5fc053f45310339cf0063fa"
+    },
+    {
+      "path": "src/decode/context/session_log.py",
+      "bytes": 12915,
+      "sha256": "275aacd974cc971dff0217962317f823d3a23f9ac93b57a1ac5f70768ec96242"
+    },
+    {
+      "path": "src/decode/agent/loop.py",
+      "bytes": 28245,
+      "sha256": "b144829a2d9e7ff9fb23d792be63eb75036edc0e68955372a0a2249b1443d437"
+    },
+    {
+      "path": "src/decode/entities/skill_def.py",
+      "bytes": 1734,
+      "sha256": "f65e15221676d57b7f7be7bb1e94eb65a88bb6c93ac91e3ae82ae6a726809cd9"
+    },
+    {
+      "path": "src/decode/skills/catalog.py",
+      "bytes": 1880,
+      "sha256": "408b73e86365a4d27dc73109b193824b3ea827a2a07f53fc4b301cb472cb1542"
+    },
+    {
+      "path": "src/decode/skills/loader.py",
+      "bytes": 6815,
+      "sha256": "dfc31ae50fab2f30d503a8703fb25ad70dff52301bd2e954d66c7258b28ba0d4"
+    },
+    {
+      "path": "src/decode/skills/payload.py",
+      "bytes": 3467,
+      "sha256": "e047cc8f8c2e9fc0efd3dad54881528e1b6b24e9f194332335e0cbe010f6e8ca"
+    },
+    {
+      "path": "src/decode/tools/skills.py",
+      "bytes": 3223,
+      "sha256": "f23fa7aa1bb88ef851de9a5590b509198351e84e9ab32d65b1362420c4af9891"
+    },
+    {
+      "path": "src/decode/services/lsp/client.py",
+      "bytes": 12792,
+      "sha256": "072cd385bb112c4136645ecdfc4095b0ff5065e7362e784e20f044bd549a6929"
+    },
+    {
+      "path": "src/decode/services/lsp/service.py",
+      "bytes": 6589,
+      "sha256": "b95e9207649a9c418cc6755830b80b3b5c91d229b0cae39ce31e7475a164a057"
+    },
+    {
+      "path": "src/decode/services/lsp/types.py",
+      "bytes": 1651,
+      "sha256": "bb5a7ed0e0e35186b9e28a2e2d53398427c4ea07efe5765ea64e66fb5d09b460"
+    },
+    {
+      "path": "src/decode/tools/lsp.py",
+      "bytes": 7788,
+      "sha256": "fe5198c9a4746ca05fbdcbb729aefe5f037189823d37e74c27b6e34cbc57d8f6"
+    },
+    {
+      "path": "src/decode/tools/agent.py",
+      "bytes": 27441,
+      "sha256": "60f907c8328bc77f00dd903bd656313a97992f6436fd42db0246d641af9a8da4"
+    },
+    {
+      "path": "src/decode/runtime/summary.py",
+      "bytes": 6851,
+      "sha256": "0256808f58e7c8a72764d430c2dd37cb746e1bf7034c2c7b3b383eb3e302723d"
+    },
+    {
+      "path": "evals/harness/driver.py",
+      "bytes": 13721,
+      "sha256": "9e8086d0f8d627574db1408b7a16d17ca5254906911bfd11647f465e1504224b"
+    },
+    {
+      "path": "evals/harness/aggregates.py",
+      "bytes": 20411,
+      "sha256": "559b6e6f9a03c791658ef06b29c04b9f5b4340d810f336fc57955e31036bb6a6"
+    },
+    {
+      "path": "evals/harness/verifier.py",
+      "bytes": 6805,
+      "sha256": "69da0bcafa9c3b4e5237d9cf31dd87ac319572b613b3a69a936f74595917c982"
+    },
+    {
+      "path": "evals/harness/trial.py",
+      "bytes": 25067,
+      "sha256": "673bf0e45621ebfc54106f8c4de2265baf931973d45f1d6b1865e39847c9af16"
+    },
+    {
+      "path": "evals/harness/mine.py",
+      "bytes": 20339,
+      "sha256": "fddae5326c1a6cbfbc0f1e80a6d989490521e9cb51f5cb44ddbc41dc709c383e"
+    },
+    {
+      "path": "evals/harness/metrics.py",
+      "bytes": 30605,
+      "sha256": "cb2ed33719948044468178656972281091a309f8eceb9262f6e9de419faef7e7"
+    },
+    {
+      "path": "evals/regression/case.py",
+      "bytes": 9139,
+      "sha256": "c95fd34c614e7b4c42eba73407293e281ca0becd39157ab5ef6e39031bb8c818"
+    },
+    {
+      "path": "evals/regression/cases/compaction_survival.py",
+      "bytes": 4414,
+      "sha256": "8b9a130af3e9b6994f2e62a1b4a8e82c46c380038c592be862ed4277cbdfa894"
+    },
+    {
+      "path": "evals/regression/cases/mined_guessed_file_path.py",
+      "bytes": 5195,
+      "sha256": "023b6738ab80e6de6ff60019893742cc03a7a134e75ebf3c7a834e3cee70101e"
+    },
+    {
+      "path": "tests/unit/decode/context/test_compaction.py",
+      "bytes": 25138,
+      "sha256": "77d019d31b692f47c2600402d218f87bc656523f5356961d976235d3e24533ba"
+    },
+    {
+      "path": "tests/unit/decode/context/test_session_log.py",
+      "bytes": 19309,
+      "sha256": "def038d32a9da210eac89c2d36fa5dcd65bf9ec69d304348b80a5af867436130"
+    },
+    {
+      "path": "tests/unit/decode/skills/test_loader.py",
+      "bytes": 24129,
+      "sha256": "ec8e5773c9d386228a8df9f602ef0b06b866682aadc9e8edc545be987bd9d19c"
+    },
+    {
+      "path": "tests/unit/decode/skills/test_payload.py",
+      "bytes": 7319,
+      "sha256": "cb085f0522c32249be0247931a0d207e6b2044945550d1df82478d89ca71e5cd"
+    },
+    {
+      "path": "tests/unit/decode/services/lsp/test_service.py",
+      "bytes": 15012,
+      "sha256": "620868ac52146bbbec7001301755923267a87027a3a6af655ecaaa7b63408692"
+    },
+    {
+      "path": "tests/unit/decode/tools/test_lsp.py",
+      "bytes": 16513,
+      "sha256": "881fda08c9f1a7f635917546dc6e64eed455684863ace547ffdbcb9e8d3c630d"
+    },
+    {
+      "path": "tests/unit/evals/harness/test_aggregates.py",
+      "bytes": 12796,
+      "sha256": "668520b43af9f81fbe19d3ea6623e98ba68b323f5cf59ab5d5f0863d8ad8cf0a"
+    },
+    {
+      "path": "tests/unit/evals/harness/test_mine.py",
+      "bytes": 12233,
+      "sha256": "d5d648b5cf2a20548f8cc19582a2523241932a08166c1d1075d835aebf355a5c"
+    },
+    {
+      "path": "tests/unit/evals/regression/test_cases_mined.py",
+      "bytes": 8545,
+      "sha256": "76d8ec830e9fa6750ece5532a14b501e3bd78170688032695ec30b1cfb25c4da"
+    },
+    {
+      "path": "docs/adr/0019-kitaru-replay-runtime.md",
+      "bytes": 11525,
+      "sha256": "9318386c40c73c6c22f3a09cc789bb8c514a2809120eb11f827ea04488f1e9b1"
+    },
+    {
+      "path": "docs/adr/0022-evals-v2-own-harbor-on-opik.md",
+      "bytes": 32638,
+      "sha256": "1401dca835b34c54fb3323843f66a610659e3c8e16ea167bd60beb59fda03808"
+    },
+    {
+      "path": "docs/adr/0023-kitaru-workers-run-locally.md",
+      "bytes": 3417,
+      "sha256": "e4ff0c88debcd7d23a68e2d6827420420a907aa93dc5136b19c04b3637135645"
+    },
+    {
+      "path": "running_the_code/06_evals_replays.md",
+      "bytes": 28050,
+      "sha256": "f0c2c6bf6f6458d05e55feb149a53e896446a042b43b8c8dd140ebe1a8cc7c59"
+    }
+  ]
+}

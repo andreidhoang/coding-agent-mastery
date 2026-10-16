@@ -1,0 +1,43 @@
+# Independent review: bounded Nebius HTTP error evidence
+
+**2026-10-10 — independent AI source review and local synthetic checks.** No remaining blocker was identified within the frozen [HTTP error evidence contract](../../hackathon/06-http-error-evidence-contract.md) after the two defects below were repaired. This is engineering evidence for the bounded reference implementation, not human mastery, live-provider capability or production readiness. Historical repair E1–E6 evidence and NVIDIA NV-S0 evidence remain separate.
+
+## Scope and authority
+
+Reviewed the native Nebius adapter, harness persistence and replay branches, and independent focused tests. The important boundary is that an observed non-2xx HTTP response supplies diagnostic evidence, never a model completion, tool authorization, billing settlement or retry permission. The adapter sanitizes and bounds response evidence; the harness binds it to its trusted request and dispatch; the store preserves uncertain liability.
+
+The reviewed implementation uses a validated immutable `NebiusHTTPError` record with detached copies and status-only exception text ([providers.py:270](../../service/providers.py#L270), [providers.py:344](../../service/providers.py#L344)). Allowed headers and decoded body capture have separate bounds and redaction paths ([providers.py:429](../../service/providers.py#L429), [providers.py:458](../../service/providers.py#L458)). The one-send receive path raises the domain error after response context exit and suppresses unsafe exception chaining ([providers.py:507](../../service/providers.py#L507)). Complete 2xx responses retain their existing bytes API.
+
+The harness validates provider, protocol, endpoint, model and payload digest against the persisted trusted request before writing the canonical wrapper. It stores the artifact before recording Unknown with `actual_units=None` ([harness.py:232](../../service/harness.py#L232)). A failed upload attempts an Unknown receipt without a result; a failed receipt can leave an orphaned artifact and unresolved dispatch. Neither case authorizes a resend. Non-native exceptions preserve the previous conservative path.
+
+Replay rejects ordinary unresolved dispatches. Two independent guards then reject diagnostics even if a trusted late receipt changes the effect to succeeded: the diagnostic content type before decoding and the reserved wrapper kind before usage/model parsing ([harness.py:220](../../service/harness.py#L220), [harness.py:226](../../service/harness.py#L226)). The focused tests exercise each guard independently ([test_nebius_http_errors.py:184](../../tests/test_nebius_http_errors.py#L184)).
+
+**VI:** Một response HTTP lỗi chỉ là bằng chứng vận chuyển. Với claim 40 và request bound 12, khi nhận 429 thì allowance chưa dùng vẫn là 28 và liability chưa biết vẫn là 12. Lưu diagnostics không đổi 12 thành 0. Kể cả khi một receipt đáng tin sau đó settle billing và đổi effect thành succeeded, artifact lỗi vẫn không được đưa vào parser của model.
+
+## Findings repaired before closeout
+
+1. **Automatic HTTPX close failure misclassified entity completeness.** A disposable stream yielded a body, reached raw EOF, then raised from `close()`. The earlier implementation retained the prefix but reported `body_complete=false` and `read_error="read_error"`. HTTPX closes the raw stream before the decoded iterator completes its decoder flush, so treating that exception as an ordinary read failure did not implement the frozen contract. The repaired collector temporarily observes close failures, lets decoding finish, restores the original close method, and reports `close_error` while preserving whether decoded EOF was actually reached. A follow-up probe observed the complete 11-byte body with `body_complete=true` and `close_error`. Independent tests also inject decoder-flush failure, both with and without close failure, and require `body_complete=false`; raw EOF alone does not establish decoded EOF ([test_nebius_http_errors.py:337](../../tests/test_nebius_http_errors.py#L337)).
+
+2. **Lossy header-name decoding bypassed the exact allowlist.** The previous ASCII decoding with `errors="ignore"` converted raw `b"x-request-\xffid"` into allowed `x-request-id`, exporting a value from a non-allowlisted name. A disposable MockTransport probe confirmed the behavior. Strict ASCII decoding now drops malformed names. The independent regression passes ([test_nebius_http_errors.py:397](../../tests/test_nebius_http_errors.py#L397)). Parent and implementation reviewers also identified this edge independently.
+
+**VI:** EOF của raw stream và EOF của decoded body là hai trạng thái khác nhau: decoder vẫn có thể lỗi khi flush. Vì vậy close lỗi sau decoded EOF có thể đi cùng `body_complete=true`, còn decoder flush lỗi phải giữ false. Tương tự, allowlist phải so khớp tên header thật; xóa byte không hợp lệ trước khi so khớp vô tình mở thêm tên được chấp nhận.
+
+## Checks actually performed by this reviewer
+
+- Ran the final focused command `uv run pytest -q tests/test_nebius_http_errors.py`: **70 passed in 1.15 seconds**. These are local synthetic cases using MockTransport and existing harness fixtures.
+- Ran an initial automatic-close failure reproduction, then a five-case boundary probe covering repaired EOF/close behavior, short-prefix timeout, compressed overflow at the 65,536-byte decoded cap, malformed compression, and malformed header names. The malformed-header case exposed the second defect before its fix; the final focused suite verifies the repaired behavior. Injected unsafe exception strings did not appear in ordinary formatted tracebacks.
+- Ran five credential-redaction probes: raw key, JSON-escaped key, key split across chunks, partial key at the capture cap, and partial key before a read failure. Each omitted the retained body and marked redaction; an allowed header containing a key after a long prefix was omitted before truncation. Forbidden cookie headers were absent. All credentials were synthetic fixture literals.
+- Inspected focused tests for valid-looking error completions, independent late-succeeded replay guards, exact request binding, upload/receipt failures, unchanged uncertain exposure, zero repeat HTTP sends, header and decoded-body limits, immutable detached diagnostic records, preflight failures, successful byte preservation, and unchanged Anthropic error behavior.
+
+Counts above describe this review only. They do not add to implementation-agent regression selections or the parent's full-suite/package checks; those can overlap. No broad suite, Docker execution, genuine provider call, account lookup or paid request was performed by this reviewer. No service or test source was edited by this reviewer.
+
+## Limits and open scope
+
+- The redaction guarantee covers the configured credential's exact raw and specified JSON-escaped forms, including supported incomplete-prefix handling. It is not general DLP for unrelated secrets or arbitrary encodings. Complete-body omission is explicitly marked; redacted evidence is not claimed to be exact raw response bytes.
+- Application retention is bounded in decoded entity bytes. HTTPX/decompressor internal allocation and hostile-server decompression-bomb resistance remain outside this slice.
+- Before-header transport failures and incomplete/oversized 2xx responses retain their existing conservative behavior. The new diagnostic schema specifically covers observed non-2xx responses; direct callers now receive `NebiusHTTPError` rather than HTTPX's status exception for that branch.
+- Error status, usage-looking body text and Retry-After never settle charges or authorize retry. There is no automatic reconciliation or fallback provider. Persistence failure can leave an unresolved dispatch or orphaned artifact; the intended recovery is conservative refusal.
+- This change adds no store migration and makes no new claim about active-container crash recovery. The previously documented lack of a durable case-instance launch journal remains an independent repair limitation.
+- The contract's design-freeze introduction and old “current behavior” anchors describe the pre-implementation gap. The parent was notified to mark those as historical or update them in delivery closeout. Final source identities and broad regression/package results belong in the parent's dated delivery record.
+
+**VI:** Kết luận ở đây chỉ là phạm vi HTTP-error evidence đã vượt qua review và phép thử mock nêu trên. Không suy ra model thật sửa code tốt, không suy ra đã kiểm Docker/crash recovery trong lượt review này, và không ghi mastery của Huy từ kết quả AI implementation.

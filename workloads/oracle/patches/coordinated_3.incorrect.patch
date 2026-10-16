@@ -1,0 +1,31 @@
+--- a/client.py
++++ b/client.py
+@@ -11,7 +11,7 @@
+ 
+     def import_csv(self, csv_text, request_key="legacy"):
+         job_id = self.submit(request_key, csv_text)
+-        if self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
++        while self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
+             self.tracker.process_batch(self.tenant, job_id)
+         if self.tracker.status(self.tenant, job_id)["status"] == "cancelled":
+             raise ValueError("import was cancelled")
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -124,7 +124,7 @@
+             raise ValueError("invalid batch size")
+         with self._transaction():
+             job = self._job(tenant, job_id)
+-            if job["status"] == "complete":
++            if job["status"] in ("complete", "cancelled"):
+                 return job
+             start = job["processed"]
+             rows = self.db.execute("SELECT * FROM staged_rows WHERE job_id=? AND position>=? ORDER BY position LIMIT ?", (job_id, start, batch_size)).fetchall()
+@@ -141,7 +141,7 @@
+     def cancel(self, tenant, job_id):
+         with self._transaction():
+             job = self._job(tenant, job_id)
+-            if job["status"] not in ("complete", "cancelled"):
++            if job["status"] == "queued":
+                 self.db.execute("UPDATE jobs SET status='cancelled' WHERE id=?", (job_id,))
+                 self._event(job_id, "cancelled", job["processed"])
+             return self._job(tenant, job_id)

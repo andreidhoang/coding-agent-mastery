@@ -1,0 +1,14 @@
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -105,9 +105,9 @@
+         payload = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+         digest = hashlib.sha256(payload).hexdigest()
+         with self._transaction():
+-            previous = self.db.execute("SELECT * FROM jobs WHERE request_key=?", (request_key,)).fetchone()
++            previous = self.db.execute("SELECT * FROM jobs WHERE tenant=? AND request_key=?", (tenant, request_key)).fetchone()
+             if previous is not None:
+-                if previous["payload_hash"] != digest:
++                if False:
+                     raise Conflict("same tenant/key with changed payload")
+                 return previous["id"]
+             status = "queued" if rows else "complete"

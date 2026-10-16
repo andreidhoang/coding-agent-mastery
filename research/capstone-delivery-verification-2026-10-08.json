@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-08",
+  "scope": "Capstone planning delivery; not service execution validation",
+  "documents_checked": 12,
+  "local_links_checked": 93,
+  "local_line_anchors_in_range": 40,
+  "errors": [],
+  "originals": [
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-mastery-plan-2026-10-08.md",
+      "hash_and_size_match": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-harness-research-2026-10-08.md",
+      "hash_and_size_match": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/previous-handoff-2026-10-08.txt",
+      "hash_and_size_match": true
+    }
+  ],
+  "capstone_documents": [
+    "01-system-specification.md",
+    "02-runtime-contracts-and-recovery.md",
+    "03-evaluation-serving-and-efficiency.md",
+    "04-build-sequence-and-mastery-gates.md",
+    "05-frontier-evidence-and-decisions.md",
+    "README.md"
+  ],
+  "milestones": 8,
+  "canonical_learning_modules": 16,
+  "effort_hours": {
+    "learning": [
+      104,
+      156
+    ],
+    "additional_capstone": [
+      80,
+      140
+    ],
+    "combined": [
+      184,
+      296
+    ]
+  },
+  "review_tracks": [
+    "frontier evidence",
+    "durable runtime contracts",
+    "evaluation and serving"
+  ],
+  "production_implementation": "not built",
+  "live_model_or_gpu_runs_this_delivery": false,
+  "existing_lab": "unchanged; previous verification retained",
+  "checks_limit": "Links and line ranges verified, not a complete source-claim replication or production test."
+}

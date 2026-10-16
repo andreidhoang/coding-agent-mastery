@@ -1,0 +1,350 @@
+{
+  "evidence": "AI-written CPU reference; synthetic fixtures; no model training",
+  "attention": {
+    "evidence": "CPU measured semantics when executed",
+    "hand_derived_expected": 6.0,
+    "scalar": 6.0,
+    "explicit_mask_sdpa": 6.0,
+    "eager": 6.0,
+    "wrong_upper_left_causal": 2.0,
+    "ledger": {
+      "evidence": "eager tensor reference",
+      "cached_length": 3,
+      "head_mapping": [
+        0
+      ],
+      "gqa_expansion": "physical reference convenience; engines may index logical KV heads",
+      "accumulation_dtype": "torch.float64",
+      "Q": {
+        "shape": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "elements": 1,
+        "logical_bytes": 4,
+        "storage_bytes": 4,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                0.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "K": {
+        "shape": [
+          1,
+          1,
+          4,
+          1
+        ],
+        "stride": [
+          4,
+          4,
+          1,
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 16,
+        "storage_bytes": 16,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                0.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "V": {
+        "shape": [
+          1,
+          1,
+          4,
+          1
+        ],
+        "stride": [
+          4,
+          4,
+          1,
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 16,
+        "storage_bytes": 16,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                2.0
+              ],
+              [
+                4.0
+              ],
+              [
+                8.0
+              ],
+              [
+                10.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "expanded_K": {
+        "shape": [
+          1,
+          1,
+          4,
+          1
+        ],
+        "stride": [
+          4,
+          4,
+          1,
+          1
+        ],
+        "dtype": "torch.float64",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 32,
+        "storage_bytes": 32,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                0.0
+              ],
+              [
+                0.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "scores": {
+        "shape": [
+          1,
+          1,
+          1,
+          4
+        ],
+        "stride": [
+          4,
+          4,
+          4,
+          1
+        ],
+        "dtype": "torch.float64",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 32,
+        "storage_bytes": 32,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "allowed_mask": {
+        "shape": [
+          1,
+          4
+        ],
+        "stride": [
+          4,
+          1
+        ],
+        "dtype": "torch.bool",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 4,
+        "storage_bytes": 4,
+        "contiguous": true,
+        "values": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ]
+      },
+      "probabilities": {
+        "shape": [
+          1,
+          1,
+          1,
+          4
+        ],
+        "stride": [
+          4,
+          4,
+          4,
+          1
+        ],
+        "dtype": "torch.float64",
+        "device": "cpu",
+        "elements": 4,
+        "logical_bytes": 32,
+        "storage_bytes": 32,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+              ]
+            ]
+          ]
+        ]
+      },
+      "output": {
+        "shape": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "stride": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "elements": 1,
+        "logical_bytes": 4,
+        "storage_bytes": 4,
+        "contiguous": true,
+        "values": [
+          [
+            [
+              [
+                6.0
+              ]
+            ]
+          ]
+        ]
+      }
+    }
+  },
+  "kv": {
+    "ideal_bytes": 64,
+    "rounded_block_bytes": 64,
+    "padding_bytes": 0,
+    "bytes_per_token": 16,
+    "excludes": [
+      "weights",
+      "workspace",
+      "activation buffers",
+      "graphs",
+      "fragmentation",
+      "headroom",
+      "shard replication"
+    ]
+  },
+  "prefix_cache": [
+    {
+      "owner": "request-a",
+      "hits": 0,
+      "misses": 2,
+      "evictions": [],
+      "keys": [
+        "ef820db59412d66a0a9b37333d61ae3aa7f97ac33de8bd2290cd2e4792297410",
+        "15aba12d187e74c97362d4fabef7fcae36361d82a9ee4bc5f498803f4e994b04"
+      ],
+      "cached_tokens": 4,
+      "uncached_tail_tokens": 1,
+      "resident_blocks": 2,
+      "evidence": "synthetic full-block cache model"
+    },
+    {
+      "owner": "request-b",
+      "hits": 2,
+      "misses": 0,
+      "evictions": [],
+      "keys": [
+        "ef820db59412d66a0a9b37333d61ae3aa7f97ac33de8bd2290cd2e4792297410",
+        "15aba12d187e74c97362d4fabef7fcae36361d82a9ee4bc5f498803f4e994b04"
+      ],
+      "cached_tokens": 4,
+      "uncached_tail_tokens": 1,
+      "resident_blocks": 2,
+      "evidence": "synthetic full-block cache model"
+    }
+  ],
+  "offline_action_loss": {
+    "evidence": "offline loss arithmetic, no gradient or training claim",
+    "action_tokens": 1,
+    "loss": -1.2,
+    "zero_action_mask": false,
+    "contributions": [
+      {
+        "index": 0,
+        "token_id": 7,
+        "ratio": 1.5,
+        "unclipped": 1.5,
+        "clipped": 1.2,
+        "loss": -1.2
+      }
+    ]
+  },
+  "cuda": {
+    "backend": "CUDA",
+    "torch_version": "2.11.0",
+    "cuda_runtime": null,
+    "python": "3.13.2",
+    "fallback": null,
+    "status": "skipped",
+    "reason": "CUDA unavailable; no MPS or CPU benchmark substitution"
+  }
+}

@@ -1,0 +1,2949 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "author": "Codex AI",
+  "provenance": "synthetic trusted fixtures only",
+  "scope": "host execution of frozen author-created controls; no arbitrary candidates",
+  "assets": {
+    "valid": true,
+    "tasks": 42,
+    "files": 82,
+    "registry_sha256": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+    "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+    "provenance": "AI-authored synthetic templates; one repository family"
+  },
+  "reports": [
+    {
+      "task_id": "calibration-01",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            }
+          ],
+          "tree_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "88947d697cdafd78b4aff5734e6bf0878973ef80985205a136d16b6f480f8e4a",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "calibration-02",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2"
+        }
+      },
+      "task_definition_digest": "379f44b09501c6cc4ad22bbd710adf1b3ab4658407568152c2a4c259b8129a1d",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "calibration-03",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b"
+        }
+      },
+      "task_definition_digest": "fef0b375421f3965f89580c6b0267d6966c43f97b5a30374e3fea208b8133cd9",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "calibration-04",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c"
+        }
+      },
+      "task_definition_digest": "9462e32dffd35b72a6af5830063d9278189500e303848ba14981aa0538f84574",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "calibration-05",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927"
+        }
+      },
+      "task_definition_digest": "8bf401f98522830b2655959826d1241f0221ba525703b3ece41466e2bd0bc492",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "calibration-06",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1"
+        }
+      },
+      "task_definition_digest": "d54c2fc674924eadfb875581f1559f18202830157d42352be73b952fae492bf7",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-01",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            }
+          ],
+          "tree_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "6ca80fe04731152de5b6d92cf0fe49b92370ceba9010f5398b29c99615c7d896",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-02",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2"
+        }
+      },
+      "task_definition_digest": "4514d549686900eec43c7845616354974326c047c4187fa4c632bb91dc012828",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-03",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b"
+        }
+      },
+      "task_definition_digest": "03cb9d30050f45ba65496d4d12bfd9f961aa636dce98fbb8efe399d6995a3ce3",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-04",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c"
+        }
+      },
+      "task_definition_digest": "d9e3ff395c19a60405967fff800040ecaa75b98d8a49ac715a96065fd1bf0b34",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-05",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927"
+        }
+      },
+      "task_definition_digest": "3988402744de56fa145c949b11b2ebf5462626dab88b0d15fd39e7ecf1ce082f",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-06",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1"
+        }
+      },
+      "task_definition_digest": "d103ec7fb6568a0ac833affc76101b9d7c8f01477df39d4ac894e26311c1f5d2",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-07",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            }
+          ],
+          "tree_digest": "64a9e6c541e084f0dc8d5f3067bc282636dc698ca824427de185117fe27ad994"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "8dbdcc2c2ac929f13aed643cba792d29feef839de0ccb6fef310ddcc564ce16f",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-08",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "5b889abafe64c9c0256b3fa3d787b1d6438fa479fb4a3dbeddb3bef3a68e2744"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2"
+        }
+      },
+      "task_definition_digest": "a1380b09d0cd8ce7757894d379d0476e16ac78f452ba9580371f8feaf9835559",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-09",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "17f9719de65fff43d27a41e66f9ded18969b96f80273357af6fe97ff160bfe60"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b"
+        }
+      },
+      "task_definition_digest": "0068cf57425a4897b5a17fdc061046e04771a3f481ca9bb2cd0a7709a171eedf",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-10",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5cc287b724a4f95b0689ba3b7c2c25da26d77be0d6e95ca3609e82875fb0c1a9"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            }
+          ],
+          "tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c"
+        }
+      },
+      "task_definition_digest": "7906e3ee912e073fcf8231c77aaa4e88cfa0cd2e1ca4dee717cb6b24ae4818bd",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-11",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "4ba4d38896f0e3df9e3137bb76c77437ec08ac2444c9c64aa1e8a82c9c284e45"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927"
+        }
+      },
+      "task_definition_digest": "86bbf84d54255019340e9525655bb0ac3b2e254539e5248e3d7886add7b5d1f3",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t1-12",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "205b5cc6aae24d696089db97e2557f8d9ff94583294e4dd8071dc17d2aa6603b"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "195e3a6e2dbf9cd543e6d464a2116805e3f66727095928ac9dddda3fbdd02fb1"
+        }
+      },
+      "task_definition_digest": "121b81814426047c4244155f7e9e2407bc44d5380946a9206dc5ae714716d8fb",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-01",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9565168600e92cb44e8be8a9f3249185eb221f3e2fa81b8bf65aaaaf42175e7a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "bafb3677cf23f96691e71c7ede906c2206ec9db8ac29211119ca5ff41e90a559",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-02",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "2cae518b118bde9d0aa2f7c14bc48a4dfcd057a7d33175124e5ab7ec3616dc92"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2"
+        }
+      },
+      "task_definition_digest": "e0c63d511a0b7238940b950cb26dea6f204441b6e3df0fd1643ff97b1a773d20",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-03",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9c7239801a894bec9e8cc705c3ad4e36742479b7891fa54490cff2c862221029"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b"
+        }
+      },
+      "task_definition_digest": "bb422ce9b082b09c38b359fecfe298a631e6b0d07423ae070104cafe58db3063",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-04",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "1c4ca20d08d258f71c7e5d1758f40436ce40732ec56ec04a526011e5649c49ad"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c"
+        }
+      },
+      "task_definition_digest": "0360009805cf93c094a6eaf53fb8205770c7cc7cd5b891b44898dc23a940a441",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-05",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6eddef8991038a721ff9de07be33e7bb84f369a81a76bfee50c2ec31752585dc"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927"
+        }
+      },
+      "task_definition_digest": "2e6a17180d5330a6ef2c96cf287edf30353e86b3e3b8c0be5746a699c1248df9",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-06",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6ce3545587536c144cf243418edb29963632634861e6b305ecbb32acdb412aeb"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "1f53b146f26e534d38a63f2dcf215cb5451c7da057a7b11b310c9c64255029c9",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-07",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9565168600e92cb44e8be8a9f3249185eb221f3e2fa81b8bf65aaaaf42175e7a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "e3d82209f5c9d917217a8be5f02d99f9091e71a19044f7620b08a62e45fdf73e",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-08",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "2cae518b118bde9d0aa2f7c14bc48a4dfcd057a7d33175124e5ab7ec3616dc92"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            }
+          ],
+          "tree_digest": "2faacfb1edcf220b1085e8e84a15e2d041aa5e43e51901400a682045a2a2ddb2"
+        }
+      },
+      "task_definition_digest": "9bbe292e19573b5fd8041a685d5a710790de0974f6a1ad34b90a30f37cfc6ab5",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-09",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "9c7239801a894bec9e8cc705c3ad4e36742479b7891fa54490cff2c862221029"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "e4cd9b63cb9b582770559844601fe0e25cf001d1be78ee63e923d95245969a0b"
+        }
+      },
+      "task_definition_digest": "7402bfea734e1935d8059c6a5c076a32f256c4ade551f465a0e1652d36565e4c",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-10",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "1c4ca20d08d258f71c7e5d1758f40436ce40732ec56ec04a526011e5649c49ad"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "5019989f2f348a78368afd10f38702a99b0fd841800322e037086916315ff51c"
+        }
+      },
+      "task_definition_digest": "bb47569efdb9c7701fe80e86664b54f4204821c6088a55efe6a341a50058457f",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-11",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6eddef8991038a721ff9de07be33e7bb84f369a81a76bfee50c2ec31752585dc"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9e338d5db92e9973fb83d959b378db977772cf9cff3042fc9eca3e2fe5f91927"
+        }
+      },
+      "task_definition_digest": "79ebf8dbba35416b851daf45b3090e3f5cfba20c9696827884685910588de376",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t2-12",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6ce3545587536c144cf243418edb29963632634861e6b305ecbb32acdb412aeb"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "ab24d87f03e319cc06fc280813710b6a9f822f0730db4cec9c2b0fd2b8f642e9",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-01",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "3a8ba2122acc613ebcc8c8e22ec118f8aa9f6ef981f813e2abc52d6a415f9096",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-02",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "ca559fa0ad725395d326d903463521dea89ca75987a82784ed8a6f5a37a52c92",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-03",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "83cde56ec9396ddcb3eec8197104fac48a3aa7c1c6de73d1b4089ca8db7ad751",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-04",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "183f9ce82f4a50b66b4ab685ef1c98d11bc6200673a29bee726f456840025dc8",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-05",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "a889d887aa8f5176aa73c3686b7f02e1cf10c0768e286d352d9f3cc825660ef4",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-06",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "1147cdce1537b10bf30851a9aa4c6339af7e73168d22383c85c4d582e34a986b",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-07",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "e980c6121fe66439140628eb82b2ea51b3ab1c5c739603371bfff19453e246ed",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-08",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "13715c6a0a780fdb328806ee23060854bbce537c0fe2b7d0767e23536dcc8e35",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-09",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "d916dc6796239f21ae84c0e762211d4246306f567390ebeb30890883fc4e3391",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-10",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "4ec68b02e66fd83ea5cf6d7167996cd7857f81f286c30c9aa45c6cabb01dbf5c",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-11",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "bfa983d889c0af25225e7e9c89cc6b0fa1597f4c92c798080c0804152d9d1cb8",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    },
+    {
+      "task_id": "diagnostic-t3-12",
+      "controls_valid": true,
+      "mode": "trusted_author_fixture_host_execution",
+      "controls": {
+        "unchanged": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "Conflict",
+              "message": "same tenant/key with changed payload"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": false,
+              "error_type": "IntegrityError",
+              "message": "CHECK constraint failed: processed BETWEEN 0 AND total"
+            },
+            {
+              "requirement": "cancellation",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected InvalidCursor"
+            },
+            {
+              "requirement": "pagination",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": ""
+            }
+          ],
+          "tree_digest": "6360d724ff6abde2c1c651dddc8571b81fd89451b1e20f761247db7cd031851a"
+        },
+        "correct": {
+          "passed": true,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": true
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9fcf2e52b2bcbe9e7e3e2ff0dab3b11348721590db050bcef15ddd806d646d85"
+        },
+        "plausible_incorrect": {
+          "passed": false,
+          "criteria": [
+            {
+              "requirement": "tenant_idempotency",
+              "passed": false,
+              "error_type": "AssertionError",
+              "message": "expected Conflict"
+            },
+            {
+              "requirement": "resume_atomicity",
+              "passed": true
+            },
+            {
+              "requirement": "cancellation",
+              "passed": true
+            },
+            {
+              "requirement": "cursor_binding",
+              "passed": true
+            },
+            {
+              "requirement": "pagination",
+              "passed": true
+            },
+            {
+              "requirement": "sync_compatibility",
+              "passed": true
+            }
+          ],
+          "tree_digest": "9b2bc0c78f4cb9867de664eb57a886da7118cc014d68e61fec71046871504268"
+        }
+      },
+      "task_definition_digest": "189643897b15981a539c829ae2576f90919a9ee544124be8c199e6dd59410da7",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "independent_reproduction": "pending",
+      "limitation": "local authored controls do not prove candidate containment or grader completeness"
+    }
+  ],
+  "independent_reproduction": "pending",
+  "linux_isolation": "not_measured"
+}

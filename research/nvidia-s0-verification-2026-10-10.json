@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-10T07:03:08.399870+00:00",
+  "project_timezone": "Asia/Ho_Chi_Minh",
+  "slice": "NV-S0 CPU RMSNorm numerical foundation",
+  "status": "implemented and verified within frozen CPU scope",
+  "purpose": "Independent numerical oracle and local tensor observation before generated CUDA execution or performance claims",
+  "authorship": {
+    "architecture_and_independent_review": "Astra agents",
+    "bounded_reference": "6.1 Sol source agent",
+    "independent_tests": "6.1 Sol test agent",
+    "integration": "coordinator",
+    "human_mastery": "not assessed"
+  },
+  "contract": "capstone/07-reference-implementation-spec.md#nv-s0-frozen-cpu-numerical-contract",
+  "implementation_order": "capstone/07-reference-implementation-spec.md#ordered-implementation-slices",
+  "design_before_code": {
+    "record": "runs/nvidia-s0-2026-10-10/design-freeze-before-code.json",
+    "record_sha256": "c03872e539903f2401a593bb48053a03a0ed84c27779254e96329ab1ab687bbb",
+    "frozen_at_utc": "2026-10-10T06:51:20.626309+00:00",
+    "clarifications_during_review": [
+      "exact torch.Tensor instances; reject subclasses before dispatch",
+      "requires_grad=False for inputs and output",
+      "hash lazy-negative logical values",
+      "nested tensors rejected before shape access",
+      "whole storage byte intervals must not overlap"
+    ]
+  },
+  "source_sha256": {
+    "compute/rmsnorm.py": "b4d189671e30be3c6c0bbd3cff6668cd9d0dcae94fcb92651618feea9402a42d",
+    "tests/test_rmsnorm.py": "c44f30b0fa68e99149a5eb87e1932bdc307e356099c6d1aa13c9dce59b04c79e"
+  },
+  "environment": {
+    "python": "3.12.11",
+    "torch": "2.14.1",
+    "cuda_available": false,
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_rmsnorm.py",
+        "tests/test_compute.py",
+        "tests/test_audit_research.py",
+        "tests/test_artifacts_execution.py",
+        "--junitxml=runs/nvidia-s0-2026-10-10/tests.xml"
+      ],
+      "exit_code": 0,
+      "log": "runs/nvidia-s0-2026-10-10/check-1.log"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "compute/rmsnorm.py",
+        "tests/test_rmsnorm.py"
+      ],
+      "exit_code": 0,
+      "log": "runs/nvidia-s0-2026-10-10/check-2.log"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "compute/rmsnorm.py",
+        "tests/test_rmsnorm.py"
+      ],
+      "exit_code": 0,
+      "log": "runs/nvidia-s0-2026-10-10/check-3.log"
+    }
+  ],
+  "test_summary": {
+    "passed_test_methods_or_functions": 76,
+    "passed_subtests": 146,
+    "skipped_tests": 1,
+    "failures": 0,
+    "errors": 0,
+    "skip_reason": "Existing Docker artifact/execution test requires CAM_TEST_SANDBOX_IMAGE; no image opted in for this CPU slice",
+    "new_rmsnorm_methods": 14,
+    "independent_reviewer_rmsnorm_passed_subtests": 141,
+    "junit_tests_including_subtests": 223,
+    "junit": "runs/nvidia-s0-2026-10-10/tests.xml",
+    "counts_not_additive": "The independent reviewer RMSNorm run is a subset of the coordinator selected run"
+  },
+  "trace_outcomes": {
+    "eager": "pass",
+    "omitted_scale": "fail",
+    "bad_tail": "fail",
+    "bad_reduction": "fail",
+    "epsilon_outside_root": "fail"
+  },
+  "review": {
+    "path": "research/nvidia-s0-review-2026-10-10.md",
+    "disposition": "no unresolved bounded CPU implementation blocker",
+    "repairs": [
+      "R1 nested tensor validation",
+      "R2 overlapping distinct external-buffer storage"
+    ],
+    "sha256": "6def9b09cb89f1c5b246ca2a49435058d69cb623d26d0f125cc0db2f9627ebf7"
+  },
+  "preservation": {
+    "before_record": "runs/nvidia-s0-2026-10-10/preservation-before.json",
+    "before_record_sha256": "367358650be6125e4ac56ebe4e13f176ff9fac04cc637510bf1e68326e2bfbc9",
+    "preexisting_file_counts_and_deltas": {
+      "service": {
+        "files_checked": 30,
+        "changed": [],
+        "missing": []
+      },
+      "tests": {
+        "files_checked": 27,
+        "changed": [],
+        "missing": []
+      },
+      "compute": {
+        "files_checked": 11,
+        "changed": [
+          "compute/README.md"
+        ],
+        "missing": []
+      },
+      "workloads": {
+        "files_checked": 92,
+        "changed": [],
+        "missing": []
+      },
+      "evals": {
+        "files_checked": 12,
+        "changed": [],
+        "missing": []
+      },
+      "references": {
+        "files_checked": 58,
+        "changed": [],
+        "missing": []
+      },
+      "archive": {
+        "files_checked": 4,
+        "changed": [],
+        "missing": []
+      },
+      "lab": {
+        "files_checked": 12,
+        "changed": [],
+        "missing": []
+      }
+    },
+    "missing_baseline_files": [],
+    "modified_baseline_documents": [
+      "compute/README.md",
+      "hackathon/02-delivery-and-submission.md",
+      "hackathon/README.md",
+      "docs/03-production-architecture-and-stack.md",
+      "docs/01-first-principles-and-system-map.md",
+      "docs/02-mastery-learning-plan.md",
+      "docs/06-reference-code-reading-guide.md",
+      "capstone/05-frontier-evidence-and-decisions.md",
+      "capstone/08-implementation-coverage.md",
+      "capstone/06-target-role-and-research-contract.md",
+      "capstone/04-build-sequence-and-mastery-gates.md",
+      "capstone/03-evaluation-serving-and-efficiency.md",
+      "capstone/07-reference-implementation-spec.md",
+      "capstone/01-system-specification.md",
+      "capstone/README.md",
+      "capstone/02-runtime-contracts-and-recovery.md",
+      "context/decision-log.md",
+      "context/README.md",
+      "context/current-state.md"
+    ],
+    "new_source_in_this_delivery": [
+      "compute/rmsnorm.py",
+      "tests/test_rmsnorm.py"
+    ],
+    "new_dependencies": [],
+    "runtime_schema_changes": false,
+    "workload_population_changed": false,
+    "human_mastery_changed": false,
+    "concurrent_work": "Hackathon source and records belong to their implementation owner. Preexisting source hashes covered by the before record are unchanged. Shared status notes were reconciled without attributing other-task results to NV-S0."
+  },
+  "evidence_limits": [
+    "Local supplied-tensor arithmetic; executable provenance unestablished",
+    "No candidate code loaded or executed",
+    "No RuntimeStore receipts, task acceptance or resource retirement",
+    "CUDA unavailable; no GPU timing, profiler or speedup measurement",
+    "No live model, paid API, rental, deployment, held-out benchmark or training",
+    "No human mastery or hiring readiness inferred",
+    "NV-S1 through NV-S4 remain pending"
+  ],
+  "next_engineering_foundation": "Existing failure-evidence/regression adapter; concrete GPU build/measurement/retirement design can proceed separately, preserving hackathon priority",
+  "repair_record_status": {
+    "path": "research/hackathon-2026-10-10/repair-delivery-verification.json",
+    "present": false,
+    "handling": "Missing links replaced with explicit implementation-owner-reported results and pending source-bound record; no substitute measurement fabricated"
+  },
+  "documentation_sha256": {
+    "AGENTS.md": "621fe320190e3cf5cb26383bb754978b75a28223e2dfc2f843505e744a13831b",
+    "README.md": "eddb815b7191df8de98365898ad06c69af336cd253c24ebd1ba07bb6abad454d",
+    "START-HERE.md": "2df3ca2d34834238c34bad564f7849d03e7af7539f67c111c2e0a32ee2b9c6b7",
+    "capstone/01-system-specification.md": "96990ff6e31e029d5fe23ff8bcd10b3c0b2fba2563750cb0834e286b02643de1",
+    "capstone/02-runtime-contracts-and-recovery.md": "7939e759e5946264bdc789e45c689fec57f74c2f76c8f7e465f77554f3972df7",
+    "capstone/03-evaluation-serving-and-efficiency.md": "74558e0a025a1b7db846143b2fe84dac67db68f7e00be2e12bef801f659a9e60",
+    "capstone/04-build-sequence-and-mastery-gates.md": "2660f164b7e592f788a50dabbf027a8fca037a2ec4973619c98a3cc7a2bdae7e",
+    "capstone/05-frontier-evidence-and-decisions.md": "cb485a0a92b98e00ec2c4d4c18376c95bc60f1c6a331435fe9b6f58fa9741f97",
+    "capstone/06-target-role-and-research-contract.md": "1e5d8517c02e23717a4ba611bdb70b7d4595fe36ae7205d35e6d3d0242ef8391",
+    "capstone/07-reference-implementation-spec.md": "107b839d7c4e6fa3c26f8339293986630d84991dd6ce3117935d089ffafaed9e",
+    "capstone/08-implementation-coverage.md": "5edf0bde14af9459fc622f5d73f2adc73d4a92a321f78570226dfe3635ccb334",
+    "capstone/README.md": "061e21fb7e2798bc637c9121b451f7b32b63e6814d2ac44f75ea36a0fa65b088",
+    "compute/README.md": "3037a38aadc8973892274a96b846375bb317f4b9dcab16bb905047b966b45667",
+    "context/README.md": "123115478219ff6704847863e38d993340be1d8c887246b9de84d32cde7e4aa0",
+    "context/current-state.md": "ad0ac07d1e3142e70c1d6d879305f4be99e060fddfe7c7bb73f526fa0542008b",
+    "context/decision-log.md": "34cca8bd5442908e40ceb67bb7448d6b8d9b563ce609d63923dae8f3aeb4b403",
+    "docs/01-first-principles-and-system-map.md": "1de34bc7c44835e012d08916bf2b90ad4a818137913d2f29c3a04432d6af3fcc",
+    "docs/02-mastery-learning-plan.md": "9cbf0093c0917a7a4811814fe8ce4fb12461d95c3557bfbb02868150fd72b311",
+    "docs/03-production-architecture-and-stack.md": "6c62b1dcd3c13604f74d2c83ce0740e53cd99a3174da6ae5ccf619518e8b5be5",
+    "docs/04-original-document-review.md": "9d9f094ce8cc75b2f750c7e98b17f81d3550e44be3f3fb62f7e6e8937b216b1b",
+    "docs/05-mastery-tracker.md": "a473b18c1f73e1610c36affeef40c8d3945286fe3f489981fe2fe7335340b3fe",
+    "docs/06-reference-code-reading-guide.md": "6bbc7c2d4fe093a7c661daef4cc05b77530c5bdcac341cdd5d912fec0bf80cfc",
+    "hackathon/05-local-repair-runbook.md": "03ba959acb4c8a37b532a8f0f7ec54504959a8eb3a2c4dd5fb597f32d030b43f",
+    "hackathon/README.md": "35eaf9433cdd5df35e73bfac766770a66907e357c2f0ae62ecce18901b6bd2e7"
+  },
+  "artifact_sha256": {
+    "runs/nvidia-s0-2026-10-10/check-1.log": "6f20b41517fece3b8642ffde78dc9c23945afae9f7e679548acaf8657de5d0e3",
+    "runs/nvidia-s0-2026-10-10/check-2.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "runs/nvidia-s0-2026-10-10/check-3.log": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "runs/nvidia-s0-2026-10-10/checks.json": "d89f898d08cfa14e585bfa9b3a0a998e6556d0c279e6318cdd2370a7043df45e",
+    "runs/nvidia-s0-2026-10-10/default-compute-trace.json": "af58c7d5af25ecca22325bc877df9e5f41ae1375656537175067a5db2cb37cba",
+    "runs/nvidia-s0-2026-10-10/design-freeze-before-code.json": "c03872e539903f2401a593bb48053a03a0ed84c27779254e96329ab1ab687bbb",
+    "runs/nvidia-s0-2026-10-10/documentation-check.json": "94f963e51c5a2129f287f7586185a6f47b3711640071297faee9357daca5df4c",
+    "runs/nvidia-s0-2026-10-10/environment.json": "f0b03b51216b1d4a99882cabcb84d00150982c09db6801726ba9478cd11d6216",
+    "runs/nvidia-s0-2026-10-10/preservation-before.json": "367358650be6125e4ac56ebe4e13f176ff9fac04cc637510bf1e68326e2bfbc9",
+    "runs/nvidia-s0-2026-10-10/rmsnorm-trace.json": "8575553db204b3fb2401a4dd30d55f481947ccdd36b9c88cd94d7e19e12ed030",
+    "runs/nvidia-s0-2026-10-10/tests.xml": "50c90d19cd9c570ba15fbe85aad7fc525010ecb41031d129707afba9d4a4eaea"
+  },
+  "documentation_validation": {
+    "record": "runs/nvidia-s0-2026-10-10/documentation-check.json",
+    "documents_checked": 25,
+    "local_links_checked": 510,
+    "new_symbol_anchors_verified": 11,
+    "errors": 0,
+    "dependency_review": "Independent Astra audit found NV-S0\u2013NV-S4 consistent across role, milestone and implementation contracts; remaining status corrections applied"
+  },
+  "finalized_at_utc": "2026-10-10T07:04:37.120646+00:00",
+  "final_integrity": {
+    "source_matches_tested_hashes": true,
+    "source_matches_reviewed_hashes": true,
+    "documentation_matches_audited_hashes": true,
+    "numerical_trace_control_verdicts_confirmed": true
+  }
+}

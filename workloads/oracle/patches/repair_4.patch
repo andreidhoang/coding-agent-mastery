@@ -1,0 +1,11 @@
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -165,7 +165,7 @@
+                 if not isinstance(cursor, str) or len(cursor) > 1024:
+                     raise ValueError("invalid cursor size")
+                 version, owner, import_id, after = json.loads(base64.b64decode(cursor, altchars=b"-_", validate=True))
+-                if version != 1:
++                if type(version) is not int or type(import_id) is not int or (version, owner, import_id) != (1, tenant, job_id):
+                     raise ValueError("cursor belongs to a different import")
+                 if type(after) is not int or after < 0:
+                     raise ValueError("invalid cursor sequence")

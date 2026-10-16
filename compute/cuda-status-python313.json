@@ -1,0 +1,9 @@
+{
+  "backend": "CUDA",
+  "torch_version": "2.11.0",
+  "cuda_runtime": null,
+  "python": "3.13.2",
+  "fallback": null,
+  "status": "skipped",
+  "reason": "CUDA unavailable; no MPS or CPU benchmark substitution"
+}

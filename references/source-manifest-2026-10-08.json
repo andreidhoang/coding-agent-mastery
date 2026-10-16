@@ -1,0 +1,191 @@
+{
+  "retrieved_date": "2026-10-08",
+  "scope": "Selected source files only; not a buildable clone. No upstream source executed.",
+  "files": [
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/LICENSE",
+      "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc",
+      "bytes": 10926,
+      "lines": 201,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/LICENSE"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/stream_events_utils.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/stream_events_utils.rs",
+      "sha256": "177f9e3e23ccdce9c3fceb43dbe69f7c21ee6f90b33f0b940a588437c3e8ac18",
+      "bytes": 21077,
+      "lines": 599,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/stream_events_utils.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/tools/parallel.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/tools/parallel.rs",
+      "sha256": "8059c2c386b6a81a72191019668145dcbb95adfc0b55381e68db568680bd0955",
+      "bytes": 36202,
+      "lines": 881,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/tools/parallel.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/session/turn.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/session/turn.rs",
+      "sha256": "fd609a3b554baa11b6e07e3f3968d5b128027c290c321b052856bb3ba80affc1",
+      "bytes": 127465,
+      "lines": 3207,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/session/turn.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/unified_exec/head_tail_buffer.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/unified_exec/head_tail_buffer.rs",
+      "sha256": "d57aa4118842bee24a896e85af05f01e4ef44760ea2804bc015c8efd7ae89ad5",
+      "bytes": 5961,
+      "lines": 169,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/unified_exec/head_tail_buffer.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/agents_md.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/agents_md.rs",
+      "sha256": "97427a870741b904a3f3c143f5990eaaa65b5bfa99ddac1808b2980052b5fc78",
+      "bytes": 20104,
+      "lines": 562,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/agents_md.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/core/src/compact.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/core/src/compact.rs",
+      "sha256": "8f05bb7d0bd2456ecc635cf90ed39c0088ff472e618c35ced7859a1f6ee3b2e8",
+      "bytes": 30756,
+      "lines": 860,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/core/src/compact.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/apply-patch/src/parser.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/apply-patch/src/parser.rs",
+      "sha256": "6b8086467d0500f4fc9aa9a35cd33a0bce53c01bcb74b915b9efc6fcf187f7ce",
+      "bytes": 22638,
+      "lines": 682,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/apply-patch/src/parser.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/apply-patch/src/seek_sequence.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/apply-patch/src/seek_sequence.rs",
+      "sha256": "a6d0d35b628a4f1e6f8ba77c533046c27e585a8bdd94ee6cd21d2585b39e34e0",
+      "bytes": 5909,
+      "lines": 164,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/apply-patch/src/seek_sequence.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/linux-sandbox/src/bwrap.rs",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/linux-sandbox/src/bwrap.rs",
+      "sha256": "a6b97db5acaec475066f3a5338776f875f7f2033f008ee2532907a1e5e50ffc0",
+      "bytes": 120870,
+      "lines": 3100,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/linux-sandbox/src/bwrap.rs"
+    },
+    {
+      "repo": "openai/codex",
+      "commit": "9dd798805fdf9dd0f836f35ccc9480cb0af17784",
+      "path": "codex-rs/execpolicy/README.md",
+      "url": "https://raw.githubusercontent.com/openai/codex/9dd798805fdf9dd0f836f35ccc9480cb0af17784/codex-rs/execpolicy/README.md",
+      "sha256": "1e0a4fdbf9d9de143c140bda551213712f7ac227a62c155f33354b761869f66b",
+      "bytes": 4122,
+      "lines": 97,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/codex-9dd7988/codex-rs/execpolicy/README.md"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "path": "LICENSE",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "src/minisweagent/agents/default.py",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/src/minisweagent/agents/default.py",
+      "sha256": "e8ef8aa365942d739c2ec5cb0879f60f377d2dc2de8ec670aaedf3bafb45a4c2",
+      "bytes": 8043,
+      "lines": 190,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/src/minisweagent/agents/default.py"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "src/minisweagent/environments/local.py",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/src/minisweagent/environments/local.py",
+      "sha256": "01dd33ae6be897458611911cc0eee1389092ea9fc6788c7eb24773e7c6342b1c",
+      "bytes": 3617,
+      "lines": 92,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/src/minisweagent/environments/local.py"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "src/minisweagent/config/mini.yaml",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/src/minisweagent/config/mini.yaml",
+      "sha256": "b539a8965f5bf41dd0f32daafa5d2db22581923d13812fa378fd09569b9d6b0c",
+      "bytes": 5228,
+      "lines": 151,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/src/minisweagent/config/mini.yaml"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "src/minisweagent/models/utils/cache_control.py",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/src/minisweagent/models/utils/cache_control.py",
+      "sha256": "edbb8952195d1d9dbef45ed7cad910a50b1cdec08175de74dbffc9414f3da5ba",
+      "bytes": 2365,
+      "lines": 67,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/src/minisweagent/models/utils/cache_control.py"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "tests/agents/test_default.py",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/tests/agents/test_default.py",
+      "sha256": "87a97d18cdb931dc5f248d5178e8596021e6b17bbef70af51c40a518ac488eda",
+      "bytes": 20154,
+      "lines": 544,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/tests/agents/test_default.py"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "tests/environments/test_local.py",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/tests/environments/test_local.py",
+      "sha256": "94651cc2d09d113c361a95656bfb1f21291a4d6197c4d62bf93c325a07fddafe",
+      "bytes": 8676,
+      "lines": 264,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/tests/environments/test_local.py"
+    },
+    {
+      "repo": "SWE-agent/mini-swe-agent",
+      "commit": "04d809ceab9df28f9adaed044884180159172930",
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/04d809ceab9df28f9adaed044884180159172930/LICENSE.md",
+      "sha256": "0f796e58f91d1c07bb2c1b1d0f8bf3a83017c3a5dec1bdc6fae733b2cd2e875b",
+      "bytes": 1094,
+      "lines": 21,
+      "local_path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/references/mini-swe-agent-04d809c/LICENSE.md"
+    }
+  ]
+}

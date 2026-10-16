@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-08",
+  "scope": "Design-first role-to-learning-to-production engineering and research specifications",
+  "official_role_rechecked": "https://job-boards.greenhouse.io/anthropic/jobs/5442680008",
+  "checked_markdown_files": 23,
+  "local_links": 190,
+  "source_line_anchors_in_range": 48,
+  "heading_fragments_checked": 4,
+  "requirement_counts": {
+    "SYS": 12,
+    "RT": 12,
+    "EV": 8,
+    "OP": 8
+  },
+  "runtime_fault_cases": 13,
+  "learning_modules": 16,
+  "pending_design_reviews": 8,
+  "capstone_hours": [
+    104,
+    180
+  ],
+  "study_hours": [
+    104,
+    156
+  ],
+  "combined_hours": [
+    208,
+    336
+  ],
+  "archives": [
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-mastery-plan-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-harness-research-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/previous-handoff-2026-10-08.txt",
+      "unchanged": true
+    }
+  ],
+  "lab_code_unchanged": true,
+  "service_tree_present": false,
+  "new_executable_service_code": false,
+  "live_model_or_paid_runs": false,
+  "human_mastery": "not demonstrated",
+  "production_readiness": "not demonstrated",
+  "independent_human_reproduction": "pending",
+  "hiring_guarantee": false,
+  "agent_reviews": [
+    "runtime_spec",
+    "research_serving_spec",
+    "learning_design_map"
+  ],
+  "resolved_review_findings": [
+    "database decision cutoff versus durable commit",
+    "all valid assigned attempt denominator",
+    "distinct CFG and design review IDs",
+    "H8 calibration count and H10/H11 learning order",
+    "backup-restore incarnation and effect reconciliation",
+    "incarnation-aware event cursors",
+    "drain versus execution quarantine",
+    "late settlement/review distinct from execution fences",
+    "claim SQL and manifest field consistency",
+    "queue admission distinct from dispatch reservation"
+  ],
+  "errors": [],
+  "document_sha256": {
+    "README.md": "e9d096606f3793e21cf1a90509d764c7b0372e5a782e8f35b46ab197b8b9fb95",
+    "capstone/README.md": "51834f59ab4405b65a1ca40ade8aa9e34deda59d195d9d49a1f706b9a747c6cb",
+    "capstone/01-system-specification.md": "50eee43d40428ab342aa9badcb51a2d5796c851c470623bbe4c0a01ed0cccf5d",
+    "capstone/02-runtime-contracts-and-recovery.md": "67edf0da93a09fb08909672ea95f5a0cc0e273fbcbe68d4a53ec717e1a15b902",
+    "capstone/03-evaluation-serving-and-efficiency.md": "26e9ca3dbc8525572aec7add4b077f89f2c2f901efae689e6e299088d1d18940",
+    "capstone/04-build-sequence-and-mastery-gates.md": "14d3569c8cb8eaf59a8022a065d43bd475a158aa4258508e2d509a49c40e1b6a",
+    "capstone/06-target-role-and-research-contract.md": "6041dea79b694bce0a7f078d0c4e2d371ce972391f62478beb1ebc0d07d767a8",
+    "docs/02-mastery-learning-plan.md": "25058b7ab99f412a1189b816cc9a3a8884d6ebd67ae4c2ae0cbe201f06f451fc",
+    "context/current-state.md": "f8384daa589887368573d38549e3058f2e4dffe3b3aa4f95ec69a778d4b90786",
+    "context/decision-log.md": "d8ed2f9d4787a943bd1671f758533c63993e6a55592b2f17595fd53baa06c5bc",
+    "study/templates/session-note.md": "ef56a689efa0d2cce0de0538628a51a663ecb795d932d870dca988233683cd62"
+  },
+  "check_limits": "Document consistency, links/line ranges, hashes and arithmetic only. No runtime execution or human mastery assessment. Existing frontier-source claims were not all re-researched in this documentation pass."
+}

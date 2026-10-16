@@ -1,0 +1,21 @@
+# R1–R3 bounded repair — 2026-10-10
+
+AI implementation of the frozen [repair specification](codebase-refactor-spec-2026-10-10.md), following the [research audit](codebase-audit-2026-10-10-research.md). Human mastery is unchanged. State ownership remains unchanged: the analyzer consumes trusted records; the registry performs data-only static admission. No new authority, schema, dataset, grader or held-out claim was added.
+
+**VI:** Sửa validation giúp evidence tự nhất quán; nó không biến receipt string thành chứng cứ đã được xác thực, và không biến static inspection thành isolation.
+
+| Contract | Change and distinguishing control |
+|---|---|
+| R1 | [Acceptance identities](../evals/analysis.py#L58) must be nonblank strings before exact comparison. Empty/whitespace/container/numeric identities score zero with `accepted_claim_without_eligibility`; matching named synthetic identities still score one, changed candidates zero. Assignment and spending remain visible. [Controls](../tests/test_codebase_research.py#L43). |
+| R2 | [All six factual timestamps](../evals/analysis.py#L102) must be at or before `recorded_at`; future facts raise `ValueError` before scoring or cutoff selection, including nonaccepted and post-cutoff snapshots. Equality is valid. Late revisions retain their raw evidence without backdating prior cutoff results; cumulative consumption still cannot decrease. [Controls](../tests/test_codebase_research.py#L89). |
+| R3 | [Entry classification](../workloads/registry.py#L199) uses one `lstat` result and rejects every unsupported nonregular kind. FIFO and Unix-socket controls cover undeclared names, required `client.py`, and allowed `TASK.json`; candidate-read tracking establishes rejection before source/digest reads. Valid regular candidates remain `pending_linux_verification`, `verified=False`; symlink/directory/byte/entry guards remain. [Controls](../tests/test_codebase_research.py#L156). |
+
+**VI:** Trace nhỏ: `recorded_at=120, review_at=121` dừng ở validation, chưa chọn snapshot để tính score. Với `candidate_digest=verified_digest={}`, equality vẫn đúng nhưng identity không hợp lệ nên score0; chi phí3 và exposure6 vẫn được giữ. FIFO được nhận dạng qua mode bits, không phải qua thử đọc.
+
+Prediction recorded before source edits: the bad-identity/future-fact/nonregular controls would distinguish the old source; valid synthetic and accounting controls would remain valid. Measured [before run — local-only](../docs/github-snapshot.md#omitted-local-evidence): **53 failed, 53 passed** across106 new cases. Measured [focused after run — local-only](../docs/github-snapshot.md#omitted-local-evidence): **223 passed, 10 subtests passed** for `test_codebase_research`, `test_evaluation`, `test_audit_research`, and `test_workloads`. Ruff passes for the four changed Python files. Exact before/after source hashes and commands are in [verification.json — local-only](../docs/github-snapshot.md#omitted-local-evidence); all83 baseline/oracle/manifest files recorded in the frozen baseline retain their hashes.
+
+The integration owner authorized a narrow correction to two pre-existing [evaluation controls](../tests/test_evaluation.py#L80): `review_at=151` previously inherited `recorded_at=120`, now records151; `withdrawn_at=150` now records150. Their original zero-score and no-cost-per-accepted assertions are unchanged. This repairs impossible fixture chronology while preserving the intended late-review/withdrawal checks. No other fixture correction was required by the focused suites.
+
+**VI:** 53 test đỏ không có nghĩa53 defect độc lập; parameterization kiểm ba invariant ở nhiều loại input và status. Hai fixture cũ được sửa thời điểm ghi nhận, không sửa oracle hoặc expected score để làm xanh.
+
+Limits: these checks establish offline record validation and static intake under the exercised local conditions. Receipt authentication and hostile concurrent filesystem containment remain absent from these functions. This lane ran no full suite, paid inference, GPU, cloud deployment or arbitrary candidate execution. Integration review and final repository-wide verification belong to the coordinator; the proposed failure-evidence adapter remains unimplemented.

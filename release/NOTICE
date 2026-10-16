@@ -1,0 +1,4 @@
+Verified repository repair reference
+Copyright 2026 project contributors.
+
+Prepared release candidate under Apache License 2.0. Third-party dependencies retain their own licenses. No third-party reference source snapshots or NVIDIA model weights are redistributed. Demonstrations use an explicit native HTTP mock; independent checks execute in local Docker.

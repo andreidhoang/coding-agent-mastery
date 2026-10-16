@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-08",
+  "author": "AI implementation agent",
+  "status": "measured CPU mechanisms; synthetic experiment fixtures",
+  "interpreter": "/Users/danghuyhoang/.pyenv/versions/3.11.7/bin/python3",
+  "python": "3.11.7",
+  "torch": "2.7.1",
+  "commands": [
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_evaluation.py' -v",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_simulation.py' -v",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_compute.py' -v",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "command": ".venv/bin/ruff check evals compute tests/test_evaluation.py tests/test_simulation.py tests/test_compute.py",
+      "status": "passed"
+    },
+    {
+      "command": "python3 -m evals --output evals/reports/synthetic-reference-demo.json",
+      "status": "passed synthetic JSON packet"
+    },
+    {
+      "command": "python3 -m compute",
+      "status": "passed CPU counterexample/cache/offline loss trace"
+    },
+    {
+      "command": "python3 -m compute.cuda_benchmark",
+      "status": "skipped",
+      "reason": "CUDA unavailable; no fallback"
+    }
+  ],
+  "additional_measurement": "900 deterministic random DAG schedules preserved makespan=realized critical-path length",
+  "predictions_attribution": "AI-derived audit oracles, not human prediction",
+  "human_mastery": "pending",
+  "gpu_performance": "pending hardware validation",
+  "unsupported": [
+    "live model coding capability",
+    "physical sandbox containment",
+    "engine cache residency",
+    "training improvement",
+    "production SLOs",
+    "statistical coverage or powered sample size"
+  ],
+  "artifacts": [
+    "evals/reports/synthetic-reference-demo.json",
+    "compute/cpu-trace.json",
+    "compute/cuda-status.json"
+  ]
+}

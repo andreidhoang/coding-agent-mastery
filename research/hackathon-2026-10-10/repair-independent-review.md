@@ -1,0 +1,61 @@
+# Independent review of supported repository repair
+
+Reviewed on 2026-10-10 against the [execution specification](../../hackathon/04-execution-specification.md), [execution contract audit](execution-contract-audit.md), [verifier contract audit](verifier-contract-audit.md), current project state and H0 reference packet. This is an AI engineering review, not evidence of Huy's mastery or live model capability.
+
+The integrated path retains the existing authority store, broker, native provider protocol, immutable artifacts and separate verifier. The review reproduced a cross-attempt checkpoint replay defect and invalid downloadable patches, and identified failure-reporting, final-receipt replay and incomplete-history export defects. The implementation owner repaired these issues during the review. No identified blocking defect remains open within the bounded local repair and clean-pause resume scope. Focused regression results below support the repaired local boundaries; they do not establish arbitrary process-crash recovery, hostile isolation or paid provider readiness.
+
+**VI:** Một request đã có receipt vẫn có thể bị chạy lại nếu lần resume tiếp theo chỉ kiểm attempt cũ trong checkpoint. Vì vậy điều cần chứng minh là quan hệ giữa toàn bộ dispatch frontier và checkpoint, không chỉ việc message history được lưu. Review này kiểm invariant bằng fault injection; không biến kết quả AI thành bằng chứng hiểu bài của Huy.
+
+## Findings and repairs
+
+| Finding | Evidence and consequence | Current disposition |
+|---|---|---|
+| P1: A checkpoint from attempt A could rewind known effects from resumed attempt B | Measured in a disposable SQLite run with native HTTP mock transport. A paused after its first complete turn. B completed a model request and worker test, then an injected checkpoint-write failure retired B without a new checkpoint. C resumed A's checkpoint and sent an identical native request; the worker test ran twice. Before C, the store contained two attempts, four completed dispatches and one checkpoint. | Fixed in the repair coordinator: select the checkpoint by durable frontier/turn progression and reject any task dispatch outside that frontier, across attempts. The generic restore helper remains narrower; this guarantee belongs to the repair coordinator. A regression now rejects C before another request or provisioning. |
+| P2: Supported text files could produce unusable patches | `git apply --check` rejected files without final newlines and files containing U+2028 because `splitlines()` treated Unicode separators as patch line boundaries and missing newline markers were absent. | Fixed by splitting patch lines only on LF and emitting the standard missing-final-newline marker. Nine independent applications reconstructed exact candidate bytes, including CRLF, Unicode separators, empty files and newline transitions. |
+| P2: Final infrastructure errors were recorded as candidate failures | Source initially mapped every `passed=false` result to verification `fail` and terminal `candidate_failed`, contradicting the verifier's `outcome=error` evidence. | Fixed: preserve the three-way verification outcome and select `infrastructure_failed` for errors. |
+| P2: Terminal failure results disappeared from the report | Measured after the outcome repair: `fail_execution` increments task generation, so the report's current-generation filter discarded the just-committed failure receipt. | Fixed: a historical nonpassing receipt is displayed only when the terminal failure explicitly binds its generation and exact evidence reference. Historical passing receipts remain ineligible. |
+| P2: A committed final verification could execute again after publication failure | Measured by raising after `record_verification` and before `publish_review`: rerunning the task invoked final verification a second time. | Fixed: reuse an exact committed current-head receipt and validate its immutable result/retirement before finishing publication or terminal failure. Regression tests cover both passing and failed final receipts. |
+| P2: Recipe source limits could strand an unused auxiliary slot | The workspace allowed 128 KiB files while the default recipe allowed 64 KiB. `_checks` reserved a slot before source validation; an oversized source failed before provisioning and left the slot reserved. | Fixed in source: validate source before reservation and at submission, and use recipe-compatible workspace limits. |
+| P2: Clean restart did not explicitly reject unsettled billing | The initial coordinator checked effect uncertainty but omitted the clean-restart contract's independent billing condition. | Fixed: unsettled billing stops resume before another dispatch. The regression retains a complete response with untrusted usage and verifies no resumed HTTP request. |
+| P2: Report regeneration required private recipe inputs; demo identity lacked the CLI schema | Source inspection found `repair-report` calling the private configuration loader and demo identity omitting required schema metadata. | Fixed in source: report regeneration uses committed public state, and new demo identities include schema 1. |
+| P2: Export stopped after 1,000 events and initially accepted missing history | CLI/demo initially fetched one page. The first pagination repair checked only the final sequence; a focused probe returned only event 3 for a target of 3 and was incorrectly accepted as complete. | Fixed: both callers use snapshot-bounded pagination with service-incarnation checks, cursor progress checks and strict sequence continuity from 1 to the saved frontier. Tests cover 1,203 events, exclusion of later events, empty history, missing prefixes, middle gaps and duplicate sequences. |
+
+**VI:** `effect_state` và `billing_state` trả lời hai câu hỏi độc lập: tác động đã biết chưa, và chi phí đã biết chưa. Tương tự, `fail` nghĩa chương trình trả kết quả sai; `error` nghĩa phép đo bị lỗi. Gộp chúng làm một sẽ vừa cho resume quá rộng vừa làm report giải thích sai nguyên nhân.
+
+## Inspected invariant boundaries
+
+Code entry points: [frozen intake](../../service/repositories.py#L73), [provider approval](../../service/repair_provider.py#L102), [repair execution and resume](../../service/repair.py#L183), [auxiliary test admission](../../service/repair.py#L155), [final receipt reuse](../../service/repair.py#L280), [verifier boundary](../../service/repair_verification.py#L337), [native linkage before dispatch](../../service/harness.py#L277), [patch generation](../../service/integration.py#L17), [report receipt matching](../../service/repair_reporting.py#L42), and [complete event export](../../service/repair.py#L23). Anchors were checked at review closeout.
+
+The full frozen repository, private recipe and provider approval are stored in a separate `control-inputs` artifact root. The ordinary task contract carries a digest, not a public artifact reference to those bytes. Public requirements expose only the declared interface and worker cases. Final results replace private case names with ordinal labels and omit raw request inputs, expected values, response bodies and backend exception text. Candidate execution occurs only through the container bridge; the mock verifier tests use literal observations and do not import candidate code on the host.
+
+**VI:** Chỉ giấu file private khỏi workspace là chưa đủ. Tool response, API artifact authorization và HTML report cũng là đường rò rỉ. Việc dùng root riêng và không công bố artifact reference khiến task reader không tự tải được recipe đầy đủ qua API hiện tại.
+
+The patch workspace and every serial verifier evaluation have distinct physical reservations. Fresh containers receive the same frozen source snapshot for each case. Unknown cleanup stops subsequent cases and retains the auxiliary reservation. The verifier latches transport, framing, output-limit, timeout and cleanup faults; an expected application exception cannot turn those faults into a pass. Tree, recipe/controller and image/environment identities remain separate. Native assistant/tool messages and tool IDs survive checkpoint restore, while replacement execution requires a fresh owner tuple. Cumulative turn, test and spend limits use retained task evidence.
+
+**VI:** Checkpoint lưu dữ liệu để tiếp tục; owner cấp quyền thực thi. Khôi phục đúng transcript không cho phép dùng lại owner cũ. Một test container cũng không thể được tính như chính patch workspace: hai tài nguyên tồn tại đồng thời cần hai slot.
+
+## Focused observations
+
+The reviewer ran the following local checks without paid inference, deployment or real candidate-container execution:
+
+- Provider, reporting and verifier suites: **142 passed, 6 skipped**. The six skips required an explicitly selected immutable Docker image.
+- Repository intake suite: **65 passed**.
+- Integrated repair and reporting suites after the core repairs: **54 passed, 1 skipped**. The skipped case required an explicitly selected immutable Docker image. A dependency deprecation warning concerned FastAPI/Starlette's HTTPX test-client integration.
+- Final patch/export boundary suite: **13 passed**. This narrow rerun followed the sequence-continuity repair; it did not repeat the broad integration suite.
+- A separate nine-case patch application probe used `git apply` and compared resulting UTF-8 bytes exactly, covering missing final newline on either side, CRLF, U+2028 and empty/nonempty transitions.
+
+These suite counts overlap and must not be summed into a unique test total. The root implementation verification record owns later complete-suite, real Docker and separate-process evidence.
+
+**VI:** Mock HTTP chứng minh protocol và quyền điều phối; mock sandbox chứng minh cách xử lý observation. Chúng không chứng minh model thật biết sửa code hay candidate thật chạy đúng trong Docker. Kết quả container thật và restart qua hai process phải có evidence riêng ở verification record của lần build.
+
+## Remaining scope and handoff
+
+CLI and demo now export the full contiguous event history through the saved snapshot frontier and reject incomplete histories. Report regeneration loads public committed records; it does not load the private recipe/provider configuration, construct a model adapter or invoke the verifier. The schema-1 demo identity is accepted by the common CLI reader. These paths were re-inspected after the final pagination repair.
+
+Active-container crash recovery remains unsupported. Creation nonce and immutable container ID are accumulated in verifier memory and enter durable result evidence after the evaluation returns. A process killed inside a case retains its physical reservation and refuses automatic replay, but the store lacks a write-ahead case-instance journal for automatic authoritative cleanup. A later operator must not infer cleanup authority from a reused display name. The supported restart claim is the committed complete-turn pause with confirmed retirement, plus reuse of committed candidate/head/final records; it does not cover every possible process-loss point.
+
+**VI:** Giữ slot khi chưa biết container còn sống là đúng về safety, nhưng chưa đủ cho khả năng phục hồi tự động. Muốn phục hồi giữa một case phải ghi intent/nonce trước provisioning và gắn immutable ID khi biết nó. “Không chạy lại” và “tự dọn rồi tiếp tục được” là hai mức bảo đảm khác nhau.
+
+Provider approval binds the supported endpoint, protocol, model and rate envelope, but its evidence is an operator assertion. Account-specific catalog/cap support, authoritative current pricing, approved paid spend and bounded non-success HTTP evidence remain live-readiness work. This review neither authorizes paid calls nor certifies a public judge deployment. Human review remains separate from independent test success, and human mastery remains undemonstrated.
+
+The implementation owner separately reports real local Docker controls, a native-mock full repair and clean pause/resume across two processes. Those results are not included in this reviewer's measured counts and must remain bound to the implementation owner's final source hashes and verification record. The remaining handoff is to retain the active-case recovery limitation and attach that final verification record. No source files were edited by this independent reviewer; only this review artifact was authored here.

@@ -1,0 +1,10 @@
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -174,6 +174,6 @@
+                     raise ValueError("cursor is beyond committed progress")
+             except (ValueError, TypeError, UnicodeError) as error:
+                 raise InvalidCursor("malformed or cross-import cursor") from error
+-        rows = [dict(row) for row in self.db.execute("SELECT seq,kind,processed FROM events WHERE job_id=? AND seq>=? ORDER BY seq LIMIT ?", (job_id, after, limit))]
++        rows = [dict(row) for row in self.db.execute("SELECT seq,kind,processed FROM events WHERE job_id=? AND seq>(?+1) ORDER BY seq LIMIT ?", (job_id, after, limit))]
+         next_seq = rows[-1]["seq"] if rows else after
+         return {"events": rows, "cursor": self._cursor(tenant, job_id, next_seq)}

@@ -1,0 +1,9 @@
+Coding-agent mastery source and collaboration snapshot
+Copyright 2026 project contributors.
+
+Project-owned source is distributed under the Apache License 2.0.
+Third-party dependencies and cited upstream projects retain their own licenses.
+Downloaded third-party source snapshots, model weights, credentials, raw run
+artifacts and dependency wheels are not included. Historical verification
+summaries identify prior local experiments; see docs/github-snapshot.md.
+The release/ directory preserves the separately authored package-release materials.

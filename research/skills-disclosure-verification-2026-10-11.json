@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-11T06:00:52.421015+00:00",
+  "status": "passed: bounded step4 implementation, independent tests/review, integrated regressions and documentation consistency",
+  "scope": "immutable skills dependency step4: explicit accepted catalog/state/prompt/request integration, scripted/native Nebius mock HTTP, source-state resource authorization; step5 typed checkpoints/fresh-owner recovery excluded",
+  "spec": {
+    "path": "research/skills-disclosure-spec-2026-10-11.md",
+    "sha256": "5038bcbd54e910b17e3d4d44791b7b878986a0996cf7df17ddd95590201d9949"
+  },
+  "freeze_before_code": {
+    "path": "runs/skills-disclosure-2026-10-11/spec-before-code.json",
+    "sha256": "d960dcb055c220f9e76207db6578913d0708e5f0fa700fb9dbe83c145a609b1d"
+  },
+  "owners": {
+    "architecture_and_independent_review": "Astra agent skills_broker_architecture",
+    "runtime": "6.1 Sol agent skills_broker_code",
+    "independent_tests": "6.1 Sol agent skills_broker_tests",
+    "integration_demo_docs": "root coordinator"
+  },
+  "source_hashes": {
+    "service/context.py": "9f7470aef404afee4257a753c22e9f1bdf116415592127c121c664529cb51808",
+    "service/harness.py": "c7b3e4348113849e4b3f5904c3980a3a54e2b5d9fb34acd47156eab0833bdd0a",
+    "service/providers.py": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4",
+    "service/recovery.py": "1e225d20b470f409921155c39e2a9abb049bfd0621350465f075b006e82b255b",
+    "service/skill_runtime.py": "ca74203bd0fc1e069debd388b0d1690f7389b115164f696537c3cf342455622e",
+    "service/storage.py": "35f3eb2efc3a8dbda968321b60b6f6e3afd9f895d7151aa244c4a281f40a4990",
+    "service/skill_disclosure.py": "7092b76a9dcd663b078cca1efa0378429d9bc4a0ae85b296afba236f844f48ce",
+    "scripts/skills_disclosure_demo.py": "a3f7dd0cfa9fc77e99e1bd5f4aafa84f537b5eb6903c6aeb6929a2f3b0f7a36c",
+    "tests/test_skills_disclosure.py": "921ff17c6b4c15131a70a6fd2d31616d54bb1597c809c7e1afb1b203b1cd7f4b",
+    "tests/test_skills_disclosure_store.py": "032cfb04a665531b51e47d9183f6e8e3dd01ce025221eac7ad494548e088edf2"
+  },
+  "source_stability": {
+    "before": {
+      "path": "runs/skills-disclosure-2026-10-11/final-checks-before.json",
+      "sha256": "11799d913c182c07c2c04add34a22f6d9bdd3f12aca41824a598b2ddec89be11"
+    },
+    "after": {
+      "path": "runs/skills-disclosure-2026-10-11/final-checks-after.json",
+      "sha256": "ebbcd0047f7c0a48330b8bb758874ffaba1fa83d2ef663bb7fa6bace385c6a6f"
+    },
+    "executable_source_tests_data_dependencies_unchanged": true,
+    "documentation_note": "One workloads README spacing edit occurred during full tests and is recorded separately; no source retest required."
+  },
+  "full_integration": {
+    "exit_code": 0,
+    "passed": 1820,
+    "subtests_passed": 156,
+    "skipped": 3,
+    "seconds": 194.32,
+    "skips": [
+      {
+        "class": "tests.test_skills_capture",
+        "test": "test_case_collision",
+        "message": "case-insensitive filesystem cannot express collision fixture"
+      },
+      {
+        "class": "tests.test_workflows",
+        "test": "test_real_local_temporal_workflow_continue_as_new_and_history_replay",
+        "message": "requires explicit local Temporal dev-server opt-in"
+      },
+      {
+        "class": "tests.test_workflows",
+        "test": "test_real_temporal_duplicate_start_memo_and_stop_before_rollover",
+        "message": "requires explicit local Temporal dev-server opt-in"
+      }
+    ],
+    "backends": [
+      "SQLite",
+      "task-owned local PostgreSQL16",
+      "existing pinned local Docker sandbox image"
+    ],
+    "temporal": "not opted in",
+    "warning": "existing Starlette HTTPX testclient deprecation",
+    "log": {
+      "path": "runs/skills-disclosure-2026-10-11/integrated-tests.txt",
+      "sha256": "be58622be4bafefeb82bc21c50520d770b8e629d0a23bd83d5b09a98ede22443"
+    },
+    "junit": {
+      "path": "runs/skills-disclosure-2026-10-11/integrated-tests.xml",
+      "sha256": "06d194cea21b6f8b5c1fc6c43ed9d844f5f07d11ee9935a671689999601c3819"
+    }
+  },
+  "independent_tests": {
+    "passed": 90,
+    "sqlite_mock_cases": 86,
+    "postgres_cases": 4,
+    "overlap": "these90 are included in1820; do not add counts",
+    "evidence": {
+      "path": "runs/skills-disclosure-2026-10-11/tests/independent-verification.json",
+      "sha256": "450fd77f319af28a2e4271db7a83c97af342a551f7e9fc76d3bc23bcee54919e"
+    },
+    "mutants_rejected": [
+      "trust-submitted-state",
+      "same-response-post-load-authority",
+      "drop-load-from-native-wire"
+    ]
+  },
+  "independent_review": {
+    "source_approved": true,
+    "controls_passed": 9,
+    "report": {
+      "path": "research/skills-disclosure-independent-review-2026-10-11.md",
+      "sha256": "685b431a80684ad9af5f8886554e6bcc2b097279eaefad4fd48acc4c627b2d26"
+    },
+    "final_audit": "runs/skills-disclosure-2026-10-11/review/final-evidence-audit.json",
+    "source_bound_controls": {
+      "path": "runs/skills-disclosure-2026-10-11/review/source-bound-controls.json",
+      "sha256": "5234def0b9646cb0dd87ed2f3c7e8218e23c3cca63ed3a9904208a66e7a4578b"
+    },
+    "note": "Final report approves the bounded source, documentation and evidence. Separate audit attestation binds this verification digest without a circular hash dependency."
+  },
+  "ruff": {
+    "exit_code": 0,
+    "scope": "service tests scripts compute evals workloads release/acceptance",
+    "log": {
+      "path": "runs/skills-disclosure-2026-10-11/ruff.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  },
+  "demo": {
+    "entry": {
+      "path": "scripts/skills_disclosure_demo.py",
+      "sha256": "a3f7dd0cfa9fc77e99e1bd5f4aafa84f537b5eb6903c6aeb6929a2f3b0f7a36c"
+    },
+    "summary": {
+      "path": "runs/skills-disclosure-2026-10-11/demo-final/summary.json",
+      "sha256": "a787558b889af7e9660f1d4f35a705e4e7f6a94814b8e7169344fb5a54b31ccc"
+    },
+    "trace": "runs/skills-disclosure-2026-10-11/demo-final/trace.md",
+    "observed": {
+      "accepted_loaded_counts": [
+        0,
+        1,
+        1
+      ],
+      "checkpoint_count": 0,
+      "checkpoint_recovery": false,
+      "human_mastery": "not_assessed",
+      "known_replay_durable_changes": false,
+      "known_replay_publications": 0,
+      "known_replay_sends": 0,
+      "origin_mutation_ignored": true,
+      "paid_execution": false,
+      "real_provider_requests": 0,
+      "request_count": 3,
+      "resource_bytes": 193,
+      "resource_sha256": "8b3256e5ccf422f9fa5de2c7903c97b1c10aa3808adb1d7c385b101d1a85e22e",
+      "same_response_read": "not_disclosed",
+      "schema": 1,
+      "scope": "accepted_skills_native_mock_http",
+      "status": "passed",
+      "wire_identity_note": "Raw HTTP body retained; parsed payload canonical identity matches accepted request record; wire hash is separate."
+    },
+    "independent_read_only_audit": {
+      "path": "runs/skills-disclosure-2026-10-11/review/demo-final-audit.json",
+      "sha256": "759fea1cac6a1560dc5c39f531371fdb8a5c3e57780222df55adaedd90843c1d"
+    },
+    "audit_note": "Reviewer validates saved DB/artifacts without production validators; exact retry no-publication is independently asserted by execution traps, not inferred from final DB alone."
+  },
+  "review_repairs": [
+    {
+      "finding": "ordinary read_file inherited skills result cap",
+      "evidence": "review/ordinary-result-cap-before.txt",
+      "kind": "reproduced before repair"
+    },
+    {
+      "finding": "failed invalid-package load incorrectly rejected after later primary",
+      "evidence": "review/failed-load-before-primary.txt",
+      "kind": "two reproduced cases before repair"
+    },
+    {
+      "finding": "exact accepted-broker retry lacked configured capture/config equality",
+      "kind": "source review finding repaired before independent execution"
+    },
+    {
+      "finding": "omitted whole ordinary turn could evade history-only prefix checks",
+      "kind": "root source finding; owner added complete accepted-sequence evidence enumeration"
+    },
+    {
+      "finding": "path/range priority and malformed nonobject value checks",
+      "kind": "source review repairs with independent regression cases"
+    },
+    {
+      "finding": "model64-record overflow returned wrong stable error",
+      "kind": "author retained failing control; now bounds_exceeded"
+    },
+    {
+      "finding": "offload positive fixture18000-byte cap too small for protected evidence",
+      "kind": "test setup corrected to26000; no runtime cap weakening"
+    }
+  ],
+  "author_intermediate_records": {
+    "path": "runs/skills-disclosure-2026-10-11/author/source-checks.json",
+    "sha256": "0606499de4b071ff15d8552ccc5e8b291e31514e58a6b6d7c6de3e227afbc2fd"
+  },
+  "preservation": {
+    "path": "runs/skills-disclosure-2026-10-11/preservation-final.json",
+    "sha256": "1b8b66b9f8e31d26046e1775db8bbfa51e5885a44832f1d66e58cc6f5b18d9bc"
+  },
+  "documentation": {
+    "changed_existing": 17,
+    "checked_documents": 50,
+    "local_links": 1054,
+    "line_anchors": 252,
+    "heading_fragments": 70,
+    "errors": [],
+    "report": "runs/skills-disclosure-2026-10-11/documentation-check.json",
+    "anchor_rebase": {
+      "path": "runs/skills-disclosure-2026-10-11/anchor-rebase.json",
+      "sha256": "3214084b3eb00f0ce8aef81d247fe637e81ce189e3f91e877c722eaaf2adbf60"
+    },
+    "note": "Historical frozen-spec anchors retain historical bytes; active study anchors rebased by exact code matches and one inspected declaration signature change."
+  },
+  "backend_environment": {
+    "path": "runs/skills-disclosure-2026-10-11/local-backends.json",
+    "sha256": "475f03521aceadc67276d96ac04e4849ffa90c4d83ebad7ba4c0328e8bee7bbf"
+  },
+  "backend_cleanup": {
+    "path": "runs/skills-disclosure-2026-10-11/local-backends-cleanup.json",
+    "sha256": "95776ad4d1651fbc0fc59e838f80b35c59beda01932ea08d60eb10d6ed47ebe4"
+  },
+  "next_dependency": "freeze/build step5 typed post-turn skills checkpoint and fresh-owner recovery, preserving source-state versus checkpoint-state distinction",
+  "limits": {
+    "paid_execution": false,
+    "real_provider_requests": 0,
+    "live_model_skill_usefulness": "not measured",
+    "new_release_candidate": false,
+    "installed_acceptance_for_this_slice": false,
+    "skills_checkpoint_recovery": false,
+    "human_mastery": "not assessed",
+    "production_ready": false,
+    "hackathon_required_profile_changed": false,
+    "store_schema": 2
+  }
+}

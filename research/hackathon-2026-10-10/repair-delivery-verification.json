@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "objective": "Supported repository repair implementation by acceptance gates; no daily build-time cap",
+  "evidence_scope": "native mock provider + actual local Docker; clean pause and restart across two separate processes; live NVIDIA coding quality is not measured",
+  "environment": {
+    "python": "3.12.11",
+    "system": "Darwin",
+    "machine": "arm64",
+    "git_commit": null,
+    "git_reason": "primary workspace is not a Git repository",
+    "candidate_image_id": "sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9",
+    "candidate_image_platform": "linux/arm64"
+  },
+  "final_repair_source_sha256": {
+    "pyproject.toml": "094ac4d7b4856813e08e9c0a5f68a01e56ebbc68a89950d971f62e3873c42326",
+    "service/__init__.py": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999",
+    "service/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "service/api.py": "5bc9b10e25287f068bfe924dbd38409505ba97dc7cb2a57ffc86161d01eb303c",
+    "service/artifacts.py": "225455ba1a75f60ff01e4f9f10a3dd7d96127b3fc4dcc30563514718be60571e",
+    "service/billing.py": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0",
+    "service/cli.py": "fe0fd2084eac33d6423cef90e9f49a10b41cebc48fff13c87a286a38db85a0ea",
+    "service/context.py": "214401dd83868ab2b4c79a50d119c9af9d6088fa4a58eab6a04e18825282cd4a",
+    "service/contracts.py": "3a118856412507eb7764991e3f545ffcf614c09ea7d85482bbe0657350f5196d",
+    "service/engine.py": "86f13fa077d5f36b88c514651c858096b782b2f9c0ef03a27ab15f2262c34e0d",
+    "service/execution.py": "6059854ea39ba403b769c44e2205bbdbb94fa94e552b3061295462ccb194aa6a",
+    "service/harness.py": "658992d9e906c19b1f5cc2e6a9442a4fba0c7071a0670000ca616dbde9459efe",
+    "service/integration.py": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92",
+    "service/protocol.py": "68e310ed998b64a649a29465cee158ef2cf5f8eaba7df6dfeba7b789a757049d",
+    "service/providers.py": "ee3bd8e376a87f91bcafdb67ef95d2caec2e7be0c2128b393c3ffd750a76519b",
+    "service/recovery.py": "60f233eced6842c488c4da653ab687f28b2dcbd519f40836b5ed409e7965bd2c",
+    "service/repair.py": "363add06b7bb398fcc78557a752b27eabe6cf6fe67ac460fcc96e93c0c0c29bb",
+    "service/repair_cli.py": "0823244953f997f30a9f896dec0ec798c123b5032c4b2b3a5b8f47c2cb576ab5",
+    "service/repair_demo.py": "6bdc067a863bf5f6a3c8ab46623f46862dcec3363ed590a5e364756bf71f1016",
+    "service/repair_provider.py": "b91fd7a95ef527d7118f3c10522196b286670c2eb035c83e99d3ed5d76b0354d",
+    "service/repair_reporting.py": "f87e035e7f6bf8fe9e8ad5fe5389d96075a2722750d422ffd8e6ac2d356c68da",
+    "service/repair_verification.py": "a0ce818578c99865fb7e8ee5fb8eab1dbd6ca7383d95f3fd8d1608998effa6bd",
+    "service/reporting.py": "c42df34441d053226613d1b15165491ed584ee671db54560effc97327c74573c",
+    "service/repositories.py": "b39676ea101aec719582124a414702a60efb6e125bfdabed4fd571802cb5597b",
+    "service/storage.py": "d9ec48f0bb42943bc0f9f039abbb5e4e5afecd5107df17520e81ed0da141c3d4",
+    "service/verification.py": "7d74ab3ce0ff4377f4e4c8c49c11e4bdd926179aa455130a65cedca34fe66f60",
+    "service/workflows.py": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919",
+    "tests/test_repair.py": "ab61dae9295f5ad73680ea512b4986e77f2f16f4bb7b8bc23ff02e52bf0c9d56",
+    "tests/test_repair_boundaries.py": "b4c7eb94d52a0922ef37bfed5bf61a54b266162ab8388d1fa5aff20f8fbe66b4",
+    "tests/test_repair_provider.py": "dd6a38cb350143a1870e2d085dd3563f55f1b85a906af6bd83245ca5fa0dbed9",
+    "tests/test_repair_reporting.py": "55358e8ae369d361865e236e32b9a532e07fb6226bc6d2d46c422bbbfc920fb4",
+    "tests/test_repair_verification.py": "1128d40ebf48f95b4994b9e81f1f0e90b73355d3ecf2c1c695c37950a88e3a59",
+    "tests/test_repositories.py": "e317308db2c054bd5f3a20479087ca5760f876fc1e52c5c58b69ca8a740bd615",
+    "workloads/repair/recipes/text-normalization-v1.json": "956730121178bd2fba548810481e8bf8235996c7314c21314bbf8d62e6110e7d",
+    "workloads/repair/repositories/text-normalization/slug.py": "d3af53a6e2245740ce3ed4a681d5a53d035de794dc2e1bea538a9628c42cb8d8",
+    "workloads/repair/tasks/text-normalization-v1.json": "1c319868e3a771ea54116a5093884bcc48c6586b351b9a71ca065ebc9fc2dd22"
+  },
+  "checks": {
+    "default_regression": {
+      "passed": 575,
+      "skipped": 24,
+      "passed_subtests": 15,
+      "reported_wall_seconds": 28.58,
+      "phase": "Before final event-contiguity guard and three distinguishing regressions; final narrow suite verifies that later change",
+      "junit": "runs/repair-2026-10-10/default-suite.xml"
+    },
+    "opt_in_new_integration": {
+      "passed": 132,
+      "skipped": 0,
+      "reported_wall_seconds": 82,
+      "scope": "Six real Docker verifier controls plus native-mock full repair and related component tests",
+      "phase": "Before final event-contiguity guard and three added regressions",
+      "junit": "runs/repair-2026-10-10/integration-tests.xml"
+    },
+    "final_export_boundary": {
+      "passed": 13,
+      "root_reported_seconds": 0.35,
+      "independent_reviewer_reported_seconds": 0.58,
+      "scope": "Exact patch application, paginated event export, missing prefix/gap/duplicate rejection",
+      "test": "tests/test_repair_boundaries.py"
+    },
+    "ruff": {
+      "state": "passed",
+      "scope": [
+        "service",
+        "tests",
+        "scripts",
+        "workloads/repair"
+      ]
+    },
+    "package": {
+      "state": "passed",
+      "scope": "Offline wheel build and imports from disposable extracted wheel; recipe/task package data verified",
+      "wheel": "runs/repair-2026-10-10/dist-final/coding_agent_mastery-0.1.0-py3-none-any.whl",
+      "sha256": "be32605a74ef0c63ed7f2ec8a51c91c6336de21fb38278d39006952aac9aaff3",
+      "build_log": "runs/repair-2026-10-10/wheel-final-build.log"
+    },
+    "source_export": {
+      "state": "prepared locally, unpublished",
+      "license_candidate": "Apache-2.0",
+      "archive": "runs/repair-2026-10-10/verified-repair-source.zip",
+      "sha256": "fd9b0430ce92ff26f3558e58cfb9fb6c2858d8e68a015ae3726f59b61b239bb4",
+      "bytes": 464370,
+      "source_manifest": "runs/repair-2026-10-10/release-source/source-manifest.json",
+      "selected_source_count": 177,
+      "subsequent_primary_workspace_drift": [
+        "compute/README.md",
+        "compute/rmsnorm.py",
+        "tests/test_rmsnorm.py"
+      ],
+      "excludes": [
+        "personal context/study/references/archive",
+        "run databases and private control inputs",
+        "credentials and environments",
+        "caches"
+      ]
+    },
+    "report_qa": {
+      "structure_downloads_escaping": "passed",
+      "rendered_browser_layout": "not inspected: local-file navigation rejected by browser security policy; no workaround used"
+    }
+  },
+  "junit_summaries": {
+    "default-suite.xml": {
+      "tests_including_subtests": 614,
+      "skipped": 24,
+      "failures": 0,
+      "errors": 0,
+      "recorded_suite_seconds": 28.452,
+      "path": "runs/repair-2026-10-10/default-suite.xml"
+    },
+    "integration-tests.xml": {
+      "tests_including_subtests": 132,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "recorded_suite_seconds": 81.469,
+      "path": "runs/repair-2026-10-10/integration-tests.xml"
+    }
+  },
+  "runs": {
+    "local-demo": {
+      "task_id": "1be58e466b78459fa0a194e54a15ae19",
+      "snapshot_sha256": "c315bd60759cc3f29c0a8cd27ec2e5e3eec0317d9eab8747f654174ba334b799",
+      "report": "runs/repair-2026-10-10/local-demo/repair.html",
+      "report_json_sha256": "36003189bd15651c68be81a63df9ed5e1773cea57eb267cfb736ba7cf47e307d",
+      "patch": "runs/repair-2026-10-10/local-demo/change.patch",
+      "patch_sha256": "b6c92b1b1153b815db0bb3f22859d4489e318af795eda85b2c3e93bf545d90aa",
+      "execution_state": "review_eligible",
+      "human_review": "pending",
+      "verified": true,
+      "provider_evidence": "native mock HTTP transport; authored correction; no learned model capability",
+      "candidate_execution": "real local Docker Linux containers",
+      "attempts": 1,
+      "epochs": [
+        1
+      ],
+      "model_dispatches": 5,
+      "worker_test_dispatches": 2,
+      "retained_sandboxes": 0,
+      "model_ledger": {
+        "spent": 0,
+        "reserved": 0,
+        "limit": 0
+      },
+      "cost_scope": "synthetic zero model rates; local infrastructure cost unmeasured",
+      "sandboxes_by_kind": {
+        "verifier": 3,
+        "patch": 1
+      },
+      "auxiliary_verifier_evaluations": 3
+    },
+    "process-restart": {
+      "task_id": "92ea21f475bc46619b35471231ad850a",
+      "snapshot_sha256": "6cf29caa51514596d71b4b832a6a85c69d859562fdcf89a03c1725638d124335",
+      "report": "runs/repair-2026-10-10/process-restart/repair.html",
+      "report_json_sha256": "1efebfb0eb59f5d85cbb7253e1d98d3ed8e29974539391f9c595a9e2cba5d51d",
+      "patch": "runs/repair-2026-10-10/process-restart/change.patch",
+      "patch_sha256": "b6c92b1b1153b815db0bb3f22859d4489e318af795eda85b2c3e93bf545d90aa",
+      "execution_state": "review_eligible",
+      "human_review": "pending",
+      "verified": true,
+      "provider_evidence": "native mock HTTP transport; authored correction; no learned model capability",
+      "candidate_execution": "real local Docker Linux containers",
+      "attempts": 2,
+      "epochs": [
+        1,
+        2
+      ],
+      "model_dispatches": 5,
+      "worker_test_dispatches": 2,
+      "retained_sandboxes": 0,
+      "model_ledger": {
+        "spent": 0,
+        "reserved": 0,
+        "limit": 0
+      },
+      "cost_scope": "synthetic zero model rates; local infrastructure cost unmeasured",
+      "sandboxes_by_kind": {
+        "patch": 2,
+        "verifier": 3
+      },
+      "auxiliary_verifier_evaluations": 3
+    }
+  },
+  "independent_review": "research/hackathon-2026-10-10/repair-independent-review.md",
+  "remaining_gates": [
+    "Actual account catalog/model and authoritative supported rates/output-cap evidence",
+    "Permitted total inference and hosting spend",
+    "Live NVIDIA repair on authorized non-demo tasks and a frozen pilot",
+    "Free judge-accessible build and public licensed source",
+    "Public video under three minutes and complete Devpost submission"
+  ],
+  "retained_limits": [
+    "Stateless single-module standard-library Python functions only",
+    "No write-ahead active-case physical-instance journal or automatic active-container process-loss reconciliation",
+    "Non-success HTTP evidence remains bounded live-readiness work",
+    "New repair path measured with SQLite and Docker; earlier PostgreSQL/Temporal tests were not rerun for this slice",
+    "No GPU performance, production readiness, competition win or human mastery inferred"
+  ],
+  "count_policy": "Phased and reviewer suites overlap; do not sum them into a unique test total"
+}

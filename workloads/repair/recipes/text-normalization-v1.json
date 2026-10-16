@@ -1,0 +1,17 @@
+{
+  "schema": "python-function-recipe-v1",
+  "recipe_id": "text-normalization-v1",
+  "source_paths": ["slug.py"],
+  "module_path": "slug.py",
+  "functions": ["normalize_slug"],
+  "worker_cases": [
+    {"id": "ordinary", "function": "normalize_slug", "args": ["Hello World"], "kwargs": {}, "expect": {"value": "hello-world"}},
+    {"id": "punctuation", "function": "normalize_slug", "args": ["Hello, World!"], "kwargs": {}, "expect": {"value": "hello-world"}}
+  ],
+  "final_cases": [
+    {"id": "whitespace", "function": "normalize_slug", "args": [" a\tb  "], "kwargs": {}, "expect": {"value": "a-b"}},
+    {"id": "separators", "function": "normalize_slug", "args": ["../A_B:42"], "kwargs": {}, "expect": {"value": "a-b-42"}},
+    {"id": "empty", "function": "normalize_slug", "args": [" ... "], "kwargs": {}, "expect": {"value": ""}},
+    {"id": "type", "function": "normalize_slug", "args": [7], "kwargs": {}, "expect": {"error_type": "TypeError"}}
+  ]
+}

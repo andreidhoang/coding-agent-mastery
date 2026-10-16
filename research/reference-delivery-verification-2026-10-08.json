@@ -1,0 +1,154 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-08T10:45:35.975479+00:00",
+  "author": "AI delivery controller; Astra design/review and 6.1 Sol implementation agents",
+  "status": "working bounded reference; broader production source and operational gates remain",
+  "coverage": "capstone/08-implementation-coverage.md",
+  "environment": {
+    "python": "3.12.11",
+    "system": "Darwin",
+    "architecture": "arm64",
+    "packages": {
+      "sqlalchemy": "2.1.4",
+      "fastapi": "0.142.4",
+      "httpx": "0.28.1",
+      "uvicorn": "0.54.0",
+      "psycopg": "3.3.6",
+      "temporalio": "1.34.0",
+      "boto3": "1.43.109",
+      "torch": "2.14.1",
+      "numpy": "2.5.3",
+      "pytest": "9.1.1",
+      "ruff": "0.16.10"
+    },
+    "lockfile": "uv.lock",
+    "lock_sha256": "40f83da9fd62a2d6758f0a426f43bd284670e46c559c08776b2b50d54cd07e32"
+  },
+  "source_manifest": {
+    "path": "research/reference-source-manifest-2026-10-08.json",
+    "sha256": "21a2e48e4435b9131204bc0411712f14fb2da862e0ead15e39a600ec55378017",
+    "files": 151
+  },
+  "tests": {
+    "command": ".venv/bin/python -m pytest tests -q --junitxml=runs/verification-2026-10-08/tests.xml",
+    "integration_opt_ins": {
+      "postgresql": true,
+      "pinned_docker_linux": true,
+      "local_temporal": true
+    },
+    "passed_tests": 154,
+    "passed_subtests": 15,
+    "junit_total": 169,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 33.845,
+    "recorded_local_start": "2026-10-08T17:09:04.597118+07:00",
+    "source_changed_since_suite": false,
+    "source_scope": "Runtime Python source and test source; subsequent documentation changes checked separately"
+  },
+  "static": {
+    "ruff": "passed service tests evals compute scripts workloads",
+    "compose_config": "passed",
+    "local_checks_driver": "plan mode and authored summary/privacy smoke passed; final suite executed directly"
+  },
+  "application_image": {
+    "tag": "cam-reference:2026-10-08",
+    "id": "sha256:baff9ee063f6019bfc9293bf09dbf04caf330079651afc440d076da943a16337",
+    "platform": "linux/arm64",
+    "build": "passed",
+    "smoke": "passed isolated no-network/read-only/nonroot TestClient and all frozen asset validation",
+    "unconfigured_protected_route_status": 503,
+    "route": "/tasks/example",
+    "initial_probe_correction": "Nonexistent /v1/tasks/example gave404; corrected to declared /tasks prefix, no source change",
+    "hosted_deployment": false
+  },
+  "images": {
+    "python": "python@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f",
+    "postgres": "postgres@sha256:029660641a0cfc575b14f336ba448fb8a75fd595d42e1fa316b9fb4378742297"
+  },
+  "wheel": {
+    "path": ".runtime/dist/coding_agent_mastery-0.1.0-py3-none-any.whl",
+    "sha256": "e9dd9e13010522cb615f5a95f1f86d29f610fa640f8ccbde3c88d6ce219bad2c",
+    "build": "passed",
+    "isolated_extraction_workload_validation": "passed"
+  },
+  "final_scripted_run": {
+    "task_id": "a26bc66306c3497db00fe20a4fb74114",
+    "execution_state": "review_eligible",
+    "review_state": "pending",
+    "budget": {
+      "spent": 0,
+      "reserved": 0,
+      "limit": 1000
+    },
+    "counts": {
+      "nodes": 2,
+      "attempts": 2,
+      "dispatches": 12,
+      "sandboxes": 3,
+      "candidates": 3,
+      "checkpoints": 6,
+      "verifications": 1,
+      "reviews": 1
+    },
+    "all_environments_retired": true,
+    "backend": "PostgreSQL authority + pinned Docker external verifier + scripted model",
+    "worker_execution": "Guarded trusted file edits; untrusted candidate execution only in Linux verifier",
+    "path": "runs/postgres-linux-final-2026-10-08"
+  },
+  "workloads": {
+    "valid": true,
+    "tasks": 42,
+    "files": 82,
+    "registry_sha256": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+    "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+    "provenance": "AI-authored synthetic templates; one repository family"
+  },
+  "gpu": {
+    "backend": "CUDA",
+    "torch_version": "2.14.1",
+    "cuda_runtime": null,
+    "python": "3.12.11",
+    "fallback": null,
+    "status": "skipped",
+    "reason": "CUDA unavailable; no MPS or CPU benchmark substitution"
+  },
+  "paid_provider_calls": 0,
+  "gpu_rentals": 0,
+  "preservation": {
+    "preexisting_archive_references_lab_files_checked": 35,
+    "all_unchanged": true,
+    "human_mastery_tracker_unchanged": true,
+    "prior_runs_preserved": true,
+    "sibling_projects_modified": false
+  },
+  "evidence": {
+    "runs/verification-2026-10-08/tests.xml": "6740002a0211d7b86f28c9a328982b270afc37e0f500ed0d21c59272c4b7054a",
+    "runs/verification-2026-10-08/cpu-tensor-trace.json": "af58c7d5af25ecca22325bc877df9e5f41ae1375656537175067a5db2cb37cba",
+    "runs/verification-2026-10-08/synthetic-evaluation.json": "7292bb1d16c7b035729b160f8878a9ab98c60c24a8e836de29225fb3f3e9ea45",
+    "runs/postgres-linux-final-2026-10-08/snapshot.json": "ff861ba958d54a5dbb74ef39e160d3912dbe09ab83bf0e8201a83c87e0a8d130",
+    "runs/postgres-linux-final-2026-10-08/trace.json": "3fc9a0dd8f9a7898ee9b9dd023c855f7c62c3a3948c328233a2c9f724d123b6b",
+    "runs/postgres-linux-final-2026-10-08/trace.html": "65275226d8bbba33c7c6626dc44d0aaa45a43c9ccd7d9fe0e643451f6af3b5c3"
+  },
+  "limitations": [
+    "Not a fully implemented or operated production capstone; see coverage register",
+    "Scripted fixture results are not live coding-model capability or held-out scaling evidence",
+    "GPU benchmark skipped; CPU/synthetic numbers are not GPU performance",
+    "AI independent review is not independent human reproduction",
+    "Human prediction, teach-back and transfer not assessed"
+  ],
+  "documentation_checks": {
+    "local_links_checked": 250,
+    "broken_links": 0,
+    "guide_and_H0_exact_source_symbol_anchors": "verified",
+    "canonical_modules": 16
+  },
+  "cleanup": {
+    "task_owned_postgresql_container": "stopped and automatically removed after verification",
+    "task_owned_sandbox_and_package_smoke_containers_remaining": 0,
+    "application_image": "retained for reuse",
+    "prior_runs": "retained",
+    "other_user_containers": "not modified"
+  }
+}

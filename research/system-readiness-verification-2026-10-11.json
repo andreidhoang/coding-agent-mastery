@@ -1,0 +1,713 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-11T07:14:31.472061+00:00",
+  "status": "passed_with_explicit_scope_and_test_only_drift",
+  "scope": "local reference readiness implementation, not complete production service",
+  "constraints": {
+    "paid_execution": false,
+    "live_provider_requests": 0,
+    "gpu_execution": false,
+    "gpu_rental": false,
+    "public_deployment": false,
+    "published": false,
+    "human_mastery": "not_demonstrated"
+  },
+  "sequence": [
+    "independent source/research audits",
+    "eight frozen spec/addendum records",
+    "skills checkpoint recovery",
+    "independent configured serving and trusted GPU preparation",
+    "journaled actual verifier environments",
+    "independent faults/review/repairs",
+    "real engine integration and full regressions",
+    "fresh installed rc2 acceptance",
+    "docs/context/preservation and exact owned backend cleanup"
+  ],
+  "tests": {
+    "full_suite": {
+      "passed": 2272,
+      "subtests_passed": 156,
+      "skipped": 2,
+      "failures": 0,
+      "product_source_stable": true,
+      "all_manifest_files_stable": false,
+      "runner_exit_note": "pytest exited0; integrity wrapper exited1 because it detected three non-product file changes; preserved unchanged and explicitly adjudicated below"
+    },
+    "context_postgres_followup": {
+      "passed": 1,
+      "reason": "CONTEXT_TEST_POSTGRES_URL differs from main opt-in; original full-suite skip retained"
+    },
+    "remaining_skip": "case-insensitive filesystem cannot represent the collision fixture",
+    "test_only_followup": {
+      "passed": 11,
+      "scope": "independent literal fixed-policy oracle in two E01 tests; exact delta preserved; all affected selected tests rerun on SQLite/PostgreSQL"
+    },
+    "lint": "passed",
+    "suite_drift": {
+      "tests/test_environment_recovery_store.py": {
+        "before": "d23a9e8a7b9b6dcb296c62ccaba3313ba34c3fe15bb4c0668befc70527134cad",
+        "after": "0e76457a556f914f57483ece0f956e62079b73023b779c229a8ff6876bceb6a1"
+      },
+      "release/OFFLINE.md": {
+        "before": "f8c68ee94f9be910fc9e248073b3ba8b5d68c0cfba0158bfc230e7ebc6658175",
+        "after": "0580888d7733675d4958ff6fb7e9154dbb7f68e1f3768638bddcb00a5e1f03cb"
+      },
+      "tests/test_environment_recovery.py": {
+        "before": "585fda9d961b62f232abd414c8105ef0e6fef9dae7837d6c205385413aab7396",
+        "after": "31498884afc729e75b4372e12baace3da75942dbb09e818217aca91b7483ee04"
+      }
+    },
+    "drift_adjudication": "Two CLI command prose corrections in release/OFFLINE.md plus two independent literal-policy test assertions. No product Python/assets/lock or previously executed behavior changed. Exact pre-test bytes match preserved copies, focused assertions pass, installed candidate includes final prose. No repeated unchanged full suite required.",
+    "warning": "FastAPI/Starlette TestClient deprecation about httpx; compatibility tests passed; dependency lock unchanged",
+    "counts_overlap": "Focused author/reviewer suites overlap and are not added to the full suite."
+  },
+  "installed_candidate": {
+    "path": "releases/offline-2026-10-11-rc2",
+    "manifest_entries": 161,
+    "all_origins_current_match": true,
+    "source_content_sha256": "db2da4b05367baf2a9eb27a05ce724a4b4d24270055a982dba8dc5435dbc1ccc",
+    "public_locked_base_wheels": 19,
+    "actual_installed_acceptance": "passed",
+    "separate_dependency_preparation": "PyYAML original exact locked wheel acquired from public lock URL before offline phases; previous18 copied and verified",
+    "claims": "same-machine base runtime, actual local Docker and actual installed child with declared origin instrumentation, native model mock only"
+  },
+  "frozen_contracts": [
+    {
+      "spec": {
+        "path": "research/environment-recovery-addendum-a-2026-10-11.md",
+        "sha256": "37bda53ca82782739660354296385a81ae9ce7406b016b9f446e7564828c0b77",
+        "size": 1422
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/environment-recovery-addendum-a-2026-10-11/spec-before-code.json",
+        "sha256": "74a0934bf154f39b281a098715e9bacdaa0f0cfc63c38a2511aaeb3949b78f78",
+        "size": 25928
+      },
+      "frozen_utc": "2026-10-11T06:49:11.144173+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/environment-recovery-spec-2026-10-11.md",
+        "sha256": "8b5b13ee66c80b47b2962c6dd9ab2001dbcc63ded8c4e1b3d4e672e976e35b62",
+        "size": 21535
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/environment-recovery-spec-2026-10-11/spec-before-code.json",
+        "sha256": "6a4628f0fed5c93a2003471700c18f3ba964900e44853f70b444922837e9baa9",
+        "size": 25480
+      },
+      "frozen_utc": "2026-10-11T06:37:46.526252+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/gpu-boundary-spec-2026-10-11.md",
+        "sha256": "ff3e5a4e4c49eb85233fd63ee16852876f4869154a1e2f0d5803b34ed1c1705a",
+        "size": 24775
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/gpu-boundary-spec-2026-10-11/spec-before-code.json",
+        "sha256": "7dacd9c856d9d74b446aba18e49e5aed401d5ee7c10a60155ec05474ba9e32d5",
+        "size": 24344
+      },
+      "frozen_utc": "2026-10-11T06:16:53.570764+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/gpu-probe-config-addendum-2026-10-11.md",
+        "sha256": "6e744b5b8add9fe713d55f97e8e07fe735938b48f549a4456e1959ab8158811b",
+        "size": 2523
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/gpu-probe-config-addendum-2026-10-11/spec-before-code.json",
+        "sha256": "d2b69bada3c422db9fe454faa7ae7fb2c837467b393be7525ecb70bbd01aa6f7",
+        "size": 24352
+      },
+      "frozen_utc": "2026-10-11T06:18:19.166540+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/readiness-release-spec-2026-10-11.md",
+        "sha256": "304d3cb82052af0a019d81e40ab826c241f42510cbfd743fc70f3eb5e42ddd03",
+        "size": 4805
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/readiness-release-spec-2026-10-11/spec-before-code.json",
+        "sha256": "883bbf9cec1b6bfc3c0c3bf95c06b5f9cf5718c04a300ced16ab72acc964a517",
+        "size": 25477
+      },
+      "frozen_utc": "2026-10-11T06:39:58.307972+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/serving-preflight-spec-2026-10-11.md",
+        "sha256": "391dde47bfc9f75be67e5683b576a38b080e271793dc7a56e3c9b06d48743297",
+        "size": 22706
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/serving-preflight-spec-2026-10-11/spec-before-code.json",
+        "sha256": "0cf7193f37047dce76b988b1f4f7b3ad9ec9587fc161e0ce0d7c4d51cf0a13df",
+        "size": 24349
+      },
+      "frozen_utc": "2026-10-11T06:17:48.214618+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/skills-recovery-addendum-a-2026-10-11.md",
+        "sha256": "510fa2d4c210d9fb19855cf3002b9390ccf98eeadb5da384bfe711af36389454",
+        "size": 1479
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/skills-recovery-addendum-a-2026-10-11/spec-before-code.json",
+        "sha256": "addc7a3f0945419721689129dc29ced93c6e1a4a3643a7890bac62aa45861446",
+        "size": 24554
+      },
+      "frozen_utc": "2026-10-11T06:20:05.629632+00:00"
+    },
+    {
+      "spec": {
+        "path": "research/skills-recovery-spec-2026-10-11.md",
+        "sha256": "236c7e784fb76198dacaceaf981f4c67686ea43af16f60a63d930f2bc8ec2571",
+        "size": 26103
+      },
+      "freeze_record": {
+        "path": "runs/system-readiness-2026-10-11/specs/skills-recovery-spec-2026-10-11/spec-before-code.json",
+        "sha256": "9b6f420622a17ad0fc6b32ad7fa703a20ce23b46a70ee64a68c96349e872b769",
+        "size": 24246
+      },
+      "frozen_utc": "2026-10-11T06:12:31.055252+00:00"
+    }
+  ],
+  "product_source_final": {
+    "compute/__init__.py": "dabad96d2767b35923a935ae89cd063d8e906db504bd958d9c68a62c2f09691e",
+    "compute/__main__.py": "c1f24f92c8856ef3f44af55ca126e19c8a713cc704bc77a99fca44359acf3ece",
+    "compute/attention.py": "d542afd738a4aab8564a483940b26de8e01712f6d0e83d960d332223c567978e",
+    "compute/cache.py": "0c17dd6b490a08d1802f0c9c0573cd78466d4fa1ba622a1feff33c40a93a372c",
+    "compute/cpu-trace-python313.json": "7df20880393f939c99cb4365bdfeeb78267267d8761180b8d80ecde07a233b94",
+    "compute/cpu-trace.json": "f36b50db1be434cfe8df697c0420af5b82951ba5ecd09a49c66301052febe9cb",
+    "compute/cuda-status-python313.json": "4efec1c21bdb7c45d0aeb291ba8457ed17d545fc07b5e73a6e34e37f8a7d02b9",
+    "compute/cuda-status.json": "e9f8e21a06e6624e6dc0d2e31e6db581c3a8beb37b2dc55868f209a99ddd4c36",
+    "compute/cuda_benchmark.py": "1442443fc704174f8041f977b57bf97a450046b79fd6815590d2631ed2c6cf53",
+    "compute/gpu_contract.py": "15438c6d84f4678972028562b7ff2f19c1b3b38718e352b6506c3bc688689977",
+    "compute/rmsnorm.py": "b4d189671e30be3c6c0bbd3cff6668cd9d0dcae94fcb92651618feea9402a42d",
+    "compute/rmsnorm_cuda.py": "2b6b7822b9b548b3ca487d365ad7011c3d5567d6f5bcb3f6891e742c7288af9d",
+    "compute/trajectory.py": "a349d7db060701ec304a65c3d1683be1bc79f95f632fea06dff719b1a25c1f29",
+    "evals/__init__.py": "15ae8a210548e5c73c6f474b83dc348c62e54936fb0513c48292296bf430f1e8",
+    "evals/__main__.py": "b272e3aa7126979478a540c26e291d89f5523d0c08b8cde1663de76734031912",
+    "evals/allocation.py": "223ba97c84b71c186a3cbe2ce2f451b26ec1d62beafbb796add9bd68c3267bfd",
+    "evals/analysis.py": "028e399b9113b5dd9b04570673a5eaa6b047effbf8a1f60347eaa34bb7efd323",
+    "evals/evidence.py": "28f8527225cd2652b733e67706188712f9212cb74df7657047b2a0cdaccc0576",
+    "evals/fixtures.py": "4428807909bd9b7bcc8dd88b54bc55d907f87ff308abdbe6d665b4ee3c2d1fb6",
+    "evals/manifest.py": "5f9663c48d140f9e92805e45757059f0c03c72e5c33e89d88dfdaec5a89a1dcd",
+    "evals/regressions.py": "a4420219aa650e990ee9e108c84d2d1d35dcf8dcfb82a8a5e70894795d6e52c8",
+    "evals/reports/linux-verifier-reference.json": "8d25b4bcdf66d105462e3200c078ae81d9e050beb95349377335bebbe60a94f9",
+    "evals/reports/reference-verification.json": "c1b47217c2118db34ffb190c3cc5e5d9a8b4863cbb146307cc29aab6cd236b71",
+    "evals/reports/synthetic-reference-demo.json": "7292bb1d16c7b035729b160f8878a9ab98c60c24a8e836de29225fb3f3e9ea45",
+    "evals/simulation.py": "36d784b23c2f920a6e0fb0d329ff62b69da7bc09879b3d52443570b5fa1ee35d",
+    "evals/validation.py": "07b4f40db42c3396e87a69edb3c5934ca8af9f75a55f46014e99b5f4361a9e65",
+    "service/__init__.py": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999",
+    "service/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "service/admission.py": "d309dcf7e8b7e7930dcff7c48331d24527c408aa5d8b3d56d1f6d0a6c213423c",
+    "service/api.py": "7b2ef3fef19a12e5af5d1f15d9384ad2ae7d5673331ca6d110f101b4da0aea8d",
+    "service/artifacts.py": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2",
+    "service/billing.py": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0",
+    "service/cli.py": "fe0fd2084eac33d6423cef90e9f49a10b41cebc48fff13c87a286a38db85a0ea",
+    "service/context.py": "9f7470aef404afee4257a753c22e9f1bdf116415592127c121c664529cb51808",
+    "service/context_retrieval.py": "b1c8b67f5eda15e72163b9979db1a21db5475f330c332009bd903d4818213553",
+    "service/contracts.py": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c",
+    "service/engine.py": "14308d320d0e3e24e29dd7fa3aab4b499035e37222f35af16087ed3133f06124",
+    "service/environment_recovery.py": "c50dcd78580633dd90be9454d960d68df8d7086c4f3a4fcc97a9ee0c0d3a97b7",
+    "service/execution.py": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738",
+    "service/harness.py": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac",
+    "service/integration.py": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92",
+    "service/migrations/001_initial.md": "fd3594c8a799e8ae610f307819c6d968a7870f0395a9a46c4c49ba9201f885e6",
+    "service/migrations/002_identity-and-writer-protocol.md": "8c29f183504e6432bcb692cc02b91402c063e7998bdd8d74199a5587df4c533a",
+    "service/migrations/__init__.py": "35ba2cdda9356bfa41b55ed189c8a991f4365d646bb73309e0d18aecd5e8575c",
+    "service/migrations/v2_identity.py": "db0cedb696fb917565905225d113dba948bf2ce325117cbf30f4d49eda817c0f",
+    "service/offline_server.py": "c9c8f76aeffaf8e4ffc32cb5cce337d4ecf9216c20c0e84ae699a080e438fb32",
+    "service/protocol.py": "98b490eb78f5a07988b8353782e72bcc35d4b590a8ac7aa015d0c02fef11f016",
+    "service/providers.py": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4",
+    "service/recovery.py": "f361d6627b0987bf2665567091d2e784d43711ddbea638e8267bbba2c5aa917d",
+    "service/repair.py": "dab6c210432dab33d1a439e31b9011133994701803ff084acbdf8cefd1bdf387",
+    "service/repair_cli.py": "0823244953f997f30a9f896dec0ec798c123b5032c4b2b3a5b8f47c2cb576ab5",
+    "service/repair_demo.py": "6bdc067a863bf5f6a3c8ab46623f46862dcec3363ed590a5e364756bf71f1016",
+    "service/repair_provider.py": "b91fd7a95ef527d7118f3c10522196b286670c2eb035c83e99d3ed5d76b0354d",
+    "service/repair_reporting.py": "f87e035e7f6bf8fe9e8ad5fe5389d96075a2722750d422ffd8e6ac2d356c68da",
+    "service/repair_verification.py": "9b7aaa7111d5dbcedc9c38699e1587ca03a7cc476a201587d22cf75630308371",
+    "service/reporting.py": "c42df34441d053226613d1b15165491ed584ee671db54560effc97327c74573c",
+    "service/repositories.py": "b39676ea101aec719582124a414702a60efb6e125bfdabed4fd571802cb5597b",
+    "service/serving_config.py": "9eae868313f04c2c6d0d5a82142f995f8b84f0903a73499953fa2489737a1763",
+    "service/skill_disclosure.py": "b1d3391b76c30c8b14f435cf46bf395d7e0399526bfc8d06e07f16ac46c6d1a1",
+    "service/skill_recovery.py": "8da071f32593eb43d2a9872cdada1199c3be3e6d62a00b6f553fefe2ec8522c9",
+    "service/skill_runtime.py": "ca74203bd0fc1e069debd388b0d1690f7389b115164f696537c3cf342455622e",
+    "service/skills.py": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+    "service/storage.py": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7",
+    "service/verification.py": "a6abec1f5eae19174d86732864edfe7e98e499ad9273d984ebb4da07c7aa249c",
+    "service/workflows.py": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919",
+    "workloads/__init__.py": "f42fa7883ed90780968a1f455148609747d48ed6d6e9656314bf5e60a2763213",
+    "workloads/baseline/coordinated_1/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_1/issue_tracker.py": "b5cf1eb1d870e97c03d7153a0c4d2daebb8fd0c476af82dd759f9bfcd96dde2d",
+    "workloads/baseline/coordinated_2/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_2/issue_tracker.py": "0ceb8494388c062a796ba5f9b318199418f50fbd08669a4a12fe5dccbf0d6591",
+    "workloads/baseline/coordinated_3/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_3/issue_tracker.py": "1af36ed865e48adb98008559e8189941cb9d4234be00a072d148b6a96d2a67c0",
+    "workloads/baseline/coordinated_4/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_4/issue_tracker.py": "b63254f5d983c8016d2ea15d83c809f9379fc5b2dff61cc4326168996764bf3c",
+    "workloads/baseline/coordinated_5/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_5/issue_tracker.py": "5de5c05aec61ed0541ed55c45a28607c778aab6bd3db7d77bb55b7ebb953ca04",
+    "workloads/baseline/coordinated_6/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/coordinated_6/issue_tracker.py": "68280397c615d35deaae7fe8bded330f95c44a5a7e24236c11bcd0dea838c400",
+    "workloads/baseline/full_import_contract/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/full_import_contract/issue_tracker.py": "95fe1bbcd61165deed13a30c8e253b6e9cafb9c2f457756071dd673cbac899a2",
+    "workloads/baseline/repair_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/baseline/repair_1/issue_tracker.py": "b5cf1eb1d870e97c03d7153a0c4d2daebb8fd0c476af82dd759f9bfcd96dde2d",
+    "workloads/baseline/repair_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/baseline/repair_2/issue_tracker.py": "0ceb8494388c062a796ba5f9b318199418f50fbd08669a4a12fe5dccbf0d6591",
+    "workloads/baseline/repair_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/baseline/repair_3/issue_tracker.py": "1af36ed865e48adb98008559e8189941cb9d4234be00a072d148b6a96d2a67c0",
+    "workloads/baseline/repair_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/baseline/repair_4/issue_tracker.py": "b63254f5d983c8016d2ea15d83c809f9379fc5b2dff61cc4326168996764bf3c",
+    "workloads/baseline/repair_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/baseline/repair_5/issue_tracker.py": "5de5c05aec61ed0541ed55c45a28607c778aab6bd3db7d77bb55b7ebb953ca04",
+    "workloads/baseline/repair_6/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+    "workloads/baseline/repair_6/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+    "workloads/evidence/control-report-2026-10-08.json": "5efd2b288554c6728664104d1c901cd2d22739ffee7d2030ffc4d61d0ff30b88",
+    "workloads/fixture.py": "c9d4dfc25a2615d2afea7c871254f75683086ce60f46aede44fe4ec4b4e8bca8",
+    "workloads/freeze_catalog.py": "47abd568211cc7d7421acd5dad9a97a5a3ab4a68ae2cfe96a8df877b0fa89be9",
+    "workloads/manifests/assets.lock.json": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+    "workloads/manifests/tasks.json": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+    "workloads/oracle/fixtures/acceptance.py": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+    "workloads/oracle/incorrect/coordinated_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_1/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+    "workloads/oracle/incorrect/coordinated_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_2/issue_tracker.py": "71ff3a59a94c2892fdd09091aadacdf73058366e42efc38f05f933aaa1dcc602",
+    "workloads/oracle/incorrect/coordinated_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_3/issue_tracker.py": "81bb53fcd5646128a1147f6da90236bc8c1b7ea09fce85560343d7ba1fa708a9",
+    "workloads/oracle/incorrect/coordinated_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_4/issue_tracker.py": "653ec216416ccae3f0caace48ca0cbda2b082b0b96b5e35982e629aa3f245f4b",
+    "workloads/oracle/incorrect/coordinated_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_5/issue_tracker.py": "d4474b5661f9189ffe95e9e4b97cf1e10807955c550568a98d949831987126cb",
+    "workloads/oracle/incorrect/coordinated_6/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/coordinated_6/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+    "workloads/oracle/incorrect/full_import_contract/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/full_import_contract/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+    "workloads/oracle/incorrect/repair_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/repair_1/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+    "workloads/oracle/incorrect/repair_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/repair_2/issue_tracker.py": "71ff3a59a94c2892fdd09091aadacdf73058366e42efc38f05f933aaa1dcc602",
+    "workloads/oracle/incorrect/repair_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/repair_3/issue_tracker.py": "81bb53fcd5646128a1147f6da90236bc8c1b7ea09fce85560343d7ba1fa708a9",
+    "workloads/oracle/incorrect/repair_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/repair_4/issue_tracker.py": "653ec216416ccae3f0caace48ca0cbda2b082b0b96b5e35982e629aa3f245f4b",
+    "workloads/oracle/incorrect/repair_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/incorrect/repair_5/issue_tracker.py": "d4474b5661f9189ffe95e9e4b97cf1e10807955c550568a98d949831987126cb",
+    "workloads/oracle/incorrect/repair_6/client.py": "e9740b7fb7898607ead78758ddfe8e2ef981ff8732d8195dea35f7d252e602dc",
+    "workloads/oracle/incorrect/repair_6/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+    "workloads/oracle/reference/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+    "workloads/oracle/reference/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+    "workloads/registry.py": "3e1ca8a0885725979fa3c389966347eaca6dba0c910b43d9b8f524f66201ef68",
+    "workloads/repair/recipes/text-normalization-v1.json": "956730121178bd2fba548810481e8bf8235996c7314c21314bbf8d62e6110e7d",
+    "workloads/repair/repositories/text-normalization/slug.py": "d3af53a6e2245740ce3ed4a681d5a53d035de794dc2e1bea538a9628c42cb8d8",
+    "workloads/repair/tasks/text-normalization-v1.json": "1c319868e3a771ea54116a5093884bcc48c6586b351b9a71ca065ebc9fc2dd22",
+    "workloads/skills/verified-repair-guide/SKILL.md": "1f38956d1150d2aeabd61772abb6db429976e3093d2ea82f42b89b5011070d66",
+    "workloads/skills/verified-repair-guide/assets/example.json": "d86f3d5f41fa2e41fa4bc9693064f64fdd31656b78c37ee83ecdd70cdb82fdfe",
+    "workloads/skills/verified-repair-guide/references/checklist.md": "8b3256e5ccf422f9fa5de2c7903c97b1c10aa3808adb1d7c385b101d1a85e22e"
+  },
+  "preservation": {
+    "baseline_file_count": 258,
+    "unchanged_baseline_count": 217,
+    "changed_baseline_count": 41,
+    "changed": {
+      "README.md": {
+        "before": "6db9c1cab704fdedf416506bd1ada29d2e952e3b4168a7df9e6b3833b5bb8945",
+        "after": "c1da1613145c7c6757d7fe69549ff38bb08e7a29e16904e3f4308694039591b3"
+      },
+      "START-HERE.md": {
+        "before": "ce00b747e8f96df27fea466764f965cba15b87226a57820b2dd6a9643cb00607",
+        "after": "75a29d4d4653166c862425de80e08a70e22a7ded1076bd50520586ce2b78601b"
+      },
+      "capstone/01-system-specification.md": {
+        "before": "96990ff6e31e029d5fe23ff8bcd10b3c0b2fba2563750cb0834e286b02643de1",
+        "after": "5413891c4893b9c340691b914282063fbeab58dade32ae013d45a01987c5997b"
+      },
+      "capstone/02-runtime-contracts-and-recovery.md": {
+        "before": "7939e759e5946264bdc789e45c689fec57f74c2f76c8f7e465f77554f3972df7",
+        "after": "edcc5dbbbfe2df0e9d5daeadb4ef5eefbd539881a36826f40df95fc45ada1b6e"
+      },
+      "capstone/03-evaluation-serving-and-efficiency.md": {
+        "before": "3d187d3b9114f4971c14e38366c232418fe46ab14c28d728a422152d600ad1a7",
+        "after": "2ba20b3ec9e03d041b28ed67938bc95c6761c4d58694d6e11a924697451201cf"
+      },
+      "capstone/04-build-sequence-and-mastery-gates.md": {
+        "before": "de8d1fcb4f13f3e26544f989f412c8a414d9bee8e2bccc708544610fd7637fa9",
+        "after": "10309d0faf742b7f150d2e83f1d49afd3d045643a9d3c864ac49373ec0fe31a5"
+      },
+      "capstone/06-target-role-and-research-contract.md": {
+        "before": "83f78b452d81e7007307b1647ed2cbac58a312785b9712830d594d5ea63d6c6d",
+        "after": "4b18b479d9cf1d3b78c6f76829d2169aed44772fa4ecc1044b7b6d412e7dd945"
+      },
+      "capstone/07-reference-implementation-spec.md": {
+        "before": "1e9b0c0e2809fcc05bb865728d5fd92d850be9e4040f6ac04d15d18407a2943c",
+        "after": "7d6006ce609038c2e6bfef72457f72eb3f81fc155d3ccc04ba121bfef9e01b9a"
+      },
+      "capstone/08-implementation-coverage.md": {
+        "before": "3164922c558d53f6deed74f94932dec27d8804ae2b67b7bb160f1f91644e2224",
+        "after": "36cf7e1a285f1c2012aeeaf67d18984cd5e69a02faa4530cee0ed4f91d62b4aa"
+      },
+      "capstone/README.md": {
+        "before": "6c961e39933879bc4a5585a31bc362ed7a493d2de47f139c83fa45c598844c23",
+        "after": "35ed0289492229942e0044f14b082434561ff7d8387c5ac9bb3579239527e288"
+      },
+      "compute/README.md": {
+        "before": "3037a38aadc8973892274a96b846375bb317f4b9dcab16bb905047b966b45667",
+        "after": "894d0d5e0bb7b30c982fb0f40fedd07c173bae3e9f8728da30e1c7631b87493a"
+      },
+      "context/README.md": {
+        "before": "1b8b6d2e372652df89b5781df44baa43fe4c69f117f98a439928bc933259b002",
+        "after": "497c23deddf7ae8059c084cab3d693de6585b364ec2e408c6b1f87218fa9db82"
+      },
+      "context/current-state.md": {
+        "before": "5c5983421f9458c9ae3d7a2e0d9cd7eb8e54e3d4703007e44fcc0fe48562ed88",
+        "after": "29c4a297a1a026ed7abd640958c0455205c21303b4de32389d0c5ec1f13d9b16"
+      },
+      "context/decision-log.md": {
+        "before": "1fff7a8810a6a243fda24bedc34b64bc20f8691746c7ebc99b71404371f95205",
+        "after": "2f1244d1397dc2549f5613ef37948a9a4eccdf1c401a5787505a3042ee6a8f9f"
+      },
+      "docs/02-mastery-learning-plan.md": {
+        "before": "dc31e18f7d365497ef3e299650fd0859f0bcbbcde7c366685c7d179686ad4271",
+        "after": "5effd869b53ef18dd6e2dbeb65617c2efa4ba6c587f17bbc69afbb57537cf0ff"
+      },
+      "docs/06-reference-code-reading-guide.md": {
+        "before": "f6506aa42dba90abcea9ef3f45928d4e981b0a2ceb0d35ecf5deb59f7aba9bd3",
+        "after": "8d29843ef1f22c6cded1bf499be108f2af2c5c7ccffa5240fa1926839e9f95da"
+      },
+      "hackathon/01-product-and-system-design.md": {
+        "before": "78570ae1625ef7a50c036463c8930432c9d97e6a0151e01f6cb7e6151d393af7",
+        "after": "e24ee9d8c4a9771d40cd63ffdfa4fb5043aafca590be6ae362559d50c811d041"
+      },
+      "hackathon/02-delivery-and-submission.md": {
+        "before": "1c770dc22c21714b10113c42c37d9dabde6ad47409e2ab812b16b14fd784d521",
+        "after": "5f14e505506698dfd2f3b42a9138e337ab83c9bfebeeadda55b947f6bd156762"
+      },
+      "hackathon/03-foundations-and-evaluation.md": {
+        "before": "c48770218d5a38c8e33394f825f0b507220cf263b53ffdc957e43ac876a68d96",
+        "after": "713315c373189524786fa98a5e2b2cc8c18c6a49df0df149bad86cbe9fb09044"
+      },
+      "hackathon/04-execution-specification.md": {
+        "before": "bebca196565534fbaca32a9b1785fdcc095fc180a21bbec068fa17c19935e682",
+        "after": "24173db64fe117d1896abc2d4375fdc7df4879da4e925af322756ccb3985fbc5"
+      },
+      "hackathon/05-local-repair-runbook.md": {
+        "before": "68d84b69631c1faa08eef69193996c5ec87cee61c229addc698e5239eff37b48",
+        "after": "588b03521c0ae58a84e322092836a05ecf50bc3c12e82e92d1cbab6d6db123d6"
+      },
+      "hackathon/README.md": {
+        "before": "ce7a6d978f404dd7d558c2231f125253625c19c1a766c879a224c7987436274a",
+        "after": "02e0d61ba2af020c66885c8c3b1b24e1072a0e2b8de220c79dcb532ddfbae3e5"
+      },
+      "ops/README.md": {
+        "before": "fc21f42acd218a20621bbc2a68ef2b22c45c58730fee5b4b1f683327c6f26051",
+        "after": "6101a58e42086d8c1e80f620b67e8e5fb3ef5d4f2f78e15a1acddaade0906ae2"
+      },
+      "ops/runbooks/recovery.md": {
+        "before": "c6c2a56c8b3219019bc19d0924c8222b6c70b12657361542b7c13e2ec156e056",
+        "after": "18dfdb0d5e8a77599a20855a8251c8ee206ea94cabcf3cc10f8e1d2d3f1a3647"
+      },
+      "release/OFFLINE.md": {
+        "before": "b3d1870ad6f6a182d66b7848fce2d61f01f7ab49387eb60f816c076b7b84fe22",
+        "after": "0580888d7733675d4958ff6fb7e9154dbb7f68e1f3768638bddcb00a5e1f03cb"
+      },
+      "release/README.md": {
+        "before": "937d0fbbfe37dcb7c7e7844b6949403219ae9847940efce0eec6314335983518",
+        "after": "9a54f085cf8bba94d019ff342301848cc7a6e60007432395ad9397f2b9907990"
+      },
+      "release/acceptance/installed_package_acceptance.py": {
+        "before": "4f3e8b5459e571d30e0d55f112e739d94e58ca1f5a59789ea000a9a0e76c7d02",
+        "after": "846ebe94e0ea3015fbf4bbcd2a6723aedb3dcfb78c1c08a245ad50657719f6a0"
+      },
+      "scripts/skills_disclosure_demo.py": {
+        "before": "a3f7dd0cfa9fc77e99e1bd5f4aafa84f537b5eb6903c6aeb6929a2f3b0f7a36c",
+        "after": "971c621884d12b8c575617b6c01dd5cc363847192320a455c673685055d6fe9e"
+      },
+      "service/api.py": {
+        "before": "5bc9b10e25287f068bfe924dbd38409505ba97dc7cb2a57ffc86161d01eb303c",
+        "after": "7b2ef3fef19a12e5af5d1f15d9384ad2ae7d5673331ca6d110f101b4da0aea8d"
+      },
+      "service/engine.py": {
+        "before": "0df2d0e658f10efd5d5bcd7122d354443aaeb7c21d92d7f59aa53cb410c14e2c",
+        "after": "14308d320d0e3e24e29dd7fa3aab4b499035e37222f35af16087ed3133f06124"
+      },
+      "service/execution.py": {
+        "before": "47ce32c3d9c1cb1e739c34adfac58b21b02a4b6bfcc1c0e8307f33d3929fb4b6",
+        "after": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738"
+      },
+      "service/harness.py": {
+        "before": "c7b3e4348113849e4b3f5904c3980a3a54e2b5d9fb34acd47156eab0833bdd0a",
+        "after": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac"
+      },
+      "service/recovery.py": {
+        "before": "1e225d20b470f409921155c39e2a9abb049bfd0621350465f075b006e82b255b",
+        "after": "f361d6627b0987bf2665567091d2e784d43711ddbea638e8267bbba2c5aa917d"
+      },
+      "service/repair.py": {
+        "before": "363add06b7bb398fcc78557a752b27eabe6cf6fe67ac460fcc96e93c0c0c29bb",
+        "after": "dab6c210432dab33d1a439e31b9011133994701803ff084acbdf8cefd1bdf387"
+      },
+      "service/repair_verification.py": {
+        "before": "a0ce818578c99865fb7e8ee5fb8eab1dbd6ca7383d95f3fd8d1608998effa6bd",
+        "after": "9b7aaa7111d5dbcedc9c38699e1587ca03a7cc476a201587d22cf75630308371"
+      },
+      "service/skill_disclosure.py": {
+        "before": "7092b76a9dcd663b078cca1efa0378429d9bc4a0ae85b296afba236f844f48ce",
+        "after": "b1d3391b76c30c8b14f435cf46bf395d7e0399526bfc8d06e07f16ac46c6d1a1"
+      },
+      "service/storage.py": {
+        "before": "35f3eb2efc3a8dbda968321b60b6f6e3afd9f895d7151aa244c4a281f40a4990",
+        "after": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7"
+      },
+      "service/verification.py": {
+        "before": "a6076e4a8ba52aeabe519a7339ca2a7a8afce0eee76878fac46922fd473e6f8b",
+        "after": "a6abec1f5eae19174d86732864edfe7e98e499ad9273d984ebb4da07c7aa249c"
+      },
+      "study/packets/H0-reference-runtime.md": {
+        "before": "65031cbed9be0e140107e210345f5b68cddd8560b03e0a6c3c89e41e3c31dc1b",
+        "after": "65a82d4ea4c3dc025ac066c9cbc4c08eb1ff6f40cd53093d9037fa400f58c9ab"
+      },
+      "tests/test_skills_disclosure.py": {
+        "before": "921ff17c6b4c15131a70a6fd2d31616d54bb1597c809c7e1afb1b203b1cd7f4b",
+        "after": "c516f4979087f505b1d4c346ab3f91d78ac7b365c5797a156ad2a567b946bd40"
+      },
+      "tests/test_skills_disclosure_store.py": {
+        "before": "032cfb04a665531b51e47d9183f6e8e3dd01ce025221eac7ad494548e088edf2",
+        "after": "5a4f4b63676f347d9dcf2d011e2d4e97b9a6e2e4fd697cf46faa6df784b1f698"
+      }
+    },
+    "workload_baseline_unchanged": true,
+    "mastery_tracker_unchanged": true,
+    "lock_and_pyproject_unchanged": true,
+    "AGENTS_unchanged": true,
+    "builder_unchanged": true,
+    "original_oct10_candidate_files_unchanged": 299,
+    "historical_candidate_authority": "independent release verification holds original byte inventory",
+    "frozen_contracts_unchanged": 8,
+    "full_before_copies": "runs/system-readiness-2026-10-11/before-source",
+    "diffs": "runs/system-readiness-2026-10-11/final-diffs"
+  },
+  "evidence": [
+    {
+      "path": "research/runtime-readiness-audit-2026-10-11.md",
+      "sha256": "ddc84d16fbe4ede90f06de13f3b5c714bae0893121706f81b18225bf3e814369",
+      "size": 5193
+    },
+    {
+      "path": "research/serving-readiness-audit-2026-10-11.md",
+      "sha256": "fb1e2c144ad27346d58654b46482e9059caac13305a117b762411a83a19e09d7",
+      "size": 14071
+    },
+    {
+      "path": "research/gpu-readiness-audit-2026-10-11.md",
+      "sha256": "704c8919255c0c113ecf2fc22b014149c1c2641b9b4727e4f8fb59f7e0981fe2",
+      "size": 18289
+    },
+    {
+      "path": "research/frontier-harness-patterns-2026-10-11.md",
+      "sha256": "e3c41a00638e7546a8995a9bd4fd8a276f8426d0c9aba44f090bd25f2c043b31",
+      "size": 4672
+    },
+    {
+      "path": "research/system-readiness-plan-2026-10-11.md",
+      "sha256": "c6951ad5067d7c8b5ec59451f44e342596c72f9563e6e9e031a067cd95bde580",
+      "size": 10087
+    },
+    {
+      "path": "research/skills-recovery-independent-review-2026-10-11.md",
+      "sha256": "4eb0af11ae8d3faee2223fe3ddbc40402b3976bf727e23e7cac25368a120d8fe",
+      "size": 10442
+    },
+    {
+      "path": "research/serving-independent-review-2026-10-11.md",
+      "sha256": "73c4cbbae8c41c71d6fd7b3564bcea60eafdd0a588659e2052b3aafcd4ecf886",
+      "size": 10966
+    },
+    {
+      "path": "research/environment-recovery-independent-review-2026-10-11.md",
+      "sha256": "312d05cc30f7e812daee6067e401c383613552e9d9bee32719319e121e9eada7",
+      "size": 12918
+    },
+    {
+      "path": "research/gpu-probe-independent-review-2026-10-11.md",
+      "sha256": "a9c8865c5912b09bc2be3aed154b7e33a7285633a9b559a30669e737a604522b",
+      "size": 9952
+    },
+    {
+      "path": "research/gpu-mutation-review-2026-10-11.md",
+      "sha256": "4844b62fd8a3c0f00d5fcf1737d8706ea522c76d1d745281e2569a56e3462b8e",
+      "size": 3856
+    },
+    {
+      "path": "research/readiness-release-independent-review-2026-10-11.md",
+      "sha256": "f57d2a27003168197f2c1d1160a92c3f05e1967622b29da8d59d99b542070cbd",
+      "size": 7874
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/skills-tests/verification.json",
+      "sha256": "0c387be7321e30ee0f8f99119973d7a8c68f88c606448c42d4ddf7ca5c40c00d",
+      "size": 3158
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/skills-review/root-final-controls.log",
+      "sha256": "f111ab2f65846da935198d29d242f314f7da5d9981e74d813a25e36b90b1aef2",
+      "size": 98
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/serving-review/verification.json",
+      "sha256": "f1af866b65b4e855ee5cfc1c10d2579d5bdf35f166bb1184ee0416f318500e65",
+      "size": 4248
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/environment-tests/verification.json",
+      "sha256": "b41c8951cf3f483f886d2949ec72e8e91386f83478f89281c81871e1cd5d6b1f",
+      "size": 3614
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/environment-tests/policy-oracle-test-only.patch",
+      "sha256": "2f942c1a34ef4938cc743acde8b626be605ac67d6b6b9b1ecc20c5a4db9d55c9",
+      "size": 2301
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/environment-tests/policy-oracle-focused.log",
+      "sha256": "b8b1579e2d49773dc69f18cc3eb66bc3539f5398b69d807cb46713d8124601ff",
+      "size": 115
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/env-review/review-record.json",
+      "sha256": "70245189e8bfa85c8cc677a5042eafcc7dd4ace09af7c14d12a5e14071cff5e6",
+      "size": 401
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/gpu-review/root-final-controls/independent-controls.json",
+      "sha256": "1867527b0371cdebb3e372226cf492f051629746dde5f12993f637fad1d370ff",
+      "size": 5978
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/gpu-mutations/verification.json",
+      "sha256": "1da3272917d9396aff27686cee2b4df831623dd33bd142249c07b2f231946da3",
+      "size": 26812
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/release-tests/final-independent-release-verification.json",
+      "sha256": "498ba0f36c7fe7893e7678b6ebd478ee571dee6fe9eb2ec23c8757d6688623d3",
+      "size": 72425
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/full-suite.log",
+      "sha256": "5f2bea7357cc99cf5bd3694d045398b91e1cc59489130989bc2aef282491037e",
+      "size": 3411
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/full-suite.xml",
+      "sha256": "14fb2e51881aaaf248a562f1f023c479ada61f33783d31a85d3258e23f182d73",
+      "size": 328399
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/full-suite-result.json",
+      "sha256": "129b1c16a985da60b1d3531dfc3293d69f4e4f3afba34f7311c746ba9dddd53e",
+      "size": 319
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/tests-source-before.json",
+      "sha256": "299a4f035b4fb9c3469025dc73366c38d5830174ccfd77200fd09b13dbbe4140",
+      "size": 21820
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/tests-source-after.json",
+      "sha256": "e7984858750ffbff2f2bead0a6fb40f404cdf91e64fa9c056c4ad418690d09b3",
+      "size": 21820
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/context-postgres.log",
+      "sha256": "c9123ef816284c516e85469f7e806acc1aa0cdec53f00a70918020834f387f5f",
+      "size": 98
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/final-lint-after-test-oracle.log",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "size": 19
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/backends.json",
+      "sha256": "6c0f005cb68b4f4230e42511782d574ab69f88d1785615c73ff250e9574feef2",
+      "size": 1430
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/backend-cleanup.json",
+      "sha256": "5f16e6cf2568b215349c4989da1429d9a78cb573f50398b406382fcf277e4100",
+      "size": 438
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/journaled-engines-final/summary.json",
+      "sha256": "e5786494c2ae96b2bf1e128e26d4c8f684667342fbf4cd257a02ca14247f0ca7",
+      "size": 1166
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/skills-recovery-final/summary.json",
+      "sha256": "2160e5a52651ef8921bd4dd4494b0b6d2915abb4b2bcf4a7d392e345d5ed21b1",
+      "size": 819
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/integration/skills-disclosure-final/summary.json",
+      "sha256": "49b820bcb2ef3135d0ab82d0e5e1c3120943b5051c0b8228e57b18c8e4ddaebe",
+      "size": 656
+    },
+    {
+      "path": "runs/system-readiness-2026-10-11/anchor-rebase.json",
+      "sha256": "bc512a43cfb7f1c652337ec7a87f0138327f0ff089541ab829765b80e6852059",
+      "size": 12997
+    }
+  ],
+  "remaining_source_gaps": [
+    "generated-CUDA build/ABI/isolation and device reservation/retirement",
+    "dynamic graph replanning and general repository/dependency execution",
+    "automatic remote-effect/billing recovery and orchestrated replacement",
+    "semantic/native rollover and supervised LSP",
+    "fair scheduling, retention/identity-secret lifecycle and live-service bootstrap"
+  ],
+  "remaining_measurement_gates": [
+    "real dedicated-GPU qualification",
+    "authorized live-provider conformance and coding quality",
+    "hostile-tenant containment and actual restore/load/canary/rollback/SLOs",
+    "fresh-machine/public judge access and required hackathon submission",
+    "resource-matched held-out research and human mastery"
+  ],
+  "notes": [
+    "Independent reviews found concrete defects and repairs; initial failures remain in run directories.",
+    "Same-incarnation stale DB rollback detection and hostile Docker-daemon attestation are outside the measured profiles.",
+    "Current local Docker inspect normalizes absent optional policy fields to fixed benign defaults; measured full native Docker response provides them.",
+    "Direct-file invocation of the recovery demo first failed because its documented interface is python -m scripts.skills_recovery_demo; proper module invocation passed with no source edit.",
+    "Final consistency review is a separate post-record attestation so its hash does not create a circular record."
+  ],
+  "not_in_baseline_current_source": {
+    "service/admission.py": "d309dcf7e8b7e7930dcff7c48331d24527c408aa5d8b3d56d1f6d0a6c213423c",
+    "service/environment_recovery.py": "c50dcd78580633dd90be9454d960d68df8d7086c4f3a4fcc97a9ee0c0d3a97b7",
+    "service/offline_server.py": "c9c8f76aeffaf8e4ffc32cb5cce337d4ecf9216c20c0e84ae699a080e438fb32",
+    "service/serving_config.py": "9eae868313f04c2c6d0d5a82142f995f8b84f0903a73499953fa2489737a1763",
+    "service/skill_recovery.py": "8da071f32593eb43d2a9872cdada1199c3be3e6d62a00b6f553fefe2ec8522c9",
+    "compute/gpu_contract.py": "15438c6d84f4678972028562b7ff2f19c1b3b38718e352b6506c3bc688689977",
+    "compute/rmsnorm_cuda.py": "2b6b7822b9b548b3ca487d365ad7011c3d5567d6f5bcb3f6891e742c7288af9d",
+    "tests/test_environment_recovery.py": "31498884afc729e75b4372e12baace3da75942dbb09e818217aca91b7483ee04",
+    "tests/test_environment_recovery_author.py": "04afb46cadff42e577fa8648ffe5dc53e46ed08f6d7393317fe43d767b96f678",
+    "tests/test_environment_recovery_store.py": "0e76457a556f914f57483ece0f956e62079b73023b779c229a8ff6876bceb6a1",
+    "tests/test_gpu_probe.py": "363c7278aabdc72a246d4239a53d8a43c8636ce7ac1584a124a1ef038672c407",
+    "tests/test_serving.py": "325bcb34fc770663afeb0097deffbe0705c58b0c027d75f30523ae5516b94bb2",
+    "tests/test_serving_independent.py": "1a5f57da9a0135ecd67e9ad8ef2098c7327db2e3fb7d602e8f7dd1a557d0f222",
+    "tests/test_skills_recovery.py": "9250aa5dad3c52c00850b1c2fbb1d02d4ff60c0e57878536e74031188e056b28",
+    "tests/test_skills_recovery_store.py": "e25b0320164b6c92781979ced2c985c38be14e881780e2fc40b02233fcbdfe4f",
+    "tests/test_skills_replay_integrity.py": "07c2955c0614f81a1f9db26a30efe7a41dac133daafa9431d868462d8196539e",
+    "scripts/skills_recovery_demo.py": "067e93ffd87757572e826c5c669ba436d06812600bce7a0b01fa6b5f3819482c"
+  },
+  "documentation_check": {
+    "path": "runs/system-readiness-2026-10-11/documentation-check.json",
+    "sha256": "c60a9bf41168754709709c20205a482ab56ca075788ff3a2136b91b703eb29c5",
+    "size": 7250
+  }
+}

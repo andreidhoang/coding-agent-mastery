@@ -1,0 +1,22 @@
+--- a/client.py
++++ b/client.py
+@@ -11,7 +11,7 @@
+ 
+     def import_csv(self, csv_text, request_key="legacy"):
+         job_id = self.submit(request_key, csv_text)
+-        if self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
++        while self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
+             self.tracker.process_batch(self.tenant, job_id)
+         if self.tracker.status(self.tenant, job_id)["status"] == "cancelled":
+             raise ValueError("import was cancelled")
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -165,7 +165,7 @@
+                 if not isinstance(cursor, str) or len(cursor) > 1024:
+                     raise ValueError("invalid cursor size")
+                 version, owner, import_id, after = json.loads(base64.b64decode(cursor, altchars=b"-_", validate=True))
+-                if version != 1:
++                if type(version) is not int or type(import_id) is not int or (version, owner, import_id) != (1, tenant, job_id):
+                     raise ValueError("cursor belongs to a different import")
+                 if type(after) is not int or after < 0:
+                     raise ValueError("invalid cursor sequence")

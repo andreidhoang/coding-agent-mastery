@@ -1,0 +1,681 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-10T11:01:26.311892+00:00",
+  "project_date": "2026-10-10",
+  "status": "verified_bounded_reference",
+  "scope": "Opt-in deterministic context offloading, dispatch acceptance, authorized retrieval and typed recovery",
+  "paid_execution": false,
+  "live_provider_inference": false,
+  "specification": {
+    "original_freeze": {
+      "frozen_at": "2026-10-10T09:34:35.731811+00:00",
+      "spec": "research/context-offloading-spec-2026-10-10.md",
+      "sha256": "4a508b119174d057296def4e4348d87f2da65e064c436215497277cd8079317e",
+      "baseline_python_unchanged": true,
+      "paid_execution": false
+    },
+    "addenda_freeze": {
+      "frozen_at": "2026-10-10T09:45:50.337977+00:00",
+      "spec_sha256": "07a0a673ab30c40d85730d9dae0dcebcf1c73e5141cc490fb15fbdd929c0bcdb",
+      "addenda": [
+        "A",
+        "B"
+      ],
+      "paid_execution": false
+    },
+    "current": {
+      "path": "research/context-offloading-spec-2026-10-10.md",
+      "sha256": "07a0a673ab30c40d85730d9dae0dcebcf1c73e5141cc490fb15fbdd929c0bcdb"
+    },
+    "original_copy": {
+      "path": "runs/context-offloading-2026-10-10/spec-frozen.md",
+      "sha256": "4a508b119174d057296def4e4348d87f2da65e064c436215497277cd8079317e"
+    }
+  },
+  "source_validation": {
+    "freeze": {
+      "path": "runs/context-offloading-2026-10-10/source-frozen.json",
+      "sha256": "37fe33d1553398d8e141afe46904a21084a18b049426e18bde991b36ea652587"
+    },
+    "freeze_revision": 2,
+    "frozen_file_count": 149,
+    "unchanged_during_full_suite": true,
+    "runtime_and_tests_still_match_freeze": true,
+    "post_verification_prose_only_change": {
+      "updated_at": "2026-10-10T10:36:18.611132+00:00",
+      "file": "scripts/context_offloading_demo.py",
+      "old_text": "The mock HTTP payload hash equals the accepted request hash.",
+      "new_text": "The canonical request reconstructed from the captured mock payload matches the accepted request digest; raw HTTP wire bytes have a separate digest.",
+      "before_sha256": "f2c469cfe07b894f24665a3c97bbd3d1e008264a51d6176365b61eb856a99acf",
+      "after_sha256": "7b59d574044da85e069940f8d7aeb2f65f5856d25041bc102fa7b7b747d5b2f4",
+      "only_one_output_string_changed": true,
+      "original_script": "runs/context-offloading-2026-10-10/demo-script-before-prose.py.txt",
+      "source_freeze_revision": 2,
+      "runtime_and_tests_unchanged": true
+    },
+    "current_python_files": {
+      "service/__init__.py": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999",
+      "service/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "service/api.py": "5bc9b10e25287f068bfe924dbd38409505ba97dc7cb2a57ffc86161d01eb303c",
+      "service/artifacts.py": "225455ba1a75f60ff01e4f9f10a3dd7d96127b3fc4dcc30563514718be60571e",
+      "service/billing.py": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0",
+      "service/cli.py": "fe0fd2084eac33d6423cef90e9f49a10b41cebc48fff13c87a286a38db85a0ea",
+      "service/context.py": "eadf2fcfa8e619953c893d6a972da1cb743a88aecfaa56aaf984c783b35eb2d6",
+      "service/context_retrieval.py": "b1c8b67f5eda15e72163b9979db1a21db5475f330c332009bd903d4818213553",
+      "service/contracts.py": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c",
+      "service/engine.py": "0df2d0e658f10efd5d5bcd7122d354443aaeb7c21d92d7f59aa53cb410c14e2c",
+      "service/execution.py": "47ce32c3d9c1cb1e739c34adfac58b21b02a4b6bfcc1c0e8307f33d3929fb4b6",
+      "service/harness.py": "32bf1208b869b91774f62b59ba121a41c0200bd9bcfc429dcb4fc5039d5fdb96",
+      "service/integration.py": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92",
+      "service/migrations/__init__.py": "35ba2cdda9356bfa41b55ed189c8a991f4365d646bb73309e0d18aecd5e8575c",
+      "service/migrations/v2_identity.py": "db0cedb696fb917565905225d113dba948bf2ce325117cbf30f4d49eda817c0f",
+      "service/protocol.py": "7d06d34885c7485c87fa148ab0878c99d35a81c77f81d4190c2fb4339e606af2",
+      "service/providers.py": "7b5f2436c7fb150be0b8bd45292fd1464ac1a049283e75a383c580a348fe2d31",
+      "service/recovery.py": "bed65f6ebeb8d208922f787e34f6ec08c51c1f4f6e66ef99e08dd8da87216d46",
+      "service/repair.py": "363add06b7bb398fcc78557a752b27eabe6cf6fe67ac460fcc96e93c0c0c29bb",
+      "service/repair_cli.py": "0823244953f997f30a9f896dec0ec798c123b5032c4b2b3a5b8f47c2cb576ab5",
+      "service/repair_demo.py": "6bdc067a863bf5f6a3c8ab46623f46862dcec3363ed590a5e364756bf71f1016",
+      "service/repair_provider.py": "b91fd7a95ef527d7118f3c10522196b286670c2eb035c83e99d3ed5d76b0354d",
+      "service/repair_reporting.py": "f87e035e7f6bf8fe9e8ad5fe5389d96075a2722750d422ffd8e6ac2d356c68da",
+      "service/repair_verification.py": "a0ce818578c99865fb7e8ee5fb8eab1dbd6ca7383d95f3fd8d1608998effa6bd",
+      "service/reporting.py": "c42df34441d053226613d1b15165491ed584ee671db54560effc97327c74573c",
+      "service/repositories.py": "b39676ea101aec719582124a414702a60efb6e125bfdabed4fd571802cb5597b",
+      "service/storage.py": "5124d010d24b9dda3f8facc2548be20f90134e968a3c1b11457702b1d99a3b3a",
+      "service/verification.py": "a6076e4a8ba52aeabe519a7339ca2a7a8afce0eee76878fac46922fd473e6f8b",
+      "service/workflows.py": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919",
+      "evals/__init__.py": "15ae8a210548e5c73c6f474b83dc348c62e54936fb0513c48292296bf430f1e8",
+      "evals/__main__.py": "b272e3aa7126979478a540c26e291d89f5523d0c08b8cde1663de76734031912",
+      "evals/allocation.py": "223ba97c84b71c186a3cbe2ce2f451b26ec1d62beafbb796add9bd68c3267bfd",
+      "evals/analysis.py": "028e399b9113b5dd9b04570673a5eaa6b047effbf8a1f60347eaa34bb7efd323",
+      "evals/evidence.py": "28f8527225cd2652b733e67706188712f9212cb74df7657047b2a0cdaccc0576",
+      "evals/fixtures.py": "4428807909bd9b7bcc8dd88b54bc55d907f87ff308abdbe6d665b4ee3c2d1fb6",
+      "evals/manifest.py": "5f9663c48d140f9e92805e45757059f0c03c72e5c33e89d88dfdaec5a89a1dcd",
+      "evals/regressions.py": "a4420219aa650e990ee9e108c84d2d1d35dcf8dcfb82a8a5e70894795d6e52c8",
+      "evals/simulation.py": "36d784b23c2f920a6e0fb0d329ff62b69da7bc09879b3d52443570b5fa1ee35d",
+      "evals/validation.py": "07b4f40db42c3396e87a69edb3c5934ca8af9f75a55f46014e99b5f4361a9e65",
+      "compute/__init__.py": "dabad96d2767b35923a935ae89cd063d8e906db504bd958d9c68a62c2f09691e",
+      "compute/__main__.py": "c1f24f92c8856ef3f44af55ca126e19c8a713cc704bc77a99fca44359acf3ece",
+      "compute/attention.py": "d542afd738a4aab8564a483940b26de8e01712f6d0e83d960d332223c567978e",
+      "compute/cache.py": "0c17dd6b490a08d1802f0c9c0573cd78466d4fa1ba622a1feff33c40a93a372c",
+      "compute/cuda_benchmark.py": "1442443fc704174f8041f977b57bf97a450046b79fd6815590d2631ed2c6cf53",
+      "compute/rmsnorm.py": "b4d189671e30be3c6c0bbd3cff6668cd9d0dcae94fcb92651618feea9402a42d",
+      "compute/trajectory.py": "a349d7db060701ec304a65c3d1683be1bc79f95f632fea06dff719b1a25c1f29",
+      "workloads/__init__.py": "f42fa7883ed90780968a1f455148609747d48ed6d6e9656314bf5e60a2763213",
+      "workloads/baseline/coordinated_1/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_1/issue_tracker.py": "b5cf1eb1d870e97c03d7153a0c4d2daebb8fd0c476af82dd759f9bfcd96dde2d",
+      "workloads/baseline/coordinated_2/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_2/issue_tracker.py": "0ceb8494388c062a796ba5f9b318199418f50fbd08669a4a12fe5dccbf0d6591",
+      "workloads/baseline/coordinated_3/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_3/issue_tracker.py": "1af36ed865e48adb98008559e8189941cb9d4234be00a072d148b6a96d2a67c0",
+      "workloads/baseline/coordinated_4/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_4/issue_tracker.py": "b63254f5d983c8016d2ea15d83c809f9379fc5b2dff61cc4326168996764bf3c",
+      "workloads/baseline/coordinated_5/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_5/issue_tracker.py": "5de5c05aec61ed0541ed55c45a28607c778aab6bd3db7d77bb55b7ebb953ca04",
+      "workloads/baseline/coordinated_6/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/coordinated_6/issue_tracker.py": "68280397c615d35deaae7fe8bded330f95c44a5a7e24236c11bcd0dea838c400",
+      "workloads/baseline/full_import_contract/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/full_import_contract/issue_tracker.py": "95fe1bbcd61165deed13a30c8e253b6e9cafb9c2f457756071dd673cbac899a2",
+      "workloads/baseline/repair_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/baseline/repair_1/issue_tracker.py": "b5cf1eb1d870e97c03d7153a0c4d2daebb8fd0c476af82dd759f9bfcd96dde2d",
+      "workloads/baseline/repair_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/baseline/repair_2/issue_tracker.py": "0ceb8494388c062a796ba5f9b318199418f50fbd08669a4a12fe5dccbf0d6591",
+      "workloads/baseline/repair_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/baseline/repair_3/issue_tracker.py": "1af36ed865e48adb98008559e8189941cb9d4234be00a072d148b6a96d2a67c0",
+      "workloads/baseline/repair_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/baseline/repair_4/issue_tracker.py": "b63254f5d983c8016d2ea15d83c809f9379fc5b2dff61cc4326168996764bf3c",
+      "workloads/baseline/repair_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/baseline/repair_5/issue_tracker.py": "5de5c05aec61ed0541ed55c45a28607c778aab6bd3db7d77bb55b7ebb953ca04",
+      "workloads/baseline/repair_6/client.py": "83a6bf0c0b2607fc533aa4276576319214aa33d2e00c7e7a32ba7fc128eed531",
+      "workloads/baseline/repair_6/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+      "workloads/fixture.py": "c9d4dfc25a2615d2afea7c871254f75683086ce60f46aede44fe4ec4b4e8bca8",
+      "workloads/freeze_catalog.py": "47abd568211cc7d7421acd5dad9a97a5a3ab4a68ae2cfe96a8df877b0fa89be9",
+      "workloads/oracle/fixtures/acceptance.py": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+      "workloads/oracle/incorrect/coordinated_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_1/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+      "workloads/oracle/incorrect/coordinated_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_2/issue_tracker.py": "71ff3a59a94c2892fdd09091aadacdf73058366e42efc38f05f933aaa1dcc602",
+      "workloads/oracle/incorrect/coordinated_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_3/issue_tracker.py": "81bb53fcd5646128a1147f6da90236bc8c1b7ea09fce85560343d7ba1fa708a9",
+      "workloads/oracle/incorrect/coordinated_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_4/issue_tracker.py": "653ec216416ccae3f0caace48ca0cbda2b082b0b96b5e35982e629aa3f245f4b",
+      "workloads/oracle/incorrect/coordinated_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_5/issue_tracker.py": "d4474b5661f9189ffe95e9e4b97cf1e10807955c550568a98d949831987126cb",
+      "workloads/oracle/incorrect/coordinated_6/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/coordinated_6/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+      "workloads/oracle/incorrect/full_import_contract/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/full_import_contract/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+      "workloads/oracle/incorrect/repair_1/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/repair_1/issue_tracker.py": "08a08d99fb6472131f86024ee25f7a7735b017967e0abd66699c72f32ca29394",
+      "workloads/oracle/incorrect/repair_2/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/repair_2/issue_tracker.py": "71ff3a59a94c2892fdd09091aadacdf73058366e42efc38f05f933aaa1dcc602",
+      "workloads/oracle/incorrect/repair_3/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/repair_3/issue_tracker.py": "81bb53fcd5646128a1147f6da90236bc8c1b7ea09fce85560343d7ba1fa708a9",
+      "workloads/oracle/incorrect/repair_4/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/repair_4/issue_tracker.py": "653ec216416ccae3f0caace48ca0cbda2b082b0b96b5e35982e629aa3f245f4b",
+      "workloads/oracle/incorrect/repair_5/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/incorrect/repair_5/issue_tracker.py": "d4474b5661f9189ffe95e9e4b97cf1e10807955c550568a98d949831987126cb",
+      "workloads/oracle/incorrect/repair_6/client.py": "e9740b7fb7898607ead78758ddfe8e2ef981ff8732d8195dea35f7d252e602dc",
+      "workloads/oracle/incorrect/repair_6/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+      "workloads/oracle/reference/client.py": "279fdda1cbc55d65c94fb16758a25a3fcdb182e68677b7d93f3821f3885fdd42",
+      "workloads/oracle/reference/issue_tracker.py": "dfbdc1374c352776d1a6bde20763242575023ce82def0eff32f098746ef18bb8",
+      "workloads/registry.py": "3e1ca8a0885725979fa3c389966347eaca6dba0c910b43d9b8f524f66201ef68",
+      "workloads/repair/repositories/text-normalization/slug.py": "d3af53a6e2245740ce3ed4a681d5a53d035de794dc2e1bea538a9628c42cb8d8",
+      "tests/failure_adapter_helpers.py": "a348a21a430e0543f6309c57d54d068a08932d4ed26a874ebb17c81c284015d4",
+      "tests/test_api.py": "2d3f3313429a3f0360a076f0aaa346b00feafbc17ca1be4456d0d0fb27f3f23b",
+      "tests/test_artifacts_execution.py": "9dfdf406fae9fc5e65d9cab71a03f8ca48cb124aa9c81b7f3b6c275c716861b9",
+      "tests/test_audit_api_artifacts.py": "bb6b5e64cd4e966a068dfdafd4f26494859fa72e4892395b9d690d71bdf142fe",
+      "tests/test_audit_authority.py": "366d9b538743b00a7d714ef3c816f52fa83f292b7b2d8ebd64a59e71f362c687",
+      "tests/test_audit_controller.py": "6fc4673c91282397bf8d4de2f9fa2e969ee38d051b644db9c8bfd306ea92b099",
+      "tests/test_audit_execution.py": "92bbf4d13924cde569e182911cb39d41368a06a4bc20920833473f7daf5a8981",
+      "tests/test_audit_ops.py": "d6b3926ed2b35db9619b8572511073349a424bf84e9ea052a1de371ab45b2c04",
+      "tests/test_audit_research.py": "7605010a73b9aebbc0c6c3582ad5b322e6bf2c883229c1801535340159f7837e",
+      "tests/test_codebase_authority.py": "344806e1cfed8179ac835f891958f904fc1a47044fd13f6df07d70bfd106f506",
+      "tests/test_codebase_execution.py": "0cd30830e9a07aae67f84e64e84e38d9bf04756c89ae4499f4ebe8c230ab9326",
+      "tests/test_codebase_research.py": "92285797e85ade7a2af367e3758b2375b929773ace7097a12f9c384bff77dd33",
+      "tests/test_compute.py": "dd75758c16b5e12877f36cdc462572b548c6123d033c89ab3e2f6b7ea1fc86ef",
+      "tests/test_context_integration.py": "6eeeac5470a954546cd2033bdede8331430bd77e3b225cff980ba08201b420fd",
+      "tests/test_context_projection.py": "00049e361621597b2986681445ba6c06f2f45f490a7cfd9ed42ea3c74076a8d2",
+      "tests/test_context_retrieval.py": "0ee8c8e0ee17a1815be1c2dd421db3b9d406ed2d455a6859b50a3b1fa69a014c",
+      "tests/test_context_runtime.py": "fb0363b2d3cf4ced69db62d7a3ff201a93beb7b871fe2c12d6c44dabf91ba775",
+      "tests/test_engine.py": "7634507363f9e3942ad1c53cbdd60046c78277a092a9b0433d19c09554492902",
+      "tests/test_evaluation.py": "0b9fe727e1470a06fe0968cc964fec7de63080943fa0c06d27edbd4523dcb813",
+      "tests/test_failure_capture.py": "de4fbb35e72ba7a5c0cd21cb90670b1a1ec3df76ae1a6ee7b451268b5e71cd70",
+      "tests/test_failure_evidence.py": "feb40ade063fff4f4bdbc814fdc12ad882b1c72e6f1a0c0a6135f94c6400d26d",
+      "tests/test_failure_regressions.py": "1b13152cd4468e20e03287dd2959b46864ca860ab93cf76c074c9ac8f27beecd",
+      "tests/test_live_harness.py": "0aa6da54a5a0f0ba543f13dcb9c7a2aa31fa5038964a3ef74558e3e641231c1f",
+      "tests/test_nebius_http_errors.py": "05bfef22804ae3ca40b7b3c5b4f6eb0ef2dc6d11bbdd182a4f11eec2b6738911",
+      "tests/test_nebius_provider.py": "fc31bc92fc99df379b2def05a916fa61de384161ed64d5daf0b80d9fa54470fb",
+      "tests/test_postgres.py": "4ef3ec0e58afc2d4ac50eb59b0bfb574b493c09981707ec768ae7ca2bd34da96",
+      "tests/test_protocol.py": "53d6519435cf9d882b629126cb5570bad1d27bec3673dcee330665211e977c8a",
+      "tests/test_repair.py": "ab61dae9295f5ad73680ea512b4986e77f2f16f4bb7b8bc23ff02e52bf0c9d56",
+      "tests/test_repair_boundaries.py": "b4c7eb94d52a0922ef37bfed5bf61a54b266162ab8388d1fa5aff20f8fbe66b4",
+      "tests/test_repair_provider.py": "dd6a38cb350143a1870e2d085dd3563f55f1b85a906af6bd83245ca5fa0dbed9",
+      "tests/test_repair_reporting.py": "55358e8ae369d361865e236e32b9a532e07fb6226bc6d2d46c422bbbfc920fb4",
+      "tests/test_repair_verification.py": "1128d40ebf48f95b4994b9e81f1f0e90b73355d3ecf2c1c695c37950a88e3a59",
+      "tests/test_repositories.py": "e317308db2c054bd5f3a20479087ca5760f876fc1e52c5c58b69ca8a740bd615",
+      "tests/test_review_regressions.py": "bb157c28b9212ac930c8285f99f8178e1837c2d1913f5aa3d9e5e72c3b0be0aa",
+      "tests/test_rmsnorm.py": "c44f30b0fa68e99149a5eb87e1932bdc307e356099c6d1aa13c9dce59b04c79e",
+      "tests/test_simulation.py": "ae2f695749ee1c3554d0723d2c610d9097cd3ff981a8c06ef2adedfe931617dd",
+      "tests/test_storage.py": "eb56db7b3de19e08a316fd5367c397003d7b46c022f9a25819d3184c950ab0b9",
+      "tests/test_verification.py": "c78853d3160bae350664a973a9d644bcac73cc6607d20e35976c8b545d69ee7a",
+      "tests/test_workflows.py": "352a2fcf3a6d895d8892ece66eb9d48145298e081e95acd88efa7bb231d1e4c3",
+      "tests/test_workloads.py": "8081f855db6132daa998c034b205e71fa1f517772a66e42dac16872c1123e788",
+      "scripts/context_offloading_demo.py": "7b59d574044da85e069940f8d7aeb2f65f5856d25041bc102fa7b7b747d5b2f4",
+      "scripts/failure_regression_demo.py": "d39d18ccbdb20906aad524f67d101b766271bfe789e974063f4401bdaab9286a",
+      "scripts/run_local_checks.py": "031b1e31276264a05cf807b6a453ec2bb02ba71e6f7fe2f2993e2930484cc390"
+    },
+    "prose_change_validation": "Exactly one generated explanation string changed; fresh 4-request mock demo passed and script Ruff passed. No runtime/test changes after revision 2."
+  },
+  "full_suite": {
+    "passed": 1171,
+    "subtests_passed": 156,
+    "skipped": 2,
+    "skip_reasons": [
+      "SKIPPED [1] tests/test_workflows.py:202: requires explicit local Temporal dev-server opt-in",
+      "SKIPPED [1] tests/test_workflows.py:259: requires explicit local Temporal dev-server opt-in"
+    ],
+    "warnings": [
+      "StarletteDeprecationWarning: httpx integration in starlette.testclient is deprecated"
+    ],
+    "postgres_enabled": true,
+    "docker_enabled": true,
+    "temporal_enabled": false,
+    "commands": [
+      {
+        "name": "full-suite",
+        "command": [
+          "/Users/danghuyhoang/Desktop/coding-agent-mastery/.venv/bin/python",
+          "-m",
+          "pytest",
+          "tests",
+          "-q",
+          "--junitxml=/Users/danghuyhoang/Desktop/coding-agent-mastery/runs/context-offloading-2026-10-10/full-suite.xml"
+        ],
+        "returncode": 0,
+        "elapsed_seconds": 111.49541462538764,
+        "log": "runs/context-offloading-2026-10-10/full-suite.log"
+      },
+      {
+        "name": "ruff",
+        "command": [
+          "/Users/danghuyhoang/Desktop/coding-agent-mastery/.venv/bin/python",
+          "-m",
+          "ruff",
+          "check",
+          "service",
+          "evals",
+          "compute",
+          "workloads",
+          "tests",
+          "scripts"
+        ],
+        "returncode": 0,
+        "elapsed_seconds": 0.09771387511864305,
+        "log": "runs/context-offloading-2026-10-10/ruff.log"
+      }
+    ],
+    "evidence": {
+      "path": "runs/context-offloading-2026-10-10/checks.json",
+      "sha256": "ee670008a9743df962bc94dfa42da6aa40ff3c5eab5620cece14acc29de5317f"
+    },
+    "junit": {
+      "path": "runs/context-offloading-2026-10-10/full-suite.xml",
+      "sha256": "20e4d24ffaa30a587b641fda35557cb24aa1127f000919bb98fe3f095f3596c2"
+    },
+    "ruff_passed": true
+  },
+  "independent_review": {
+    "result": "accepted for scoped local reference path",
+    "report": {
+      "path": "research/context-offloading-independent-review-2026-10-10.md",
+      "sha256": "0d632563b285399ff97a815702718c145f0e430f72b69e10efa23f091debc2d6"
+    },
+    "verification": {
+      "path": "runs/context-offloading-2026-10-10/independent-final/final-verification.json",
+      "sha256": "3b4603b871560ea39f561e1945059436c4162cb46ba5c2470a032f715001dcdb"
+    },
+    "selected_tests_passed": 464,
+    "independent_new_probe_tests": 10,
+    "counts_overlap_full_suite": true,
+    "reproduced_and_repaired": [
+      "Invalid typed checkpoint cursor/schema",
+      "Obsolete projection authorizing fresh retrieval including pin-to-intent race",
+      "Canonical JSON boolean/integer aliasing"
+    ],
+    "resource_probe_rechecked": "Forged source/reference descriptors rejected before any offload body reads"
+  },
+  "independent_integration": {
+    "verification": {
+      "path": "runs/context-offloading-2026-10-10/tests/final-independent-v2.json",
+      "sha256": "871680351c1a9ec53ce88a2c2a9d826a8b8f3c47a9032925587cab0fcf0603ec"
+    },
+    "tests_passed": 27,
+    "counts_overlap_full_suite": true,
+    "original_demo_unchanged": true,
+    "original_demo_summary": {
+      "path": "runs/context-offloading-2026-10-10/demo-final-v2/summary.json",
+      "sha256": "95a31ab4b58be0dba0d5256113ceaeac6ea866f9855515c89cf17215edaf83fd"
+    }
+  },
+  "readable_demo": {
+    "command": ".venv/bin/python scripts/context_offloading_demo.py --output runs/context-offloading-2026-10-10/demo-final-readable",
+    "returncode": 0,
+    "mock_requests": 4,
+    "summary": {
+      "path": "runs/context-offloading-2026-10-10/demo-final-readable/summary.json",
+      "sha256": "9cbbf24ec97806ee700826f24de5682c7d49662ef2c1a23506f82ec05d65c4e0"
+    },
+    "trace": {
+      "path": "runs/context-offloading-2026-10-10/demo-final-readable/trace.md",
+      "sha256": "5d047f60772c4eef7c4311ece4203352b05636538c9853c15e5bfd8107abd173"
+    },
+    "observations": {
+      "fresh_owner_new_chain": true,
+      "fresh_owner_new_projection_id": "1d69393bcf22618548d87e8fad82b93efa1cb3f7ecdeca45224726e945c3b390",
+      "live_performance_claim": false,
+      "mode": "local_mock_http_only",
+      "old_tool_only_sentinel_absent_from_third_request": true,
+      "raw_history_retained": true,
+      "recovery_grants_authority": false,
+      "reload_projection_id": "9efe354520091cd785135ed0770adda4140908f2d3d7166b48fd3a7e8826e3d8",
+      "request_comparisons": [
+        {
+          "accepted_request_digest": "f614d77d4a5b1a3d975add8720e001e32a906c60f01ed1199d2c64683656c829",
+          "actual_wire_digest": "724a9c123af6124a8aefed9ba1d70ee12f321f841659b871c2411bf328e59d65",
+          "observed_request_digest": "f614d77d4a5b1a3d975add8720e001e32a906c60f01ed1199d2c64683656c829",
+          "offload_count": 0,
+          "projection_bytes": 2498,
+          "projection_id": "70e4d4b28f5d7b8999e711ddfc33c173bdbe6d3d42d6984793c5afa3b4760241",
+          "request_payload_bytes": 1909,
+          "turn": 0
+        },
+        {
+          "accepted_request_digest": "ddedf2f8eb41b1ec602911f10d260b63e4fba7b001b1b7e243374c6cccbd8dec",
+          "actual_wire_digest": "a06dc9b7f62e7cee1e9659e701e7520acc4334b1a6e5008eacf7ed8fab8a0ece",
+          "observed_request_digest": "ddedf2f8eb41b1ec602911f10d260b63e4fba7b001b1b7e243374c6cccbd8dec",
+          "offload_count": 0,
+          "projection_bytes": 13489,
+          "projection_id": "39409210128a236c59d349b027cc631151900bffa6ffd65dec07ba62b0e8e6a7",
+          "request_payload_bytes": 12413,
+          "turn": 1
+        },
+        {
+          "accepted_request_digest": "89fe3ecd2bbf23f742635862f8bccc193f22239a3fe0877b67e9ee8b0de2bd37",
+          "actual_wire_digest": "a5fa95c5081046ed108c6fc31d1911ff5963da2893492cb2abaad3dc89c56087",
+          "observed_request_digest": "89fe3ecd2bbf23f742635862f8bccc193f22239a3fe0877b67e9ee8b0de2bd37",
+          "offload_count": 1,
+          "projection_bytes": 14577,
+          "projection_id": "9efe354520091cd785135ed0770adda4140908f2d3d7166b48fd3a7e8826e3d8",
+          "request_payload_bytes": 12906,
+          "turn": 2
+        }
+      ],
+      "restored_projection_id": "9efe354520091cd785135ed0770adda4140908f2d3d7166b48fd3a7e8826e3d8",
+      "schema": 1,
+      "source_sha256": {
+        "service/context.py": "eadf2fcfa8e619953c893d6a972da1cb743a88aecfaa56aaf984c783b35eb2d6",
+        "service/context_retrieval.py": "b1c8b67f5eda15e72163b9979db1a21db5475f330c332009bd903d4818213553",
+        "service/harness.py": "32bf1208b869b91774f62b59ba121a41c0200bd9bcfc429dcb4fc5039d5fdb96",
+        "service/protocol.py": "7d06d34885c7485c87fa148ab0878c99d35a81c77f81d4190c2fb4339e606af2",
+        "service/providers.py": "7b5f2436c7fb150be0b8bd45292fd1464ac1a049283e75a383c580a348fe2d31",
+        "service/recovery.py": "bed65f6ebeb8d208922f787e34f6ec08c51c1f4f6e66ef99e08dd8da87216d46",
+        "service/storage.py": "5124d010d24b9dda3f8facc2548be20f90134e968a3c1b11457702b1d99a3b3a"
+      },
+      "status": "completion_proposed"
+    },
+    "files_sha256": {
+      "turn-1-source-history.json": "76b827d4bfc4eba1ff4e929eda23bdf7a4fb2c8204703f224845e354c53a35f0",
+      "summary.json": "9cbbf24ec97806ee700826f24de5682c7d49662ef2c1a23506f82ec05d65c4e0",
+      "turn-0-source-history.json": "871512cbf3c7c33c3b43013a4765ad285f3946cfde97c21540f3b54cca883b21",
+      "turn-2-source-history.json": "241c779e224ff1fd4a4da517e023adf40eb6aa9e6dd0bac947f7236f28b5f6a7",
+      "turn-0-actual-sent-payload.json": "9d1304f280688ec22a2133df50a400d516763f495025bc4eecf0b0d8526e182a",
+      "turn-0-acceptance.json": "7305fdc2a4ae15412f90244f6c5b2531acf3d80238bf0bf993c4e9f85e7af310",
+      "turn-0-projection.json": "02386b68d3abe9d23b87041290dade1e2204ade921020210dc28d6b548ef1196",
+      "turn-1-acceptance.json": "f68d794b0eea1977864de9ac651739682b711d6b88686d82577de3a7d1b1e32d",
+      "turn-1-accepted-request.json": "2fc8b5d4903256daae692f4d21586d0038d80c48e81a9468978c8ab606d510c1",
+      "fresh-owner-actual-wire.json": "65b5d836b15b11c3d0e33e06d8d32d17e31ca7c70702695ff2c796f33c08ca21",
+      "fresh-owner-recovery.json": "16fa638ef1908a1f0e837c72089fb0132037f68c22974594e47d7b9eae403ea3",
+      "turn-1-projection.json": "67c7677a868752d20b68e3e7e3365a717b6ca67924c7703bd518ef13c482e047",
+      "turn-1-actual-sent-wire.json": "a06dc9b7f62e7cee1e9659e701e7520acc4334b1a6e5008eacf7ed8fab8a0ece",
+      "turn-1-actual-sent-payload.json": "26bf2d5b2f4b3ad760aad0bc8d8f8eee518fb9bd6a5277f3ec11514e01540b2e",
+      "snapshot.json": "81bf01e2011f7a749db88224c681892a10f3529eac3a79a75a7bd2a4d158c564",
+      "receipts.json": "bfb19489716a4019f014dd2092f258eeb2261e63eebc660f47634904afabc643",
+      "fresh-owner-result.json": "405a3075f6f45aaff622c28818d94dc331a246894cb996da61ccdbe9aff3fd6d",
+      "fresh-owner-actual-request.json": "ec19424b826e7192e422ecad2d5276fe60618731274ad91f2ee7f207d61e3b96",
+      "raw-final-history.json": "0cf1f8523f9f053a613b56b8e169501dd60e1c7c7aa8df2400a49109379f1094",
+      "trace.md": "5d047f60772c4eef7c4311ece4203352b05636538c9853c15e5bfd8107abd173",
+      "turn-2-actual-sent-payload.json": "66577e14335924a86559232d0cf5f1a76c9ecd10a69a38a3bb15bf961674c3bc",
+      "turn-0-accepted-request.json": "1c92fc7371dc2147446892ba7eaa6633405c70278e6c53467f30428898845a27",
+      "turn-2-actual-sent-wire.json": "a5fa95c5081046ed108c6fc31d1911ff5963da2893492cb2abaad3dc89c56087",
+      "runtime.db": "466dabfa3f8d6117c1230c9db1ebd5efbfb2f0a83729cf042dc42d051a708c0c",
+      "recovery.json": "16fa638ef1908a1f0e837c72089fb0132037f68c22974594e47d7b9eae403ea3",
+      "turn-2-acceptance.json": "3151b9cb2fd33b875e10cd5ad4f352ae1f70bc456df6c493d698fe536fbbc64d",
+      "fresh-owner-dispatch.json": "ae6e94bd75b6d532a0833c14eb35ece7229871d6c071595b26b9ff2381cc134a",
+      "turn-2-projection.json": "b6c767a5fff8d11bf11ee1b351daf5fbf2116a3f9346b463a199a3b4f4b4bc31",
+      "turn-2-accepted-request.json": "35998e06eb8da0ccff8bfb97b78255977bcd9b08585e9996cf7fe5a2b204c814",
+      "turn-0-actual-sent-wire.json": "724a9c123af6124a8aefed9ba1d70ee12f321f841659b871c2411bf328e59d65",
+      "workspace/recent.txt": "ee495583da3837270125e8dc70ccec871677b7c6ce9f8920560f6a6bf6b80c31",
+      "workspace/old.txt": "7569a864eb3ad05a2b71e7d73423511c0f2ec453acbb12e87693c318aabe2c5c",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/57998356630cc204ca24bc5624e854ad318012acfa0e1b347746886995160b44": "57998356630cc204ca24bc5624e854ad318012acfa0e1b347746886995160b44",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/740973f45422542f6a706e665e9758588bc6b67a7fd9660a37e274423af22a84": "740973f45422542f6a706e665e9758588bc6b67a7fd9660a37e274423af22a84",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/707d317b979f8390d22ba898c54bdd02d9d1be0b2bfd5e8d9111a5b2c57fb889": "707d317b979f8390d22ba898c54bdd02d9d1be0b2bfd5e8d9111a5b2c57fb889",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/3494c40e59d6870b6d375f0d0d1617d0c1f5cf82136d0e481846fb364f994df2": "3494c40e59d6870b6d375f0d0d1617d0c1f5cf82136d0e481846fb364f994df2",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/78e38f88ec11d2ef18543c78c5a755064d2cdb3444b1a26014ec55df5f1a1af2": "78e38f88ec11d2ef18543c78c5a755064d2cdb3444b1a26014ec55df5f1a1af2",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/12de1615fcca83ca939cbc18d2cb0e9e6d087d4027d07edf05448f28cd5aeb3d": "12de1615fcca83ca939cbc18d2cb0e9e6d087d4027d07edf05448f28cd5aeb3d",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/980aaba9e5dfe0d89df57bc90b5585d88d5dbfeb24c6ee7f67a76e1ae2d47237": "980aaba9e5dfe0d89df57bc90b5585d88d5dbfeb24c6ee7f67a76e1ae2d47237",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/66a839071532c846e481c1277a7ba3284839403388b2942b68e417bce2735584": "66a839071532c846e481c1277a7ba3284839403388b2942b68e417bce2735584",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/89fe3ecd2bbf23f742635862f8bccc193f22239a3fe0877b67e9ee8b0de2bd37": "89fe3ecd2bbf23f742635862f8bccc193f22239a3fe0877b67e9ee8b0de2bd37",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/9af7381372cb63834d93343874ffd34900a8997e4841a41f4a4fdd7af8d28ba1": "9af7381372cb63834d93343874ffd34900a8997e4841a41f4a4fdd7af8d28ba1",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/67ab143bcfe6ae66bd70e7f232159dc1c901fc374b4b3a2094393011ccd98641": "67ab143bcfe6ae66bd70e7f232159dc1c901fc374b4b3a2094393011ccd98641",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/ddedf2f8eb41b1ec602911f10d260b63e4fba7b001b1b7e243374c6cccbd8dec": "ddedf2f8eb41b1ec602911f10d260b63e4fba7b001b1b7e243374c6cccbd8dec",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/5b9418590a2612ca8aad0480aec63385fd5b7df862d02f3fd3539d7dbe793b7f": "5b9418590a2612ca8aad0480aec63385fd5b7df862d02f3fd3539d7dbe793b7f",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/d69dc327c5382f7d88e2d5f653cc1bc814a1425d8977385aab93982bc402998c": "d69dc327c5382f7d88e2d5f653cc1bc814a1425d8977385aab93982bc402998c",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/d846a4356a11e5baff4b0274c95e6c4a302df9fffb0a1aab925d30f0025efb9b": "d846a4356a11e5baff4b0274c95e6c4a302df9fffb0a1aab925d30f0025efb9b",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/5095bc4dea15fedaacdf42525a4b16dfac18cf28ee2af2b7902631b95ecd1456": "5095bc4dea15fedaacdf42525a4b16dfac18cf28ee2af2b7902631b95ecd1456",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/51240d5b765e0b31b4d1b198f8a774e9c91fe8bd01d53b01c82def8c788463d0": "51240d5b765e0b31b4d1b198f8a774e9c91fe8bd01d53b01c82def8c788463d0",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/d6b033456884a649ea6a305b6e6718e49b479bd3b23f3d0c8690d31e766320b1": "d6b033456884a649ea6a305b6e6718e49b479bd3b23f3d0c8690d31e766320b1",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/09850f2dd7d315490f8711d27c8e2cd274a3a1cf4a93c6ae9fa8ce70c11e6a1f": "09850f2dd7d315490f8711d27c8e2cd274a3a1cf4a93c6ae9fa8ce70c11e6a1f",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/ebf688025ee7eb4a38b0859c9ab1b97667aab261b79cea77406fbf0aaec30788": "ebf688025ee7eb4a38b0859c9ab1b97667aab261b79cea77406fbf0aaec30788",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/8273b7eecc102d5159e079ce5976721b505dcc67c7daa37910e433ac3a782c7a": "8273b7eecc102d5159e079ce5976721b505dcc67c7daa37910e433ac3a782c7a",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/8b37f06647de476227fc03f3874907bd163a24b9184b82c48c2a14d8c006f549": "8b37f06647de476227fc03f3874907bd163a24b9184b82c48c2a14d8c006f549",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/47700dfbddae9a8ae9c67fde7ac18e54676f86e81dbc5ec1648c7ef98985cff7": "47700dfbddae9a8ae9c67fde7ac18e54676f86e81dbc5ec1648c7ef98985cff7",
+      "artifacts/context-tenant/06d32a234b234e5d8431e15483d67ed7/f614d77d4a5b1a3d975add8720e001e32a906c60f01ed1199d2c64683656c829": "f614d77d4a5b1a3d975add8720e001e32a906c60f01ed1199d2c64683656c829"
+    }
+  },
+  "preserved_failed_run": {
+    "record": {
+      "path": "runs/context-offloading-2026-10-10/integrated-first/checks.json",
+      "sha256": "577baef027445604aaeeb292e0013d15b8860a12abf2e57012e839a8dd271ccf"
+    },
+    "status": "superseded after repair",
+    "failed": 18,
+    "passed": 1143,
+    "skipped": 3,
+    "causes": [
+      "New false-valued optional keyword broke legacy approved repair provider override",
+      "Legacy untagged/minimal checkpoints were misclassified by typed recovery"
+    ],
+    "repairs_verified": true,
+    "other_preliminary_records": [
+      "independent/ partial reviewer stopped before completion",
+      "independent-final/initial-selected/ superseded selected review"
+    ]
+  },
+  "documentation": {
+    "check": {
+      "path": "runs/context-offloading-2026-10-10/documentation-check.json",
+      "sha256": "7471dd779d6ae8f93c26312145fd7de9e42cc025cc473c3238ab4dfcb9b74dd1"
+    },
+    "metrics": {
+      "documents": 37,
+      "local_links": 758,
+      "line_anchors": 192,
+      "heading_fragments": 52,
+      "errors": []
+    },
+    "changed_documents_sha256": {
+      "README.md": "4a7639a5f7ec27c92c28937ddb77ee07333ce2739fd24ce6916f687e5ef96c75",
+      "START-HERE.md": "b82202a946adaede236e25ab4327bc96cb724f0dd1bd244d372a6670f5f0ca3d",
+      "capstone/03-evaluation-serving-and-efficiency.md": "3d187d3b9114f4971c14e38366c232418fe46ab14c28d728a422152d600ad1a7",
+      "capstone/04-build-sequence-and-mastery-gates.md": "afd7303e11996906f74199fab3fb9e08dc22ed97f249a3bcccaed011f44c5a92",
+      "capstone/06-target-role-and-research-contract.md": "734f879ed147d30291e95ce5a1ace6dc3fa3fddd9ecf9691b97af3eabeb023a0",
+      "capstone/07-reference-implementation-spec.md": "98ce05aff733b0ace9db8f79553e24f4fddce6dd7b3462f594efd52767fbcc29",
+      "capstone/08-implementation-coverage.md": "7a2b0305997ff790d08b48c1bb4d1205c22671ae9ea033b455f2d64ee0486bc4",
+      "capstone/README.md": "07511997553fd8bfed580a4a86ee8e5ddb8f31957d35af05b139904782a50c41",
+      "context/README.md": "3ecc551836281af4518f1e9dd1fe78fa7e0a1444c0d30014948184e26a3d6e1e",
+      "context/current-state.md": "db2b83104ad8016b10532980b779b715b6e795d8e2af0f2a029263741fcafea5",
+      "context/decision-log.md": "40e9364ebb677ed2774205c65e9baadbda0c86d9d16316001ed57394ad324cb4",
+      "docs/02-mastery-learning-plan.md": "ffa5eef8b5a6f3e2b1266ac2f5ce5d97ceea8e3894370afe0492f009c757708c",
+      "docs/06-reference-code-reading-guide.md": "b82dbd82c8c0834baa7991a304d0efaa0cccbb2426085dc8c03e9397fbbba2c4",
+      "hackathon/06-http-error-evidence-contract.md": "d9098e5bbefb25169febd6f3e268d2d2757150ef5f2e6279d0cbdeb195915b10",
+      "hackathon/README.md": "6cd727175cb69994355d65470687ac8ed868fa45f8e17c05c90303c57cb02b43",
+      "ops/runbooks/recovery.md": "c6c2a56c8b3219019bc19d0924c8222b6c70b12657361542b7c13e2ec156e056",
+      "research/context-offloading-independent-review-2026-10-10.md": "0d632563b285399ff97a815702718c145f0e430f72b69e10efa23f091debc2d6",
+      "research/context-offloading-spec-2026-10-10.md": "07a0a673ab30c40d85730d9dae0dcebcf1c73e5141cc490fb15fbdd929c0bcdb",
+      "study/packets/H0-reference-runtime.md": "f667e19a30ab93b40fd97f96e48a86087b8fe49be59700de508c20466530afa7"
+    },
+    "declaration_anchors_verified": [
+      {
+        "label": "plan_context",
+        "path": "service/context.py",
+        "line": 72,
+        "verified_declaration": "plan_context"
+      },
+      {
+        "label": "begin_projected_dispatch",
+        "path": "service/storage.py",
+        "line": 648,
+        "verified_declaration": "begin_projected_dispatch"
+      },
+      {
+        "label": "Harness.run",
+        "path": "service/harness.py",
+        "line": 147,
+        "verified_declaration": "run"
+      },
+      {
+        "label": "ToolBroker.execute",
+        "path": "service/harness.py",
+        "line": 41,
+        "verified_declaration": "execute"
+      },
+      {
+        "label": "read_context_artifact",
+        "path": "service/context_retrieval.py",
+        "line": 9,
+        "verified_declaration": "read_context_artifact"
+      },
+      {
+        "label": "restore_checkpoint",
+        "path": "service/recovery.py",
+        "line": 34,
+        "verified_declaration": "restore_checkpoint"
+      },
+      {
+        "label": "validate_accepted_request",
+        "path": "service/recovery.py",
+        "line": 309,
+        "verified_declaration": "validate_accepted_request"
+      }
+    ],
+    "previous_anchors_refreshed": {
+      "path": "runs/context-offloading-2026-10-10/anchor-refresh.json",
+      "sha256": "72d8a68fc34d2f9806fb4a44c090d9a8a91db2179e5f372fc7d5aaf376df3e7e"
+    }
+  },
+  "preservation": {
+    "baseline": {
+      "path": "runs/context-offloading-2026-10-10/before.json",
+      "sha256": "11af213a74172c093645f9884e58979b99dbc0be327b54460ca80d05d1e6a96c"
+    },
+    "baseline_file_count": 200,
+    "removed_baseline_files": [],
+    "changed_existing_files": {
+      "service/harness.py": {
+        "before": "c3f48b9bb332a958c3c3d878ab7c7a91e2573567659d3c34e277b77c9445e4f7",
+        "after": "32bf1208b869b91774f62b59ba121a41c0200bd9bcfc429dcb4fc5039d5fdb96"
+      },
+      "service/recovery.py": {
+        "before": "1db8453963bcf7aaddcb958eca3e6da806fc3fc7ca8850c65b8c708d626eb6f2",
+        "after": "bed65f6ebeb8d208922f787e34f6ec08c51c1f4f6e66ef99e08dd8da87216d46"
+      },
+      "service/protocol.py": {
+        "before": "68e310ed998b64a649a29465cee158ef2cf5f8eaba7df6dfeba7b789a757049d",
+        "after": "7d06d34885c7485c87fa148ab0878c99d35a81c77f81d4190c2fb4339e606af2"
+      },
+      "service/providers.py": {
+        "before": "ceed1b520d954d93bff191cb3b05cd30d4f35035ec59c51a11dc0bcbb302ff78",
+        "after": "7b5f2436c7fb150be0b8bd45292fd1464ac1a049283e75a383c580a348fe2d31"
+      },
+      "service/context.py": {
+        "before": "214401dd83868ab2b4c79a50d119c9af9d6088fa4a58eab6a04e18825282cd4a",
+        "after": "eadf2fcfa8e619953c893d6a972da1cb743a88aecfaa56aaf984c783b35eb2d6"
+      },
+      "service/storage.py": {
+        "before": "8c841dd1f09c97236aa24af57ab927b4fa09ca72a4fb42d02537872e5db8d118",
+        "after": "5124d010d24b9dda3f8facc2548be20f90134e968a3c1b11457702b1d99a3b3a"
+      },
+      "capstone/08-implementation-coverage.md": {
+        "before": "71caf75ce414c2da8356415fb5d07884e1efd232c625a84f731d8d07d39882ab",
+        "after": "7a2b0305997ff790d08b48c1bb4d1205c22671ae9ea033b455f2d64ee0486bc4"
+      },
+      "capstone/06-target-role-and-research-contract.md": {
+        "before": "b5d0dece3e12acc72e7095dbed9b2e48dae90416ce3f5ff4c14dc0690e6ff4ee",
+        "after": "734f879ed147d30291e95ce5a1ace6dc3fa3fddd9ecf9691b97af3eabeb023a0"
+      },
+      "capstone/04-build-sequence-and-mastery-gates.md": {
+        "before": "f2f023434a76446018263a0476e5b3d73e356acfc51478bc1dee8265fa9b639f",
+        "after": "afd7303e11996906f74199fab3fb9e08dc22ed97f249a3bcccaed011f44c5a92"
+      },
+      "capstone/03-evaluation-serving-and-efficiency.md": {
+        "before": "52013838b89554c9980b5eaa9e4a72fb12902caee066e448e2b50c8b889fb6ef",
+        "after": "3d187d3b9114f4971c14e38366c232418fe46ab14c28d728a422152d600ad1a7"
+      },
+      "capstone/07-reference-implementation-spec.md": {
+        "before": "070d63357965a05f3f3e21681d1bc414a1056c5ac9993e5f258eaecc56eb95d9",
+        "after": "98ce05aff733b0ace9db8f79553e24f4fddce6dd7b3462f594efd52767fbcc29"
+      },
+      "capstone/README.md": {
+        "before": "061e21fb7e2798bc637c9121b451f7b32b63e6814d2ac44f75ea36a0fa65b088",
+        "after": "07511997553fd8bfed580a4a86ee8e5ddb8f31957d35af05b139904782a50c41"
+      },
+      "context/decision-log.md": {
+        "before": "6bb1b1512fb7c9785d236e19b910696609f59101f52b773e5bed861e092742c6",
+        "after": "40e9364ebb677ed2774205c65e9baadbda0c86d9d16316001ed57394ad324cb4"
+      },
+      "context/README.md": {
+        "before": "b3b5f3e9c42d3bb84617fed898c9baf070dd27fc254c572eaafabe5d15894bab",
+        "after": "3ecc551836281af4518f1e9dd1fe78fa7e0a1444c0d30014948184e26a3d6e1e"
+      },
+      "context/current-state.md": {
+        "before": "9ce47d97373e1142dfc7cb1911baa78de116243bef1eb7891a00c87d92767435",
+        "after": "db2b83104ad8016b10532980b779b715b6e795d8e2af0f2a029263741fcafea5"
+      },
+      "docs/02-mastery-learning-plan.md": {
+        "before": "a6d1a27d362f95c073a45d82f1624f4c86926d66cb00453e3be9d6da4712f62e",
+        "after": "ffa5eef8b5a6f3e2b1266ac2f5ce5d97ceea8e3894370afe0492f009c757708c"
+      },
+      "docs/06-reference-code-reading-guide.md": {
+        "before": "0f41b1b008282d9fef67111daa5a4706241a3a1eacfc6a105c63441107916703",
+        "after": "b82dbd82c8c0834baa7991a304d0efaa0cccbb2426085dc8c03e9397fbbba2c4"
+      },
+      "study/packets/H0-reference-runtime.md": {
+        "before": "0a3cb72fe0bfe1d33faa264200776f47f6dd76c0d602a3d774bb9c15090df55b",
+        "after": "f667e19a30ab93b40fd97f96e48a86087b8fe49be59700de508c20466530afa7"
+      },
+      "ops/runbooks/recovery.md": {
+        "before": "e04dac9f443ce78880cedd7b6ff4220bd3e77c90fb5b61d5f300f11e8ea78553",
+        "after": "c6c2a56c8b3219019bc19d0924c8222b6c70b12657361542b7c13e2ec156e056"
+      },
+      "hackathon/README.md": {
+        "before": "0b8064d590cf1e0dc192a585a3db5b38abf72a98279871a20cbe20eee86adc5f",
+        "after": "6cd727175cb69994355d65470687ac8ed868fa45f8e17c05c90303c57cb02b43"
+      },
+      "hackathon/06-http-error-evidence-contract.md": {
+        "before": "02a88ddeb543304799a59993b705d56f4e7f011185eb4062dc28e2252d280d9a",
+        "after": "d9098e5bbefb25169febd6f3e268d2d2757150ef5f2e6279d0cbdeb195915b10"
+      },
+      "README.md": {
+        "before": "e7e508e8f86b6a758f331154f5feb5bdc5f092e67bbeb4786ef076544a677559",
+        "after": "4a7639a5f7ec27c92c28937ddb77ee07333ce2739fd24ce6916f687e5ef96c75"
+      },
+      "START-HERE.md": {
+        "before": "abb772852f3232d5bc97e9e0c762061cda635e9bcd12c230d7fa7956e84cec00",
+        "after": "b82202a946adaede236e25ab4327bc96cb724f0dd1bd244d372a6670f5f0ca3d"
+      }
+    },
+    "new_python_files": [
+      "scripts/context_offloading_demo.py",
+      "service/context_retrieval.py",
+      "tests/test_context_integration.py",
+      "tests/test_context_projection.py",
+      "tests/test_context_retrieval.py",
+      "tests/test_context_runtime.py"
+    ],
+    "unchanged_from_baseline": [
+      "existing tests",
+      "compute",
+      "workloads",
+      "evals",
+      "uv.lock",
+      "pyproject.toml",
+      "docs/05-mastery-tracker.md"
+    ],
+    "historical_inputs": "Archive, references, original lab and prior runs were not edited; they were outside this turn's baseline hash scope.",
+    "authority_storage_schema": "Existing schema 2 retained; new per-dispatch acceptance/retrieval metadata is additive. Typed checkpoint payload version is separate from DB schema."
+  },
+  "environment": {
+    "python": "3.12.11 (main, Jun 26 2025, 21:44:36) [Clang 20.1.4 ]",
+    "packages": {
+      "pytest": "9.1.1",
+      "ruff": "0.16.10",
+      "sqlalchemy": "2.1.4",
+      "psycopg": "3.3.6",
+      "httpx": "0.28.1"
+    },
+    "paid_execution": false
+  },
+  "temporary_postgres": {
+    "base": "/var/folders/jk/23y_gcc56qg_43vr0br4l82h0000gn/T/cam-context-pg-yvcs_rw3",
+    "port": 60817,
+    "status": "stopped",
+    "host": "127.0.0.1",
+    "user": "danghuyhoang",
+    "database": "cam_context",
+    "url": "postgresql+psycopg://danghuyhoang@127.0.0.1:60817/cam_context",
+    "encoding": "UTF8",
+    "temporary_cluster_removed": true,
+    "stopped_at": "2026-10-10T10:35:39.103366+00:00",
+    "stop_log": "runs/context-offloading-2026-10-10/postgres-stop.log"
+  },
+  "limits": [
+    "Scripted/mock model evidence, trusted local stores and bounded examples; no live semantic recall, cost/speed improvement or production-readiness claim",
+    "Anthropic retains full history; offloading requires explicit reviewed capability",
+    "Per-dispatch acceptance does not create global mandatory task-wide context enforcement",
+    "Canonical request-record identity and actual HTTP wire bytes are distinct artifacts",
+    "Recovery validates evidence and preserves Unknown/in-flight effects; it grants no ownership or retry authority",
+    "Legacy minimal/untagged and schema-1 checkpoint payload compatibility remains; context-enabled continuation requires typed metadata",
+    "No new semantic/native compaction, skills, LSP, GPU validation, live sponsor conformance or public release",
+    "Human mastery remains not demonstrated; hackathon release/access priorities remain"
+  ]
+}

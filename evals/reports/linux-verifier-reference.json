@@ -1,0 +1,556 @@
+{
+  "passed": true,
+  "criteria": [
+    {
+      "requirement": "tenant_idempotency",
+      "passed": true
+    },
+    {
+      "requirement": "resume_atomicity",
+      "passed": true
+    },
+    {
+      "requirement": "cancellation",
+      "passed": true
+    },
+    {
+      "requirement": "cursor_binding",
+      "passed": true
+    },
+    {
+      "requirement": "pagination",
+      "passed": true
+    },
+    {
+      "requirement": "sync_compatibility",
+      "passed": true
+    }
+  ],
+  "mode": "linux_candidate_rpc_external_grader",
+  "tree_digest": "a7d758133e3bf4a81c060669fdc82a1cbe97e4ec409fb38889b60462dc1a0e45",
+  "grader_digest": "4174c11b124f6a6206a86e3b45139d4298f86781c7db2430e894e3689755c390",
+  "environment_digest": "b01c81e044c390a592d3b34563dcefcc112b03de305a2ffe9f2220b4771558e1",
+  "observations": [
+    {
+      "request_digest": "32e1e72909637a8802849aeea4e5d4fb8b19cd256bc39c983a2cf316a38a88ce",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2802242496982217,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "d590ed796cc44ba8b3988d8ae08309c46867950522fb9d826585348f1715ab48",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20154008409008384,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "1b0563ce053897725735e282d5dd6fdca501f736f08c848bd2421c8ed3a387bf",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20334562472999096,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "d041cd828c2ae61b8bd9323141db028c05a12160242b4d6486b2225fc70b6e35",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19088166626170278,
+      "output_digest": "c5580482009b56e10ffd8a683fa2d479b7926f0191c35c7e62a815669bb602f8"
+    },
+    {
+      "request_digest": "17e3e21d7d6d51cd3a189e082ce77cc6bfb5b2be0f89091a9f21ad7b0196096b",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20379308285191655,
+      "output_digest": "91b14b36d2252cd8fa46fc1bed65998e21775c9e655636b94b365f5f1d068e7f"
+    },
+    {
+      "request_digest": "fd2beafc1870e71be319475ca7637d5d266176dbdae38cea7e80f26f477892dd",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20263537485152483,
+      "output_digest": "33b81aef1f23dcb3142ee566ccce397187f4cf2b2193826f82d337e06e33f71b"
+    },
+    {
+      "request_digest": "347d8c129d323acbf5a71a5994e265001adc64d18b9165f3e0c682c51570c413",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2151843341998756,
+      "output_digest": "e94430b03e37fd716aa28357c279b45f66c78b85ea280f832c5d8b6232f7e585"
+    },
+    {
+      "request_digest": "be6dfb314cde442f5fa3e6ab77012b3d79c975a7740ba95af2f82028561205a0",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20993266673758626,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "f47c86c2009c578345c317e28eeba7928d5147c22691acdbeff8c820b76af0b9",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19546912517398596,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "e3c6eaa650803632f8b11eb1b53b703227843f9c4f9d0b4256c61984ec76cd90",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18944433284923434,
+      "output_digest": "d0625db3814b68affa9a406160e4674da7e36747fa253f71109cb6c38f416e3f"
+    },
+    {
+      "request_digest": "d90f1b1d86d9ab493ed94e396b35b2cf7d87ec3a059d254178ef328bf83a4f94",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20033224998041987,
+      "output_digest": "50b9bf33ef9d60161ac81a08bc20e6ef9654814686545f71ae759a5ac4739a5e"
+    },
+    {
+      "request_digest": "e4a9f08d23767e1b1566d84427528d6c34b0c7b70ff499b018524dc8940af871",
+      "method": "list_issues",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18995254207402468,
+      "output_digest": "4d7727999caa4615644a841f6d97481a41c319e8660b0b6a0536f7db3c9c1d40"
+    },
+    {
+      "request_digest": "9ec2ab1ad9b380b738df03f1355703ad01f697cabeba455a28d0ce72192bc01a",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18318841699510813,
+      "output_digest": "3c6e196042aaad54d3946f6cc21c704318e803385b3484b40d41e24b99dd8b36"
+    },
+    {
+      "request_digest": "be6dfb314cde442f5fa3e6ab77012b3d79c975a7740ba95af2f82028561205a0",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.14382024994120002,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "9ec2ab1ad9b380b738df03f1355703ad01f697cabeba455a28d0ce72192bc01a",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18737187515944242,
+      "output_digest": "6e3ce953827c9aef150e9eaa3f7e0fce57d64b9e65157080e322d7b99bcba66a"
+    },
+    {
+      "request_digest": "9ec2ab1ad9b380b738df03f1355703ad01f697cabeba455a28d0ce72192bc01a",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20825220830738544,
+      "output_digest": "39bf95c5f2c98f0fe4c68d186c5ff614bd175e3e1c6c116743a99ea8d555eea4"
+    },
+    {
+      "request_digest": "9ec2ab1ad9b380b738df03f1355703ad01f697cabeba455a28d0ce72192bc01a",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19569458300247788,
+      "output_digest": "39bf95c5f2c98f0fe4c68d186c5ff614bd175e3e1c6c116743a99ea8d555eea4"
+    },
+    {
+      "request_digest": "d90f1b1d86d9ab493ed94e396b35b2cf7d87ec3a059d254178ef328bf83a4f94",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18650520918890834,
+      "output_digest": "39bf95c5f2c98f0fe4c68d186c5ff614bd175e3e1c6c116743a99ea8d555eea4"
+    },
+    {
+      "request_digest": "d90f1b1d86d9ab493ed94e396b35b2cf7d87ec3a059d254178ef328bf83a4f94",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20564691675826907,
+      "output_digest": "39bf95c5f2c98f0fe4c68d186c5ff614bd175e3e1c6c116743a99ea8d555eea4"
+    },
+    {
+      "request_digest": "e4a9f08d23767e1b1566d84427528d6c34b0c7b70ff499b018524dc8940af871",
+      "method": "list_issues",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1970336250960827,
+      "output_digest": "9c0a49c3939def1f7a836e53330c40b713c1fd8313059c13362288ff627db5a4"
+    },
+    {
+      "request_digest": "9e16e95a1aeed33a938f2c8535ad66402a50a3534578ab9fa1ada5a19dbc8c27",
+      "method": "__count_events__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18339308304712176,
+      "output_digest": "7ffd493d8d088b6249b65715f9fb799e8a40354253419dabe3695ca500ee07dc"
+    },
+    {
+      "request_digest": "9ec2ab1ad9b380b738df03f1355703ad01f697cabeba455a28d0ce72192bc01a",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1910217497497797,
+      "output_digest": "39bf95c5f2c98f0fe4c68d186c5ff614bd175e3e1c6c116743a99ea8d555eea4"
+    },
+    {
+      "request_digest": "9e16e95a1aeed33a938f2c8535ad66402a50a3534578ab9fa1ada5a19dbc8c27",
+      "method": "__count_events__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1994335833005607,
+      "output_digest": "7ffd493d8d088b6249b65715f9fb799e8a40354253419dabe3695ca500ee07dc"
+    },
+    {
+      "request_digest": "26997b9c23426c0f62589395e31cc05118098093b5d127499da3a6f5bc83bc14",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20234137494117022,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "b3b818e692e48899c00ff37f6f9ad3cf20b453d15f6b41f4f0c9362249a91e1f",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.22055629082024097,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "74ab7866da96808ff86fc2589aa9a77979897b8578642a338a9f96f601648d00",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19211095804348588,
+      "output_digest": "c65661f206103cdb02d8b1f374a2841c290ad722b68e802131448fcde175ad8d"
+    },
+    {
+      "request_digest": "5f49c4e643643d3b418ebba8f72dcd38e2c39bab5ff1cf0358b36e101f68bf85",
+      "method": "cancel",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18736591702327132,
+      "output_digest": "8ca3140bef51e3571c38754b5afaf5737cf6b5135fa7939ec3802e7b03b7a80c"
+    },
+    {
+      "request_digest": "99d3fe7e1ae641c8ef4974502bf44f691aef7637a2d37cf11fb6cd130d0d529e",
+      "method": "__count_events__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19071649992838502,
+      "output_digest": "9e3c1f85f14fce4cbb4391ece5621a9c262612ea0b3cca2466f0726a6c7a91de"
+    },
+    {
+      "request_digest": "5f49c4e643643d3b418ebba8f72dcd38e2c39bab5ff1cf0358b36e101f68bf85",
+      "method": "cancel",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.13698374992236495,
+      "output_digest": "8ca3140bef51e3571c38754b5afaf5737cf6b5135fa7939ec3802e7b03b7a80c"
+    },
+    {
+      "request_digest": "74ab7866da96808ff86fc2589aa9a77979897b8578642a338a9f96f601648d00",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1943520000204444,
+      "output_digest": "8ca3140bef51e3571c38754b5afaf5737cf6b5135fa7939ec3802e7b03b7a80c"
+    },
+    {
+      "request_digest": "6c7760fc161b7d41ee7e74ca998cd809712a807c2e9512d7eecf9ba2a1ee4c36",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1949855419807136,
+      "output_digest": "8ca3140bef51e3571c38754b5afaf5737cf6b5135fa7939ec3802e7b03b7a80c"
+    },
+    {
+      "request_digest": "6c7760fc161b7d41ee7e74ca998cd809712a807c2e9512d7eecf9ba2a1ee4c36",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20265599992126226,
+      "output_digest": "8ca3140bef51e3571c38754b5afaf5737cf6b5135fa7939ec3802e7b03b7a80c"
+    },
+    {
+      "request_digest": "3cba6ec0e0ebc718c9723a58190b1382373a4b2c64eacba75ae2451b66d7666f",
+      "method": "list_issues",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1964449156075716,
+      "output_digest": "6036b24541dc7e6b6f2c2f60271564c7b1fdad1fa2e24673f0009d8b1cd491a1"
+    },
+    {
+      "request_digest": "99d3fe7e1ae641c8ef4974502bf44f691aef7637a2d37cf11fb6cd130d0d529e",
+      "method": "__count_events__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1960025830194354,
+      "output_digest": "9e3c1f85f14fce4cbb4391ece5621a9c262612ea0b3cca2466f0726a6c7a91de"
+    },
+    {
+      "request_digest": "6910e09c20bb416c15eb0392b85a5c7891dd29b5e296f672bce9f7ed004c53fe",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18145641684532166,
+      "output_digest": "91b14b36d2252cd8fa46fc1bed65998e21775c9e655636b94b365f5f1d068e7f"
+    },
+    {
+      "request_digest": "f167071557bb1e26f12dd5edca5fd7a17f9717b646790c0115261208873242b0",
+      "method": "cancel",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.14515799982473254,
+      "output_digest": "519e703181d96d8e0a41971b8955daf0724e2413f95de9db6c00dcdd387832fe"
+    },
+    {
+      "request_digest": "2e6fe5807037ecc61999474ac6a20bb72d44e8a3c8869b057a80c7c4738c77fd",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.17616500006988645,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "b68bee7dddb50d689271cb8b69f459eda8197fa28fd20bce5e4b07fc52644ad0",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18363374983891845,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "23151bd9f7a7d573ae7d880df0f44e718474c0576cc96b166d23d13f90b39ba3",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19474516715854406,
+      "output_digest": "91b14b36d2252cd8fa46fc1bed65998e21775c9e655636b94b365f5f1d068e7f"
+    },
+    {
+      "request_digest": "8a4bf07bb31221fa50547f41d3242fc8132d515c9e6d443b81c11dc0994332b6",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20189350005239248,
+      "output_digest": "9e3c1f85f14fce4cbb4391ece5621a9c262612ea0b3cca2466f0726a6c7a91de"
+    },
+    {
+      "request_digest": "e168a51ba361a19ca4545115e5503e436f801e86a1cbe61a6a5909974da218ca",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19811266707256436,
+      "output_digest": "9cbccb7ea016b892716cd11bfc4e5a584216422390fed01d9f3cb55a689ec459"
+    },
+    {
+      "request_digest": "a0f2cd4901b04471d13a85e613c96063badffc8fec98840c2824948b10767249",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.4950215839780867,
+      "output_digest": "982a12218bcfe91a9ca41189bf53295a022d85ba7b9309c5095f0b320f603be1"
+    },
+    {
+      "request_digest": "e138bf1fa8954a9be0929cf5bb9d24f0fe1f4120894fdda7bf76f5ecf63cea34",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1454902496188879,
+      "output_digest": "982a12218bcfe91a9ca41189bf53295a022d85ba7b9309c5095f0b320f603be1"
+    },
+    {
+      "request_digest": "588b5b8fcf542ca3a61e6034e56c66a8f9c6c1b0a68f48bf7d75cf099905a8ad",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1882222923450172,
+      "output_digest": "982a12218bcfe91a9ca41189bf53295a022d85ba7b9309c5095f0b320f603be1"
+    },
+    {
+      "request_digest": "03b42c97d5ed955d374f1c8bc6000c8359b4d31953023ad8bf60a0d4e7b6cffd",
+      "method": "_cursor",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19722733367234468,
+      "output_digest": "c4564f6c8f317c30c2f1f146442e0f2dbdaeb6a3fc021e4e5d91239dbf50d935"
+    },
+    {
+      "request_digest": "32d1a9cc2a518a1099ec87714d5b7abd7bd80b080b2b2f6d56b7183e3fc35a0f",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19911491684615612,
+      "output_digest": "982a12218bcfe91a9ca41189bf53295a022d85ba7b9309c5095f0b320f603be1"
+    },
+    {
+      "request_digest": "a72b93f2c1533570d0c466825c08e936fada6591ebec984cf7ace569bf682c9f",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1881372081115842,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "603f1693ba67e4551a4e236f9f7546cd60f557654207783dba99a53be274ccdc",
+      "method": "submit_import",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19553087512031198,
+      "output_digest": "5fbede46212efc4d247bcba4e90e15ecc0a36da45d33e02b6439b20d5036f722"
+    },
+    {
+      "request_digest": "8bd2dee9b69c08574e7cb2047d125f259e89782b1452c86df029c2669efc6fde",
+      "method": "process_batch",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.20100112492218614,
+      "output_digest": "8fb764e0dcc2e5d3b83a54e8a23b1f2a5f0c89058b6bec148812ad5cf37dfe7c"
+    },
+    {
+      "request_digest": "54f4353e928c2a715b60ef24b0b0be355a8697f890d11bc5ceceed238ceb09de",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2190678338520229,
+      "output_digest": "9cbccb7ea016b892716cd11bfc4e5a584216422390fed01d9f3cb55a689ec459"
+    },
+    {
+      "request_digest": "19c429730f443db8d5291c04a0e0c89668ceb73b677355bb703b0ad5d209928f",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19617258291691542,
+      "output_digest": "3ca1a73dcdaec44efefff86f221791612b18a5a3dda8e9eef1a0917d18318b2e"
+    },
+    {
+      "request_digest": "56c80eb82c4d8b599258ca4c0d4604376ed5ecce564667ca1497cde2dadce29d",
+      "method": "cancel",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2771749999374151,
+      "output_digest": "6d803ade09c2c026c785f0446dc5c99a42db3f0ed3cf41594187e20ecf189aa0"
+    },
+    {
+      "request_digest": "711a4d2feb90b934e3c2fcad47ea0928b50a3c561a58bc13a6b02305a06ce977",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19857962522655725,
+      "output_digest": "9cbccb7ea016b892716cd11bfc4e5a584216422390fed01d9f3cb55a689ec459"
+    },
+    {
+      "request_digest": "19c429730f443db8d5291c04a0e0c89668ceb73b677355bb703b0ad5d209928f",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2328723748214543,
+      "output_digest": "3ca1a73dcdaec44efefff86f221791612b18a5a3dda8e9eef1a0917d18318b2e"
+    },
+    {
+      "request_digest": "3c6b21d820c6339ee1efe68e3799da76dcf0263c582c62985029350359229377",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19178679073229432,
+      "output_digest": "d957c562751d40df4fd5e06113f5c9eecfb260faebfc2cb75d6a4cfeae0afc02"
+    },
+    {
+      "request_digest": "3db4d19b03461c1153d0519de2344040bbb3cc5c094f3d33e441c95a422a4d17",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19706774968653917,
+      "output_digest": "99088e16e1795c74188bf2ed520231ae2d3c6e01206f36eaae46ad9a7f30b7a1"
+    },
+    {
+      "request_digest": "9a99f8cef21be23f3934ad3d1d2c129507875d3364a0fd53ab5fd301a2c11ab6",
+      "method": "_cursor",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2037579999305308,
+      "output_digest": "0db42c1f399d08dd7119f2dc6040d324b886275ff7e7a1486d75b5e603505455"
+    },
+    {
+      "request_digest": "df98f493a32d0cabb1096560764de2c4f7b247fc96beae4ef0ba67bd96daf669",
+      "method": "progress",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.19999375008046627,
+      "output_digest": "99088e16e1795c74188bf2ed520231ae2d3c6e01206f36eaae46ad9a7f30b7a1"
+    },
+    {
+      "request_digest": "f87d6c2ea862e1a660c21c8a17bf566f9526493b214f1de94305699cf6bd8add",
+      "method": "__init__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.27069533290341496,
+      "output_digest": "f64adc28f20eb12a8812cf2013f5ebfb665ecb337059f2d060a82cf361c81cdc"
+    },
+    {
+      "request_digest": "97f8b7657d136edf1df3e4c5a72628ee0577940b9a3b34bf4d799d952b82570c",
+      "method": "__client_import__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.2038434580899775,
+      "output_digest": "6036b24541dc7e6b6f2c2f60271564c7b1fdad1fa2e24673f0009d8b1cd491a1"
+    },
+    {
+      "request_digest": "48c41adea96eae0235cafa52ef148dbfb1572afbb26086a86f6737d61dc1e1d7",
+      "method": "__client_submit__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.1367210829630494,
+      "output_digest": "91b14b36d2252cd8fa46fc1bed65998e21775c9e655636b94b365f5f1d068e7f"
+    },
+    {
+      "request_digest": "053778dbd5f047b1943988e3232325433a89612e44df956e92217480cf6b3807",
+      "method": "__client_import__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18224600004032254,
+      "output_digest": "9c0a49c3939def1f7a836e53330c40b713c1fd8313059c13362288ff627db5a4"
+    },
+    {
+      "request_digest": "5c9e6cdf466b1d12f32e8b6f8aaee8e933e35dfbfbff352d3be373be0cc1787e",
+      "method": "status",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.18998225033283234,
+      "output_digest": "729331993e52a00dffe194ef1ba4a5eb5ff2081fdeabfd22c16edf0f10e593c2"
+    },
+    {
+      "request_digest": "053778dbd5f047b1943988e3232325433a89612e44df956e92217480cf6b3807",
+      "method": "__client_import__",
+      "exit_code": 0,
+      "reason": "exited",
+      "duration_seconds": 0.22426179191097617,
+      "output_digest": "9c0a49c3939def1f7a836e53330c40b713c1fd8313059c13362288ff627db5a4"
+    }
+  ],
+  "retirement": {
+    "retired": true,
+    "container": "cam-sandbox-4be651c2648c444e844be918547f53fd",
+    "evidence": "docker rm acknowledged and inventory absent"
+  },
+  "limitations": [
+    "bounded synchronous RPC workload; no hostile-kernel escape certification",
+    "reopens database per operation; in-process lifetime differs from application server"
+  ]
+}

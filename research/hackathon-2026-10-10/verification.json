@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "scope": "Nebius native provider/harness offline reference and hackathon planning",
+  "git_revision": null,
+  "git_status": "workspace has no Git repository; source identities use sha256",
+  "environment": {
+    "python": "3.12.11",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "source_sha256": {
+    "service/providers.py": "ee3bd8e376a87f91bcafdb67ef95d2caec2e7be0c2128b393c3ffd750a76519b",
+    "service/harness.py": "3fb0815ab00b382c6c0754005ecc5d6a1cd3305679dacb16ff9add98ad838bd2",
+    "service/protocol.py": "68e310ed998b64a649a29465cee158ef2cf5f8eaba7df6dfeba7b789a757049d",
+    "service/context.py": "214401dd83868ab2b4c79a50d119c9af9d6088fa4a58eab6a04e18825282cd4a",
+    "tests/test_nebius_provider.py": "1a80b6753a131d4ae1d7f359fb7ca4cdf6b073f3af2651decfc60e5e63e03025"
+  },
+  "document_sha256": {
+    "hackathon/00-nebius-protocol-contract.md": "dc2ff266544dfd906919061832bfd1e2917f74e1a612509312efa6b00db3b9eb",
+    "hackathon/01-product-and-system-design.md": "23285bd1d8ed1cacde1aa7f5c698468a9a4102e665893d3836118b379268c134",
+    "hackathon/02-delivery-and-submission.md": "358f63eb0d3b6b1ffcf408647191efa044df6a567df16cb4731271d4528f7eda",
+    "hackathon/03-foundations-and-evaluation.md": "c48770218d5a38c8e33394f825f0b507220cf263b53ffdc957e43ac876a68d96",
+    "hackathon/README.md": "c861af7068059558e2a61d9d0fe099a5e59cd0b34ca9f29882d333f935bd3679"
+  },
+  "checks": {
+    "focused": {
+      "passed": 98,
+      "new_nebius_cases": 67,
+      "result_owner": "Sol implementation; earlier97 plus final1 independently checked by Astra"
+    },
+    "full_default_suite": {
+      "passed": 323,
+      "skipped": 17,
+      "subtests_passed": 15,
+      "seconds": 21.81,
+      "junit": "runs/hackathon-2026-10-10/tests.xml",
+      "xml_suites": [
+        {
+          "name": "pytest",
+          "tests": "355",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "17",
+          "time": "21.716"
+        }
+      ]
+    },
+    "ruff": {
+      "scope": [
+        "service",
+        "tests"
+      ],
+      "result": "all checks passed"
+    },
+    "document_links": {
+      "result": "all checked local paths exist",
+      "files_checked": 17
+    },
+    "deadline_conversion": {
+      "official_pdt": "2026-10-30T10:00:00-07:00",
+      "utc": "2026-10-30T17:00:00+00:00",
+      "vietnam": "2026-10-31T00:00:00+07:00",
+      "internal_target": "2026-10-29T18:00:00+07:00",
+      "buffer_hours": 30
+    }
+  },
+  "skipped_backends": [
+    "explicit Linux Docker image integration",
+    "disposable PostgreSQL URL integration",
+    "opted-in local Temporal server integration"
+  ],
+  "independent_review": "research/hackathon-2026-10-10/nebius-review.md",
+  "plan_review": "research/hackathon-2026-10-10/plan-review.md",
+  "not_established": [
+    "authenticated model catalog",
+    "live NVIDIA/Nebius inference",
+    "live token cap or price enforcement",
+    "unseen-repository coding quality",
+    "general live runner",
+    "hosted judge access",
+    "CUDA performance",
+    "operated production readiness",
+    "human mastery"
+  ],
+  "known_source_limits": [
+    "successful bodies retained; HTTP error bodies/headers not persisted",
+    "rate approvals keyed by model; dispatch and restore bind provider/protocol/endpoint",
+    "global-only nonstreaming adapter",
+    "premium cached-input rate rejected; unknown cache breakdown conservatively billed at input rate"
+  ]
+}

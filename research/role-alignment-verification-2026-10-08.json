@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-08",
+  "scope": "Role alignment documentation and proposed research profile",
+  "target": "Anthropic Staff Research Engineer, Multi-Agent Scaling",
+  "source": "https://job-boards.greenhouse.io/anthropic/jobs/5442680008",
+  "checked_markdown_files": 23,
+  "local_links": 165,
+  "line_anchors_in_range": 48,
+  "milestones": 8,
+  "capstone_hours": [
+    104,
+    180
+  ],
+  "study_hours": [
+    104,
+    156
+  ],
+  "total_hours": [
+    208,
+    336
+  ],
+  "research_increment_hours": [
+    24,
+    40
+  ],
+  "production_patch_limit": 2,
+  "proposed_research_limits": [
+    1,
+    2,
+    4
+  ],
+  "capability_clusters": 6,
+  "new_role_contracts": 1,
+  "errors": [],
+  "archives": [
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-mastery-plan-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/original-harness-research-2026-10-08.md",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/danghuyhoang/Desktop/coding-agent-mastery/archive/previous-handoff-2026-10-08.txt",
+      "unchanged": true
+    }
+  ],
+  "new_production_code_or_paid_runs": false,
+  "human_mastery_or_staff_readiness": "not established",
+  "hiring_guarantee": false,
+  "checks_limit": "Document consistency/link validation; no implemented runtime or research results claimed."
+}

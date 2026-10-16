@@ -1,0 +1,1729 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "status": "passed_with_explicit_offline_scope",
+  "scope": "offline_provider_qualification_and_prepared_repair_advisory_handoff",
+  "implementation_order": [
+    "frozen spec and independent architecture review",
+    "separate implementation and contract-test agents",
+    "independent review, preserved defect and repair",
+    "source regression and fresh offline installed acceptance",
+    "core documentation/context update"
+  ],
+  "paid_execution": "disabled",
+  "live_observed": false,
+  "g1_passed": false,
+  "g2_passed": false,
+  "execution_authority_from_handoff": false,
+  "gpu_execution": false,
+  "published": false,
+  "human_mastery": "not demonstrated; tracker unchanged",
+  "specs": [
+    {
+      "path": "research/provider-qualification-spec-2026-10-11.md",
+      "sha256": "f8d76436e2add0e255d798ec14ab2b812ea1228939e65422ef4316c4cdeaa232",
+      "size": 11014
+    },
+    {
+      "path": "research/provider-qualification-addendum-a-2026-10-11.md",
+      "sha256": "62556a8a813d2d30adfa42c2e4a12c9a6cff3d2dbb642fd765a85fe992ce00de",
+      "size": 1354
+    },
+    {
+      "path": "research/provider-qualification-addendum-b-2026-10-11.md",
+      "sha256": "10559e2af77861aa52e325c033183b5c039a8bd54d090b0bf6eeea7f86263c64",
+      "size": 1180
+    }
+  ],
+  "source": {
+    "new": [
+      {
+        "path": "service/qualification.py",
+        "sha256": "6222e11f4f89cc65d2c9f3479f14b5c6873c242b94333c21a6e577c114a45cee",
+        "size": 34180
+      },
+      {
+        "path": "service/qualification_cli.py",
+        "sha256": "032f5ab2a73c77858c43e8d18a5eb75acd24dc88c1d028b5d845871c670a4e9f",
+        "size": 1591
+      },
+      {
+        "path": "tests/test_provider_qualification.py",
+        "sha256": "9d0faa3b88baa1c562eef4a52ccdbdf83920581c099729d85dc96045705d9fac",
+        "size": 25747
+      },
+      {
+        "path": "ops/runbooks/provider-qualification.md",
+        "sha256": "d5fecb49f3197124246625daebcd142d1f465fb2dfbaeeda912f420d04c0b790",
+        "size": 6202
+      },
+      {
+        "path": "research/provider-qualification-spec-2026-10-11.md",
+        "sha256": "f8d76436e2add0e255d798ec14ab2b812ea1228939e65422ef4316c4cdeaa232",
+        "size": 11014
+      },
+      {
+        "path": "research/provider-qualification-addendum-a-2026-10-11.md",
+        "sha256": "62556a8a813d2d30adfa42c2e4a12c9a6cff3d2dbb642fd765a85fe992ce00de",
+        "size": 1354
+      },
+      {
+        "path": "research/provider-qualification-addendum-b-2026-10-11.md",
+        "sha256": "10559e2af77861aa52e325c033183b5c039a8bd54d090b0bf6eeea7f86263c64",
+        "size": 1180
+      },
+      {
+        "path": "research/provider-qualification-independent-review-2026-10-11.md",
+        "sha256": "0ac6e550550859b94404131d509159d87df5e2c338dc1572f9ec4aadb8e6cf13",
+        "size": 6821
+      }
+    ],
+    "changed_baseline_files": [
+      {
+        "path": "README.md",
+        "before": "c1da1613145c7c6757d7fe69549ff38bb08e7a29e16904e3f4308694039591b3",
+        "after": "85596ed78de64716bd8601c04303c9162b32d85cad046dfd41d08587a5c26c2d"
+      },
+      {
+        "path": "START-HERE.md",
+        "before": "bc0d829ae1025415aaea8b605e6f614f027f286f30a1620e65d7db92c35ffc20",
+        "after": "79649de9588c33603ef8976b2a58763a63df731bd9113b26d30a35de0dfd3bd1"
+      },
+      {
+        "path": "capstone/07-reference-implementation-spec.md",
+        "before": "5b5e9ca471f515ea6e3ec82b6a710d8e2c1ef0324d89e8ad1c6e5f7eb67ba0a4",
+        "after": "0745af8746770fecfd88e49d11360b9c3560b9d939d7a327c535f77033061310"
+      },
+      {
+        "path": "capstone/08-implementation-coverage.md",
+        "before": "36cf7e1a285f1c2012aeeaf67d18984cd5e69a02faa4530cee0ed4f91d62b4aa",
+        "after": "3df560dabb7b6d38a030c697d9ec342ada370ef42570fe97a5776898c1a7758d"
+      },
+      {
+        "path": "context/README.md",
+        "before": "497c23deddf7ae8059c084cab3d693de6585b364ec2e408c6b1f87218fa9db82",
+        "after": "f0728dd655eef5fcf7b210cfb9188e319872bc2f14a9ac05b931ddbc0af176f7"
+      },
+      {
+        "path": "context/current-state.md",
+        "before": "86fad4968b957f56024dd53f04032bacd091c90d01535473704e6354cde4f3fa",
+        "after": "e62f31981f9c2f549b7e2a2ec7fe74a48ee3d38ba5894e7914a7bb36bfbb2d66"
+      },
+      {
+        "path": "context/decision-log.md",
+        "before": "449f4b24b0dcef59318ac3979aa83a728bdb9ab21a81f54f7153849eb7b53508",
+        "after": "2bd2a143c97f124065cbba9360e709e5056e06d84b87cb6e785236129ee1cde3"
+      },
+      {
+        "path": "docs/02-mastery-learning-plan.md",
+        "before": "9f569c276d5e7e50cb03edc4c0cb6e830516356db448c410e7601ce8de69f4b1",
+        "after": "cdc6a9a0f4658a2c1cbe0c17327f9c8d3afa3d5c0e7a6ac740b8efa80d5ad33a"
+      },
+      {
+        "path": "docs/06-reference-code-reading-guide.md",
+        "before": "8d29843ef1f22c6cded1bf499be108f2af2c5c7ccffa5240fa1926839e9f95da",
+        "after": "d44396ad35c7c6c87504d1618eca96ff8e86a32947193362234c30ed9caf00f7"
+      },
+      {
+        "path": "hackathon/02-delivery-and-submission.md",
+        "before": "c47e80829aae8446af7f587db957a6d3a5ebb8bc3d188ca197680608a5c9e851",
+        "after": "fd2764dc3fcb4472bd1a24cc396c694e57511ad55c103f1b012d01401686be41"
+      },
+      {
+        "path": "hackathon/04-execution-specification.md",
+        "before": "24173db64fe117d1896abc2d4375fdc7df4879da4e925af322756ccb3985fbc5",
+        "after": "2740b485b3bc9d6308894e649317e61dd8a966319f0fbd55272ba8c9f93ed2ca"
+      },
+      {
+        "path": "hackathon/05-local-repair-runbook.md",
+        "before": "717ec876e7886ed55b899d8efc50bc7a4b6dc5fe38710427e92fd5ec66e9c49e",
+        "after": "117260c43eb5f902771340bf9c9e0db651daf28a65c1d325554652f43877c9b6"
+      },
+      {
+        "path": "hackathon/README.md",
+        "before": "02e0d61ba2af020c66885c8c3b1b24e1072a0e2b8de220c79dcb532ddfbae3e5",
+        "after": "beef26b572cdd64c528e85643dc48e6d64586c2d435b39f57104203ac4f10a87"
+      },
+      {
+        "path": "ops/README.md",
+        "before": "6101a58e42086d8c1e80f620b67e8e5fb3ef5d4f2f78e15a1acddaade0906ae2",
+        "after": "4847a946d0ad7efa65428c34e559894ba827a43bee3d31597209f3592d1f67e8"
+      },
+      {
+        "path": "release/OFFLINE.md",
+        "before": "0580888d7733675d4958ff6fb7e9154dbb7f68e1f3768638bddcb00a5e1f03cb",
+        "after": "64d134e598924cfb75dd36612646f2333d03104c6603195294d2846cdeaebc52"
+      },
+      {
+        "path": "release/README.md",
+        "before": "9a54f085cf8bba94d019ff342301848cc7a6e60007432395ad9397f2b9907990",
+        "after": "7d75cc59304fa3b064e5518e5d0bcb0048fc59804cee3d53fe204b98612680cb"
+      },
+      {
+        "path": "release/acceptance/installed_package_acceptance.py",
+        "before": "846ebe94e0ea3015fbf4bbcd2a6723aedb3dcfb78c1c08a245ad50657719f6a0",
+        "after": "73684ad7bea304759bd52af949d36aa70f83651a6efbc35c8042fe8106d43f9d"
+      },
+      {
+        "path": "releases/README.md",
+        "before": "d49639235c4d1c80f5095e9e3950de156e07500a4b2e59a1c382261c3bb265e8",
+        "after": "a0412703ad11b47784a7780fbe59756c556525064385af394421e9301451f010"
+      },
+      {
+        "path": "service/cli.py",
+        "before": "fe0fd2084eac33d6423cef90e9f49a10b41cebc48fff13c87a286a38db85a0ea",
+        "after": "ccd2ad4a42d2c27d5974901f8cbf7564837c24f5de7522cbc1a8423f2dbd6104"
+      },
+      {
+        "path": "study/packets/H0-reference-runtime.md",
+        "before": "4c7b99a67737674bca122fb5e33ecfeb23cf676929c897ffd058932d038f73bb",
+        "after": "9335023df6ee4e7303d788e2112971b59c27e14db2e9a65390b6e2b57fe96d86"
+      }
+    ],
+    "service_hashes": {
+      "service/__init__.py": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999",
+      "service/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "service/admission.py": "d309dcf7e8b7e7930dcff7c48331d24527c408aa5d8b3d56d1f6d0a6c213423c",
+      "service/api.py": "7b2ef3fef19a12e5af5d1f15d9384ad2ae7d5673331ca6d110f101b4da0aea8d",
+      "service/artifacts.py": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2",
+      "service/billing.py": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0",
+      "service/cli.py": "ccd2ad4a42d2c27d5974901f8cbf7564837c24f5de7522cbc1a8423f2dbd6104",
+      "service/context.py": "9f7470aef404afee4257a753c22e9f1bdf116415592127c121c664529cb51808",
+      "service/context_retrieval.py": "b1c8b67f5eda15e72163b9979db1a21db5475f330c332009bd903d4818213553",
+      "service/contracts.py": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c",
+      "service/engine.py": "14308d320d0e3e24e29dd7fa3aab4b499035e37222f35af16087ed3133f06124",
+      "service/environment_recovery.py": "c50dcd78580633dd90be9454d960d68df8d7086c4f3a4fcc97a9ee0c0d3a97b7",
+      "service/execution.py": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738",
+      "service/harness.py": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac",
+      "service/integration.py": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92",
+      "service/migrations/__init__.py": "35ba2cdda9356bfa41b55ed189c8a991f4365d646bb73309e0d18aecd5e8575c",
+      "service/migrations/v2_identity.py": "db0cedb696fb917565905225d113dba948bf2ce325117cbf30f4d49eda817c0f",
+      "service/offline_server.py": "c9c8f76aeffaf8e4ffc32cb5cce337d4ecf9216c20c0e84ae699a080e438fb32",
+      "service/protocol.py": "98b490eb78f5a07988b8353782e72bcc35d4b590a8ac7aa015d0c02fef11f016",
+      "service/providers.py": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4",
+      "service/qualification.py": "6222e11f4f89cc65d2c9f3479f14b5c6873c242b94333c21a6e577c114a45cee",
+      "service/qualification_cli.py": "032f5ab2a73c77858c43e8d18a5eb75acd24dc88c1d028b5d845871c670a4e9f",
+      "service/recovery.py": "f361d6627b0987bf2665567091d2e784d43711ddbea638e8267bbba2c5aa917d",
+      "service/repair.py": "dab6c210432dab33d1a439e31b9011133994701803ff084acbdf8cefd1bdf387",
+      "service/repair_cli.py": "0823244953f997f30a9f896dec0ec798c123b5032c4b2b3a5b8f47c2cb576ab5",
+      "service/repair_demo.py": "6bdc067a863bf5f6a3c8ab46623f46862dcec3363ed590a5e364756bf71f1016",
+      "service/repair_provider.py": "b91fd7a95ef527d7118f3c10522196b286670c2eb035c83e99d3ed5d76b0354d",
+      "service/repair_reporting.py": "f87e035e7f6bf8fe9e8ad5fe5389d96075a2722750d422ffd8e6ac2d356c68da",
+      "service/repair_verification.py": "9b7aaa7111d5dbcedc9c38699e1587ca03a7cc476a201587d22cf75630308371",
+      "service/reporting.py": "c42df34441d053226613d1b15165491ed584ee671db54560effc97327c74573c",
+      "service/repositories.py": "b39676ea101aec719582124a414702a60efb6e125bfdabed4fd571802cb5597b",
+      "service/serving_config.py": "9eae868313f04c2c6d0d5a82142f995f8b84f0903a73499953fa2489737a1763",
+      "service/skill_disclosure.py": "b1d3391b76c30c8b14f435cf46bf395d7e0399526bfc8d06e07f16ac46c6d1a1",
+      "service/skill_recovery.py": "8da071f32593eb43d2a9872cdada1199c3be3e6d62a00b6f553fefe2ec8522c9",
+      "service/skill_runtime.py": "ca74203bd0fc1e069debd388b0d1690f7389b115164f696537c3cf342455622e",
+      "service/skills.py": "1ee97c3cc9f5ec9800c491b92a8d947041606a0e05118570c21d247827096eba",
+      "service/storage.py": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7",
+      "service/verification.py": "a6abec1f5eae19174d86732864edfe7e98e499ad9273d984ebb4da07c7aa249c",
+      "service/workflows.py": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919"
+    },
+    "frozen_candidate_entries": 163,
+    "frozen_origin_checks": [
+      {
+        "target": "LICENSE",
+        "origin": "release/LICENSE",
+        "matches": true
+      },
+      {
+        "target": "NOTICE",
+        "origin": "release/NOTICE",
+        "matches": true
+      },
+      {
+        "target": "README.md",
+        "origin": "release/README.md",
+        "matches": true
+      },
+      {
+        "target": "compute/__init__.py",
+        "origin": "compute/__init__.py",
+        "matches": true
+      },
+      {
+        "target": "compute/__main__.py",
+        "origin": "compute/__main__.py",
+        "matches": true
+      },
+      {
+        "target": "compute/attention.py",
+        "origin": "compute/attention.py",
+        "matches": true
+      },
+      {
+        "target": "compute/cache.py",
+        "origin": "compute/cache.py",
+        "matches": true
+      },
+      {
+        "target": "compute/cuda_benchmark.py",
+        "origin": "compute/cuda_benchmark.py",
+        "matches": true
+      },
+      {
+        "target": "compute/gpu_contract.py",
+        "origin": "compute/gpu_contract.py",
+        "matches": true
+      },
+      {
+        "target": "compute/rmsnorm.py",
+        "origin": "compute/rmsnorm.py",
+        "matches": true
+      },
+      {
+        "target": "compute/rmsnorm_cuda.py",
+        "origin": "compute/rmsnorm_cuda.py",
+        "matches": true
+      },
+      {
+        "target": "compute/trajectory.py",
+        "origin": "compute/trajectory.py",
+        "matches": true
+      },
+      {
+        "target": "evals/__init__.py",
+        "origin": "evals/__init__.py",
+        "matches": true
+      },
+      {
+        "target": "evals/__main__.py",
+        "origin": "evals/__main__.py",
+        "matches": true
+      },
+      {
+        "target": "evals/allocation.py",
+        "origin": "evals/allocation.py",
+        "matches": true
+      },
+      {
+        "target": "evals/analysis.py",
+        "origin": "evals/analysis.py",
+        "matches": true
+      },
+      {
+        "target": "evals/evidence.py",
+        "origin": "evals/evidence.py",
+        "matches": true
+      },
+      {
+        "target": "evals/fixtures.py",
+        "origin": "evals/fixtures.py",
+        "matches": true
+      },
+      {
+        "target": "evals/manifest.py",
+        "origin": "evals/manifest.py",
+        "matches": true
+      },
+      {
+        "target": "evals/regressions.py",
+        "origin": "evals/regressions.py",
+        "matches": true
+      },
+      {
+        "target": "evals/simulation.py",
+        "origin": "evals/simulation.py",
+        "matches": true
+      },
+      {
+        "target": "evals/validation.py",
+        "origin": "evals/validation.py",
+        "matches": true
+      },
+      {
+        "target": "pyproject.toml",
+        "origin": "pyproject.toml",
+        "matches": true
+      },
+      {
+        "target": "release/LICENSE",
+        "origin": "release/LICENSE",
+        "matches": true
+      },
+      {
+        "target": "release/NOTICE",
+        "origin": "release/NOTICE",
+        "matches": true
+      },
+      {
+        "target": "release/OFFLINE.md",
+        "origin": "release/OFFLINE.md",
+        "matches": true
+      },
+      {
+        "target": "release/README.md",
+        "origin": "release/README.md",
+        "matches": true
+      },
+      {
+        "target": "release/acceptance/installed_package_acceptance.py",
+        "origin": "release/acceptance/installed_package_acceptance.py",
+        "matches": true
+      },
+      {
+        "target": "scripts/build_offline_release.py",
+        "origin": "scripts/build_offline_release.py",
+        "matches": true
+      },
+      {
+        "target": "service/__init__.py",
+        "origin": "service/__init__.py",
+        "matches": true
+      },
+      {
+        "target": "service/__main__.py",
+        "origin": "service/__main__.py",
+        "matches": true
+      },
+      {
+        "target": "service/admission.py",
+        "origin": "service/admission.py",
+        "matches": true
+      },
+      {
+        "target": "service/api.py",
+        "origin": "service/api.py",
+        "matches": true
+      },
+      {
+        "target": "service/artifacts.py",
+        "origin": "service/artifacts.py",
+        "matches": true
+      },
+      {
+        "target": "service/billing.py",
+        "origin": "service/billing.py",
+        "matches": true
+      },
+      {
+        "target": "service/cli.py",
+        "origin": "service/cli.py",
+        "matches": true
+      },
+      {
+        "target": "service/context.py",
+        "origin": "service/context.py",
+        "matches": true
+      },
+      {
+        "target": "service/context_retrieval.py",
+        "origin": "service/context_retrieval.py",
+        "matches": true
+      },
+      {
+        "target": "service/contracts.py",
+        "origin": "service/contracts.py",
+        "matches": true
+      },
+      {
+        "target": "service/engine.py",
+        "origin": "service/engine.py",
+        "matches": true
+      },
+      {
+        "target": "service/environment_recovery.py",
+        "origin": "service/environment_recovery.py",
+        "matches": true
+      },
+      {
+        "target": "service/execution.py",
+        "origin": "service/execution.py",
+        "matches": true
+      },
+      {
+        "target": "service/harness.py",
+        "origin": "service/harness.py",
+        "matches": true
+      },
+      {
+        "target": "service/integration.py",
+        "origin": "service/integration.py",
+        "matches": true
+      },
+      {
+        "target": "service/migrations/__init__.py",
+        "origin": "service/migrations/__init__.py",
+        "matches": true
+      },
+      {
+        "target": "service/migrations/v2_identity.py",
+        "origin": "service/migrations/v2_identity.py",
+        "matches": true
+      },
+      {
+        "target": "service/offline_server.py",
+        "origin": "service/offline_server.py",
+        "matches": true
+      },
+      {
+        "target": "service/protocol.py",
+        "origin": "service/protocol.py",
+        "matches": true
+      },
+      {
+        "target": "service/providers.py",
+        "origin": "service/providers.py",
+        "matches": true
+      },
+      {
+        "target": "service/qualification.py",
+        "origin": "service/qualification.py",
+        "matches": true
+      },
+      {
+        "target": "service/qualification_cli.py",
+        "origin": "service/qualification_cli.py",
+        "matches": true
+      },
+      {
+        "target": "service/recovery.py",
+        "origin": "service/recovery.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair.py",
+        "origin": "service/repair.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair_cli.py",
+        "origin": "service/repair_cli.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair_demo.py",
+        "origin": "service/repair_demo.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair_provider.py",
+        "origin": "service/repair_provider.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair_reporting.py",
+        "origin": "service/repair_reporting.py",
+        "matches": true
+      },
+      {
+        "target": "service/repair_verification.py",
+        "origin": "service/repair_verification.py",
+        "matches": true
+      },
+      {
+        "target": "service/reporting.py",
+        "origin": "service/reporting.py",
+        "matches": true
+      },
+      {
+        "target": "service/repositories.py",
+        "origin": "service/repositories.py",
+        "matches": true
+      },
+      {
+        "target": "service/serving_config.py",
+        "origin": "service/serving_config.py",
+        "matches": true
+      },
+      {
+        "target": "service/skill_disclosure.py",
+        "origin": "service/skill_disclosure.py",
+        "matches": true
+      },
+      {
+        "target": "service/skill_recovery.py",
+        "origin": "service/skill_recovery.py",
+        "matches": true
+      },
+      {
+        "target": "service/skill_runtime.py",
+        "origin": "service/skill_runtime.py",
+        "matches": true
+      },
+      {
+        "target": "service/skills.py",
+        "origin": "service/skills.py",
+        "matches": true
+      },
+      {
+        "target": "service/storage.py",
+        "origin": "service/storage.py",
+        "matches": true
+      },
+      {
+        "target": "service/verification.py",
+        "origin": "service/verification.py",
+        "matches": true
+      },
+      {
+        "target": "service/workflows.py",
+        "origin": "service/workflows.py",
+        "matches": true
+      },
+      {
+        "target": "uv.lock",
+        "origin": "uv.lock",
+        "matches": true
+      },
+      {
+        "target": "workloads/__init__.py",
+        "origin": "workloads/__init__.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_1/client.py",
+        "origin": "workloads/baseline/coordinated_1/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_1/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_1/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_2/client.py",
+        "origin": "workloads/baseline/coordinated_2/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_2/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_2/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_3/client.py",
+        "origin": "workloads/baseline/coordinated_3/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_3/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_3/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_4/client.py",
+        "origin": "workloads/baseline/coordinated_4/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_4/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_4/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_5/client.py",
+        "origin": "workloads/baseline/coordinated_5/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_5/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_5/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_6/client.py",
+        "origin": "workloads/baseline/coordinated_6/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/coordinated_6/issue_tracker.py",
+        "origin": "workloads/baseline/coordinated_6/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/full_import_contract/client.py",
+        "origin": "workloads/baseline/full_import_contract/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/full_import_contract/issue_tracker.py",
+        "origin": "workloads/baseline/full_import_contract/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_1/client.py",
+        "origin": "workloads/baseline/repair_1/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_1/issue_tracker.py",
+        "origin": "workloads/baseline/repair_1/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_2/client.py",
+        "origin": "workloads/baseline/repair_2/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_2/issue_tracker.py",
+        "origin": "workloads/baseline/repair_2/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_3/client.py",
+        "origin": "workloads/baseline/repair_3/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_3/issue_tracker.py",
+        "origin": "workloads/baseline/repair_3/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_4/client.py",
+        "origin": "workloads/baseline/repair_4/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_4/issue_tracker.py",
+        "origin": "workloads/baseline/repair_4/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_5/client.py",
+        "origin": "workloads/baseline/repair_5/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_5/issue_tracker.py",
+        "origin": "workloads/baseline/repair_5/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_6/client.py",
+        "origin": "workloads/baseline/repair_6/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/baseline/repair_6/issue_tracker.py",
+        "origin": "workloads/baseline/repair_6/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/evidence/control-report-2026-10-08.json",
+        "origin": "workloads/evidence/control-report-2026-10-08.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/fixture.py",
+        "origin": "workloads/fixture.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/freeze_catalog.py",
+        "origin": "workloads/freeze_catalog.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/manifests/assets.lock.json",
+        "origin": "workloads/manifests/assets.lock.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/manifests/tasks.json",
+        "origin": "workloads/manifests/tasks.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/fixtures/acceptance.py",
+        "origin": "workloads/oracle/fixtures/acceptance.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_1/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_1/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_1/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_1/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_2/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_2/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_2/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_2/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_3/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_3/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_3/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_3/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_4/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_4/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_4/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_4/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_5/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_5/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_5/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_5/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_6/client.py",
+        "origin": "workloads/oracle/incorrect/coordinated_6/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/coordinated_6/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/coordinated_6/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/full_import_contract/client.py",
+        "origin": "workloads/oracle/incorrect/full_import_contract/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/full_import_contract/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/full_import_contract/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_1/client.py",
+        "origin": "workloads/oracle/incorrect/repair_1/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_1/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_1/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_2/client.py",
+        "origin": "workloads/oracle/incorrect/repair_2/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_2/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_2/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_3/client.py",
+        "origin": "workloads/oracle/incorrect/repair_3/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_3/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_3/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_4/client.py",
+        "origin": "workloads/oracle/incorrect/repair_4/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_4/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_4/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_5/client.py",
+        "origin": "workloads/oracle/incorrect/repair_5/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_5/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_5/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_6/client.py",
+        "origin": "workloads/oracle/incorrect/repair_6/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/incorrect/repair_6/issue_tracker.py",
+        "origin": "workloads/oracle/incorrect/repair_6/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_1.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_1.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_1.patch",
+        "origin": "workloads/oracle/patches/coordinated_1.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_2.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_2.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_2.patch",
+        "origin": "workloads/oracle/patches/coordinated_2.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_3.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_3.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_3.patch",
+        "origin": "workloads/oracle/patches/coordinated_3.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_4.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_4.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_4.patch",
+        "origin": "workloads/oracle/patches/coordinated_4.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_5.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_5.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_5.patch",
+        "origin": "workloads/oracle/patches/coordinated_5.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_6.incorrect.patch",
+        "origin": "workloads/oracle/patches/coordinated_6.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/coordinated_6.patch",
+        "origin": "workloads/oracle/patches/coordinated_6.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/full_import_contract.incorrect.patch",
+        "origin": "workloads/oracle/patches/full_import_contract.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/full_import_contract.patch",
+        "origin": "workloads/oracle/patches/full_import_contract.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_1.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_1.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_1.patch",
+        "origin": "workloads/oracle/patches/repair_1.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_2.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_2.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_2.patch",
+        "origin": "workloads/oracle/patches/repair_2.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_3.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_3.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_3.patch",
+        "origin": "workloads/oracle/patches/repair_3.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_4.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_4.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_4.patch",
+        "origin": "workloads/oracle/patches/repair_4.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_5.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_5.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_5.patch",
+        "origin": "workloads/oracle/patches/repair_5.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_6.incorrect.patch",
+        "origin": "workloads/oracle/patches/repair_6.incorrect.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/patches/repair_6.patch",
+        "origin": "workloads/oracle/patches/repair_6.patch",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/reference/client.py",
+        "origin": "workloads/oracle/reference/client.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/oracle/reference/issue_tracker.py",
+        "origin": "workloads/oracle/reference/issue_tracker.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/registry.py",
+        "origin": "workloads/registry.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/repair/recipes/text-normalization-v1.json",
+        "origin": "workloads/repair/recipes/text-normalization-v1.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/repair/repositories/text-normalization/slug.py",
+        "origin": "workloads/repair/repositories/text-normalization/slug.py",
+        "matches": true
+      },
+      {
+        "target": "workloads/repair/tasks/text-normalization-v1.json",
+        "origin": "workloads/repair/tasks/text-normalization-v1.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/skills/verified-repair-guide/SKILL.md",
+        "origin": "workloads/skills/verified-repair-guide/SKILL.md",
+        "matches": true
+      },
+      {
+        "target": "workloads/skills/verified-repair-guide/assets/example.json",
+        "origin": "workloads/skills/verified-repair-guide/assets/example.json",
+        "matches": true
+      },
+      {
+        "target": "workloads/skills/verified-repair-guide/references/checklist.md",
+        "origin": "workloads/skills/verified-repair-guide/references/checklist.md",
+        "matches": true
+      }
+    ]
+  },
+  "validation": {
+    "source_checks": {
+      "regressions-a": {
+        "result": {
+          "path": "runs/provider-qualification-2026-10-11/integration/regressions-a/result.json",
+          "sha256": "20568c8fc5e3d812756b8602dbd9b92db776aa65c7aa38bbf40d925886d7aaf0",
+          "size": 895
+        },
+        "log": {
+          "path": "runs/provider-qualification-2026-10-11/integration/regressions-a/output.log",
+          "sha256": "98fabf86ca7716d80f5ce20834bd4531a0940e2040eedcb0cb9fd15dda29073a",
+          "size": 1018
+        },
+        "exit_code": 0,
+        "source_unchanged": true,
+        "junit": {
+          "path": "runs/provider-qualification-2026-10-11/integration/regressions-a.xml",
+          "sha256": "25ae46e61565a1fbf5d9f2324ee9551cbff65c6a730fcd55a3d1967ce328c54b",
+          "size": 52194
+        },
+        "counts": {
+          "tests": "381",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "26.034"
+        }
+      },
+      "qualification-final": {
+        "result": {
+          "path": "runs/provider-qualification-2026-10-11/integration/qualification-final/result.json",
+          "sha256": "f5c4e06e57a0b3bb67758d09afeb57d914c9001a11df42bfd61c138222e850d7",
+          "size": 606
+        },
+        "log": {
+          "path": "runs/provider-qualification-2026-10-11/integration/qualification-final/output.log",
+          "sha256": "33413a9be35f49227e67f2703a9f87b3e8e2c6f47965a094f6d0c99a5f2fbbcc",
+          "size": 99
+        },
+        "exit_code": 0,
+        "source_unchanged": true,
+        "junit": {
+          "path": "runs/provider-qualification-2026-10-11/integration/qualification-final.xml",
+          "sha256": "116e8d65b003e1dbba9f25db0a5cb1755c25909054766f3bc82eed76da2e683c",
+          "size": 6817
+        },
+        "counts": {
+          "tests": "43",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "4.490"
+        }
+      },
+      "lint-final": {
+        "result": {
+          "path": "runs/provider-qualification-2026-10-11/integration/lint-final/result.json",
+          "sha256": "691d53dccfdc9e766dfe8387eca01f05ce28f837334a1772fcbe7105b2431f0c",
+          "size": 517
+        },
+        "log": {
+          "path": "runs/provider-qualification-2026-10-11/integration/lint-final/output.log",
+          "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "size": 19
+        },
+        "exit_code": 0,
+        "source_unchanged": true
+      },
+      "acceptance-preflight-final": {
+        "result": {
+          "path": "runs/provider-qualification-2026-10-11/integration/acceptance-preflight-final/result.json",
+          "sha256": "75e71d8ebfede7019997e27c60f5f7dfe8aa4ea0e8aecf581558a9b19d127ebb",
+          "size": 606
+        },
+        "log": {
+          "path": "runs/provider-qualification-2026-10-11/integration/acceptance-preflight-final/output.log",
+          "sha256": "4c253b33b7489efaeb04e4cd00303053f2741cd48a56fb376913e660d2be3cfa",
+          "size": 99
+        },
+        "exit_code": 0,
+        "source_unchanged": true,
+        "junit": {
+          "path": "runs/provider-qualification-2026-10-11/integration/acceptance-preflight-final.xml",
+          "sha256": "2d988677cc1a5bbc779b0a98370acdbd85a8430e74e8635939f0335596f7b256",
+          "size": 7667
+        },
+        "counts": {
+          "tests": "56",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.716"
+        }
+      }
+    },
+    "independent_reviewer_controls": 6,
+    "independent_mutations_detected": 3,
+    "installed": {
+      "schema": 1,
+      "status": "passed",
+      "scope": "full_shipped_standalone_installed_acceptance",
+      "candidate": "releases/offline-2026-10-11-rc4",
+      "original_driver": "/private/tmp/cam-provider-qualification-rc4-acceptance/installed_package_acceptance.py",
+      "original_output": "/private/tmp/cam-provider-qualification-rc4-acceptance/result",
+      "original_cwd": "/private/tmp/cam-provider-qualification-rc4-acceptance",
+      "executable": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/bin/python",
+      "isolated_python": true,
+      "outside_checkout": true,
+      "network_denied": true,
+      "cached_image_no_pull": "sha256:ce9a404c2c0138e747a43e6ea022d2f7e670ed868df35d627a663ba7fb940ea9",
+      "script_sha256": "73684ad7bea304759bd52af949d36aa70f83651a6efbc35c8042fe8106d43f9d",
+      "source_manifest_sha256": "ef91e2ce85b6dc1924eb9e2d5d79f4d8eee19376d44cf0ce2c634a8d3a56447f",
+      "acceptance_sha256": "4ddba54cbf8d063dbc09681cc2cfd8073283229c3694445ed9af0cbfb8133fc9",
+      "frozen_installed_product_entries": 152,
+      "installed_distributions": 20,
+      "base_distributions": 19,
+      "qualification_process_origin_records": 7,
+      "qualification_loaded_origin_total": 175,
+      "parent_loaded_origins": 40,
+      "preflight_loaded_origins": 13,
+      "repair_cli_origin_records": 5,
+      "qualification": {
+        "prepared_task_id": "00bbf214bb9b4279a37b66070abcf485",
+        "manifest_sha256": "a289f35f6b879c3c47e9b63620b6680bca430bee2120779bb4e96e0aeb084fd3",
+        "native_requests": 2,
+        "synthetic_spent": 2,
+        "upstream_unchanged": true,
+        "opaque_linkage": true,
+        "all_four_cli_paths": true,
+        "duplicate_no_resend": true,
+        "corrupt_receipt_denied": true,
+        "canonical_forgery_denied": true,
+        "unknown_no_resend": true,
+        "execution_authority": false,
+        "live_observed": false
+      },
+      "copied_files": 383,
+      "copy_byte_verified": true,
+      "stderr": "StarletteDeprecationWarning only; no failure",
+      "source_start_phase": "installed entry hashes captured during acceptance startup; shipped preflight origins checked before scenarios; all152 matched frozen manifest again after",
+      "limitations": [
+        "same-machine installed offline evidence",
+        "no live inference/payment/GPU qualification/publication",
+        "no human mastery evidence"
+      ],
+      "configured_service": {
+        "task_id": "af2041525335451b9325aa06b1462145",
+        "worker_pids": [
+          91259,
+          91260
+        ],
+        "clean_restarts": 1,
+        "installed_worker_origins": [
+          {
+            "pid": 91259,
+            "executable": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/bin/python",
+            "origins": {
+              "service": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/__init__.py",
+                "sha256": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999"
+              },
+              "service.admission": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/admission.py",
+                "sha256": "d309dcf7e8b7e7930dcff7c48331d24527c408aa5d8b3d56d1f6d0a6c213423c"
+              },
+              "service.api": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/api.py",
+                "sha256": "7b2ef3fef19a12e5af5d1f15d9384ad2ae7d5673331ca6d110f101b4da0aea8d"
+              },
+              "service.artifacts": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/artifacts.py",
+                "sha256": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2"
+              },
+              "service.billing": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/billing.py",
+                "sha256": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0"
+              },
+              "service.context": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/context.py",
+                "sha256": "9f7470aef404afee4257a753c22e9f1bdf116415592127c121c664529cb51808"
+              },
+              "service.contracts": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/contracts.py",
+                "sha256": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c"
+              },
+              "service.engine": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/engine.py",
+                "sha256": "14308d320d0e3e24e29dd7fa3aab4b499035e37222f35af16087ed3133f06124"
+              },
+              "service.execution": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/execution.py",
+                "sha256": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738"
+              },
+              "service.harness": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/harness.py",
+                "sha256": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac"
+              },
+              "service.integration": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/integration.py",
+                "sha256": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92"
+              },
+              "service.migrations": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/migrations/__init__.py",
+                "sha256": "35ba2cdda9356bfa41b55ed189c8a991f4365d646bb73309e0d18aecd5e8575c"
+              },
+              "service.migrations.v2_identity": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/migrations/v2_identity.py",
+                "sha256": "db0cedb696fb917565905225d113dba948bf2ce325117cbf30f4d49eda817c0f"
+              },
+              "service.offline_server": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/offline_server.py",
+                "sha256": "c9c8f76aeffaf8e4ffc32cb5cce337d4ecf9216c20c0e84ae699a080e438fb32"
+              },
+              "service.protocol": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/protocol.py",
+                "sha256": "98b490eb78f5a07988b8353782e72bcc35d4b590a8ac7aa015d0c02fef11f016"
+              },
+              "service.providers": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/providers.py",
+                "sha256": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4"
+              },
+              "service.serving_config": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/serving_config.py",
+                "sha256": "9eae868313f04c2c6d0d5a82142f995f8b84f0903a73499953fa2489737a1763"
+              },
+              "service.storage": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/storage.py",
+                "sha256": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7"
+              },
+              "service.verification": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/verification.py",
+                "sha256": "a6abec1f5eae19174d86732864edfe7e98e499ad9273d984ebb4da07c7aa249c"
+              },
+              "service.workflows": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/workflows.py",
+                "sha256": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919"
+              },
+              "workloads": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/workloads/__init__.py",
+                "sha256": "f42fa7883ed90780968a1f455148609747d48ed6d6e9656314bf5e60a2763213"
+              },
+              "workloads.registry": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/workloads/registry.py",
+                "sha256": "3e1ca8a0885725979fa3c389966347eaca6dba0c910b43d9b8f524f66201ef68"
+              }
+            }
+          },
+          {
+            "pid": 91260,
+            "executable": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/bin/python",
+            "origins": {
+              "service": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/__init__.py",
+                "sha256": "4fc7ad3b1df5c39a5fbcf29bd0f3d944f650f463f28c9f29bf15d3367ea11999"
+              },
+              "service.admission": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/admission.py",
+                "sha256": "d309dcf7e8b7e7930dcff7c48331d24527c408aa5d8b3d56d1f6d0a6c213423c"
+              },
+              "service.api": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/api.py",
+                "sha256": "7b2ef3fef19a12e5af5d1f15d9384ad2ae7d5673331ca6d110f101b4da0aea8d"
+              },
+              "service.artifacts": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/artifacts.py",
+                "sha256": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2"
+              },
+              "service.billing": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/billing.py",
+                "sha256": "a3224195aa03fc91ace3c16966154e36592db0e64a6077bbe00c7afdf5131cb0"
+              },
+              "service.context": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/context.py",
+                "sha256": "9f7470aef404afee4257a753c22e9f1bdf116415592127c121c664529cb51808"
+              },
+              "service.contracts": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/contracts.py",
+                "sha256": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c"
+              },
+              "service.engine": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/engine.py",
+                "sha256": "14308d320d0e3e24e29dd7fa3aab4b499035e37222f35af16087ed3133f06124"
+              },
+              "service.execution": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/execution.py",
+                "sha256": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738"
+              },
+              "service.harness": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/harness.py",
+                "sha256": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac"
+              },
+              "service.integration": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/integration.py",
+                "sha256": "52166832829314f05c5d101cd26298340650a3a0b19ed07f7fcbe68b15052d92"
+              },
+              "service.migrations": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/migrations/__init__.py",
+                "sha256": "35ba2cdda9356bfa41b55ed189c8a991f4365d646bb73309e0d18aecd5e8575c"
+              },
+              "service.migrations.v2_identity": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/migrations/v2_identity.py",
+                "sha256": "db0cedb696fb917565905225d113dba948bf2ce325117cbf30f4d49eda817c0f"
+              },
+              "service.offline_server": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/offline_server.py",
+                "sha256": "c9c8f76aeffaf8e4ffc32cb5cce337d4ecf9216c20c0e84ae699a080e438fb32"
+              },
+              "service.protocol": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/protocol.py",
+                "sha256": "98b490eb78f5a07988b8353782e72bcc35d4b590a8ac7aa015d0c02fef11f016"
+              },
+              "service.providers": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/providers.py",
+                "sha256": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4"
+              },
+              "service.serving_config": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/serving_config.py",
+                "sha256": "9eae868313f04c2c6d0d5a82142f995f8b84f0903a73499953fa2489737a1763"
+              },
+              "service.storage": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/storage.py",
+                "sha256": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7"
+              },
+              "service.verification": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/verification.py",
+                "sha256": "a6abec1f5eae19174d86732864edfe7e98e499ad9273d984ebb4da07c7aa249c"
+              },
+              "service.workflows": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/service/workflows.py",
+                "sha256": "2ffd9302bb5a0c865ddb8f39f2fe2d7b8580e85c600760c7e31fae09998f3919"
+              },
+              "workloads": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/workloads/__init__.py",
+                "sha256": "f42fa7883ed90780968a1f455148609747d48ed6d6e9656314bf5e60a2763213"
+              },
+              "workloads.registry": {
+                "path": "/private/tmp/coding-agent-offline-2026-10-11-rc4/venv/lib/python3.12/site-packages/workloads/registry.py",
+                "sha256": "3e1ca8a0885725979fa3c389966347eaca6dba0c910b43d9b8f524f66201ef68"
+              }
+            }
+          }
+        ],
+        "duplicate_execution_unchanged": true,
+        "completed_restart_execution_unchanged": true,
+        "worker_instrumentation": "installed entrypoint/args/env/fds preserved with test-only socket/origin wrapper",
+        "transport": "ASGI plus actual child process; independent review owns unmodified loopback HTTP",
+        "paid_execution": false
+      },
+      "gpu_plan": {
+        "status": "not_run",
+        "plan_digest": "60787b0fff09d3345f8c3f981f7731039fb372e009967c123c3597c246ef720c",
+        "torch_imported": false,
+        "child_launch_denied_by_control": true,
+        "source_hashes": {
+          "compute/gpu_contract.py": "15438c6d84f4678972028562b7ff2f19c1b3b38718e352b6506c3bc688689977",
+          "compute/rmsnorm_cuda.py": "2b6b7822b9b548b3ca487d365ad7011c3d5567d6f5bcb3f6891e742c7288af9d",
+          "compute/rmsnorm.py": "b4d189671e30be3c6c0bbd3cff6668cd9d0dcae94fcb92651618feea9402a42d",
+          "compute/attention.py": "d542afd738a4aab8564a483940b26de8e01712f6d0e83d960d332223c567978e",
+          "compute/cuda_benchmark.py": "1442443fc704174f8041f977b57bf97a450046b79fd6815590d2631ed2c6cf53",
+          "service/execution.py": "930c7bfb86947f3fc996f9c07f28dcbebabe5cc5eb79e0d0082d93c405ac6738",
+          "service/artifacts.py": "ae9f832eee692b6d4d7ca075632fa9cda4de68c531bbb7d25de0cf063ad693a2"
+        },
+        "installed_lock_presence": false,
+        "installed_lock_digest": null
+      },
+      "environment_journal": {
+        "instances": 2,
+        "states": [
+          "retired",
+          "retired"
+        ],
+        "container_ids": [
+          "dbe8641ae8efea8d0755fc0d99a9b9c1ba14f25d3d4894dfa4a971f1376e49c3",
+          "00a874320b1a0fe43610605443055c34c7353be865ced670a8cb3d8256f42fc7"
+        ],
+        "backend": {
+          "backend_id": "installed-local-docker",
+          "daemon_id": "bb79851bb972fec36deb1c92c52c3477590dd761869468477cda32d7129e8cdf",
+          "kind": "docker_local"
+        },
+        "wrong_candidate_rejected": true,
+        "cleanup_retry_read_only": true,
+        "paid_execution": false
+      }
+    },
+    "installed_probe_observations": {
+      "qualification": {
+        "index": {
+          "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-full-independent/result/qualification-slice/qualification/report.json",
+          "sha256": "688d7bdb4a59101a62618d24500594533e9abb6b13e688c2e2504dab024ad474",
+          "size": 439
+        },
+        "bundle": {
+          "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-full-independent/result/qualification-slice/qualification/artifacts/qualification/6ca17d5804c74bc4b11c36b66fbe4002/58af51a86a172bbeceab37cbd68cd9869aded63aaedff268d3987176a11e078d",
+          "sha256": "58af51a86a172bbeceab37cbd68cd9869aded63aaedff268d3987176a11e078d",
+          "size": 31509
+        },
+        "passed": true,
+        "budget": {
+          "limit": 70,
+          "reserved": 0,
+          "spent": 2
+        },
+        "native_requests": 2,
+        "dispatches": [
+          {
+            "kind": "finish",
+            "effect_state": "succeeded",
+            "billing_state": "settled",
+            "actual_units": 0
+          },
+          {
+            "kind": "model.nebius",
+            "effect_state": "succeeded",
+            "billing_state": "settled",
+            "actual_units": 1
+          },
+          {
+            "kind": "read_file",
+            "effect_state": "succeeded",
+            "billing_state": "settled",
+            "actual_units": 0
+          },
+          {
+            "kind": "model.nebius",
+            "effect_state": "succeeded",
+            "billing_state": "settled",
+            "actual_units": 1
+          }
+        ]
+      },
+      "qualification-timeout": {
+        "index": {
+          "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-full-independent/result/qualification-slice/qualification-timeout/report.json",
+          "sha256": "acb8d986369a0edc3f3c6465df91187fa84afc7c3455c232a1b1206b55101c98",
+          "size": 440
+        },
+        "bundle": {
+          "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-full-independent/result/qualification-slice/qualification-timeout/artifacts/qualification/5dd91ba9fde843d6ab46ae0568c2affe/b1025811dd6782666880e72401533e18d4a4bbe3f355030841c2c357f02f510e",
+          "sha256": "b1025811dd6782666880e72401533e18d4a4bbe3f355030841c2c357f02f510e",
+          "size": 12986
+        },
+        "passed": false,
+        "budget": {
+          "limit": 70,
+          "reserved": 35,
+          "spent": 0
+        },
+        "native_requests": 1,
+        "dispatches": [
+          {
+            "kind": "model.nebius",
+            "effect_state": "unknown",
+            "billing_state": "liability_unknown",
+            "actual_units": null
+          }
+        ]
+      }
+    },
+    "documentation": {
+      "documents": 45,
+      "links": 1017,
+      "numeric_anchors": 239,
+      "heading_fragments": 59,
+      "errors": []
+    }
+  },
+  "preservation": {
+    "prior_candidates": {
+      "offline-2026-10-10-rc1": {
+        "files": 299,
+        "exact_bytes_and_path_set_preserved": true
+      },
+      "offline-2026-10-11-rc2": {
+        "files": 325,
+        "exact_bytes_and_path_set_preserved": true
+      }
+    },
+    "exact_baseline_files": {
+      "AGENTS.md": "621fe320190e3cf5cb26383bb754978b75a28223e2dfc2f843505e744a13831b",
+      "uv.lock": "9e80b9a78d1965e5691625661e72172a53d378dc09fa4ace230b105726b238b7",
+      "pyproject.toml": "ad75fd1f3cd5e8a574c67382eee04fcdafbe9e6053d119728e47a7e5f85dbc7b",
+      "scripts/build_offline_release.py": "6d711cf7129149769a6e1ad0722df0cf7adfbe418dec948b6db2f1d50f31d628",
+      "docs/05-mastery-tracker.md": "2138877d36ad47d743de6ddd27df04e21a547422d44bdabe33e7758211225ca6",
+      "service/storage.py": "800ad6b45f2864d8669c5d5c8a24fa57256a260d41262de68daead072c34bee7",
+      "service/harness.py": "60981b4edc663748e2290b94f9ec5b28ce02ece38ede60a6e3be909c0f6beeac",
+      "service/providers.py": "d19a9a117ad90364fc5a5df005df6c9e255eaf98a62e1d1f1062c2480658fcb4",
+      "service/repair.py": "dab6c210432dab33d1a439e31b9011133994701803ff084acbdf8cefd1bdf387",
+      "service/repair_provider.py": "b91fd7a95ef527d7118f3c10522196b286670c2eb035c83e99d3ed5d76b0354d",
+      "service/contracts.py": "e27bd144b3600bf7d653fb90f6c052b749e406d68a005dcf32ef6e8a9500f19c"
+    },
+    "workload_files_matching_rc2": 94,
+    "workload_definitions": 42,
+    "asset_validation": {
+      "valid": true,
+      "tasks": 42,
+      "files": 82,
+      "registry_sha256": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "provenance": "AI-authored synthetic templates; one repository family"
+    },
+    "no_runtime_schema_change": true,
+    "baseline_omissions": "initial snapshot omitted26 workload patch files and release/LICENSE/NOTICE; unchanged rc2 source comparisons separately retained in code-tests/preservation.json"
+  },
+  "retained_findings": [
+    {
+      "finding": "canonical manifest/report reindex could relabel a genuine run",
+      "outcome": "fixed by manifest digest in durable probe contract, exact reconstructed task/request and native evidence checks",
+      "pre_fix_evidence": "runs/provider-qualification-2026-10-11/review/binding-before-7541c1bf/result.json"
+    },
+    {
+      "finding": "nested qualification CLI origin records were not checked by inherited root glob",
+      "outcome": "rc3 built but not installed/accepted; unchanged product and corrected standalone checks in accepted rc4",
+      "evidence": "runs/provider-qualification-2026-10-11/review/release-precheck.json"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "releases/offline-2026-10-11-rc4/build-evidence.json",
+      "sha256": "6f58d26f2252a5d01f0f431e5e780ce03b1e6c1a9c64b666852b52b405bbfe2a",
+      "size": 35484
+    },
+    {
+      "path": "releases/offline-2026-10-11-rc4/dist/coding_agent_mastery-0.1.0-py3-none-any.whl",
+      "sha256": "f8152351bee9cef9845fd97f9e55fa3a6189c3226217423affc71eb4315a19f6",
+      "size": 371379
+    },
+    {
+      "path": "releases/offline-2026-10-11-rc4/frozen-manifest.json",
+      "sha256": "ef91e2ce85b6dc1924eb9e2d5d79f4d8eee19376d44cf0ce2c634a8d3a56447f",
+      "size": 34723
+    },
+    {
+      "path": "releases/offline-2026-10-11-rc4/install-evidence.json",
+      "sha256": "229c4feeb6554dcaf2eb9edf6d7d486a57d856c095037ba833f9cdcb0ecb4f93",
+      "size": 202315
+    },
+    {
+      "path": "releases/offline-2026-10-11-rc4/source.tar.gz",
+      "sha256": "b50523a147ed004596b141c75d65abf60cd339c663c53aaec0e0130024c4b32f",
+      "size": 351680
+    },
+    {
+      "path": "research/provider-qualification-independent-review-2026-10-11.md",
+      "sha256": "0ac6e550550859b94404131d509159d87df5e2c338dc1572f9ec4aadb8e6cf13",
+      "size": 6821
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/before.json",
+      "sha256": "21602a9abc805210c6e2bab02567d4baa1c6fd6af8ebfa9a99dbbb40a30cd15f",
+      "size": 154132
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/code-tests/preservation.json",
+      "sha256": "1b183022bfa0f5ecd5968f6a1c46cdf1891f340fbe46cacaaf0f1ceed8c7f833",
+      "size": 20669
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/documentation/checks.json",
+      "sha256": "9610f598f55b008b113e4df96cb712ae8f840b82223f4e4e3685deafb414042e",
+      "size": 72343
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-full-independent/result/acceptance.json",
+      "sha256": "4ddba54cbf8d063dbc09681cc2cfd8073283229c3694445ed9af0cbfb8133fc9",
+      "size": 132738
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/installed-tests/rc4-independent-verification.json",
+      "sha256": "dbe0bbf1406e372374edfb658ea655b689be70155b9a436026dedff1751fa77c",
+      "size": 16223
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/integration/preacceptance-candidate.json",
+      "sha256": "6b6cfd4fcfa27e141095e704af06c3409160572ecea8d35126a9951a7f6a5aa2",
+      "size": 816
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/integration/preflight.json",
+      "sha256": "90c437113cac84a4b0f5827f2153dae5dce5292b11b490fed8b6cf7adbed2a90",
+      "size": 1213
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/binding-before-7541c1bf/result.json",
+      "sha256": "b06ce5e6c9678817767e8a75701427577e4fa838973b95c4fe8a0517f73785b0",
+      "size": 7957
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/preimplementation-oracles.json",
+      "sha256": "fdbc1edac4339e50416171d7667e165a03d7a4443e96855c361ea4729f613c9a",
+      "size": 8163
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/preimplementation-provenance.json",
+      "sha256": "59d778044fa6fc3cb9fdda597e645f1e256fb501ef7baead01f356ae4b55aead",
+      "size": 1979
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/pytest-final.log",
+      "sha256": "21c5fc0b50f69414b6518567671a543d1624974559c7ef835d2ec36c15a00adb",
+      "size": 98
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/release-precheck.diff",
+      "sha256": "92767d846fd8c95a1331f7f0e61e8fb3823d0c641594864b8f2d68909007528e",
+      "size": 1033
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/release-precheck.json",
+      "sha256": "ce9d5af0818211305b912e70526b9f96d62e753a7582bc6a308911579047157e",
+      "size": 1747
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/review-verification.json",
+      "sha256": "c27f2e105cd00ae10b8775d746648e16ad89237d353ea1c0626a99093612ca5c",
+      "size": 6770
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/review/test_review_controls.py",
+      "sha256": "d87015666cb3fcf8e4342e40590602493c5300b252ab1acfb54ad5fd9a5808fb",
+      "size": 7404
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/spec/architecture-review.json",
+      "sha256": "53e08328b1562f0dc6b341c4bb0df0806e3233ec1542679192b05c2ddc070667",
+      "size": 743
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/binding-fixed-pytest.log",
+      "sha256": "33f86d20d1f0d916dc797831e131263ddd5c8db1b750bd4d158ed3892ba44c49",
+      "size": 99
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/expanded-pytest.log",
+      "sha256": "c5dcc3c0eb9279e849d83942862ff368f96c874452e125b2b948bbd9e6ba7c37",
+      "size": 8153
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/forgery-pytest.log",
+      "sha256": "d658e0f63f4395b5f7d0ba6fd5dfd4e53c4d8d472a045e7f156233d87b942b50",
+      "size": 5346
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/independent-tests-current.json",
+      "sha256": "fdbee451e6b41173506b218a01ab1777ef9f8cd23c172a332e8cbf2ca57d4b70",
+      "size": 2363
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/mutation-dropped_evidence_validation.log",
+      "sha256": "5ca43cae60184b8cbf08acd7223e870003c3d068fc18c3df7071981f95a859d9",
+      "size": 2568
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/mutation-lost_native_history.log",
+      "sha256": "30e0fb30b746186f9c76aaf807b2eac13602f5160ff425466d889a27573c2f02",
+      "size": 1572
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/mutation-unknown_fresh_retry.log",
+      "sha256": "24500460d6a2b2a43bb4ad3e471174d8357eed4de9c8bebe6b66c373a8431dbf",
+      "size": 4263
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/qualification_mutation_plugin.py",
+      "sha256": "806947bd2a636a5b1a8b33eaf72a29250af30878dd9244fbfc8ff0f31b346abe",
+      "size": 1870
+    },
+    {
+      "path": "runs/provider-qualification-2026-10-11/tests/test-plan.json",
+      "sha256": "0697cd8bc45311c7a5823b53ecebbc7563bbeb0b5bfa5c83de167fdb7527d0f2",
+      "size": 1051
+    }
+  ],
+  "limits": [
+    "same-machine installed base package with mocked inference and existing local Docker; no fresh-machine/live/CUDA/public/production claim",
+    "original control-plane files/authority trusted; no hostile filesystem guarantee",
+    "read-only SQLite preserves main DB and WAL bytes; shared-memory coordination not claimed byte-stable",
+    "handoff is point-in-time advisory, not a lock or permission token",
+    "source-origin coverage152 product entries differs from163 curated source entries and40 loaded parent modules",
+    "review/test counts overlap; later56 packaging checks repeat a subset of381 regressions",
+    "full prior2272-test backend suite is historical; unchanged PostgreSQL/Temporal were not repeated",
+    "full archive/wheel bit-reproducibility was not repeated; builder unchanged",
+    "source/test warnings and original failed evidence retained; all final relevant checks passed",
+    "live conformance executor is not implemented by this offline-only wrapper"
+  ],
+  "next_gate": "changed explicit live/paid authorization plus actual account/catalog/model/rates/bounds/budget/task, then frozen G1 trial and useful G2 repair; public G5 remains essential"
+}

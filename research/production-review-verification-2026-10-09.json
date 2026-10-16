@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "recorded_at": "2026-10-09T09:24:30.330801+00:00",
+  "author": "AI review coordinator; Astra component design/independent review and 6.1 Sol bounded repairs",
+  "status": "22 defect groups repaired and independently re-reviewed; bounded reference, not operated production certification",
+  "review": "research/production-code-review-2026-10-09.md",
+  "coverage": "capstone/08-implementation-coverage.md",
+  "review_scope": {
+    "first_party": [
+      "service",
+      "evals",
+      "compute",
+      "workloads",
+      "tests",
+      "scripts",
+      "ops",
+      "packaging"
+    ],
+    "preserved_lab": "Inspected under trusted-fixture single-owner contract; unchanged",
+    "excluded_from_refactoring": [
+      "vendored references",
+      "historical archive",
+      "deliberately incorrect workload controls",
+      "prior runs"
+    ]
+  },
+  "findings": {
+    "total_groups": 22,
+    "P1": 6,
+    "P2": 16,
+    "resolved_groups": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "O1",
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5"
+    ],
+    "GPU_measurement_repair": "Source-inspected, pure accounting/contract tests; hardware validation pending"
+  },
+  "independent_review": {
+    "authority": "Astra accepted original authority repairs and independently8 bootstrap/migration cases after final A6 fix, including actual PostgreSQL",
+    "execution": "Astra accepted6 trust/execution repairs with24 tests including pinned Docker",
+    "controller": "Astra accepted controller repairs with5 original audit regressions and inspected Temporal regressions; consolidated suite exercised actual local server",
+    "research": "Astra independently70 passed plus15 subtests after source freeze"
+  },
+  "environment": {
+    "python": "3.12.11",
+    "system": "Darwin",
+    "architecture": "arm64",
+    "packages": {
+      "sqlalchemy": "2.1.4",
+      "fastapi": "0.142.4",
+      "httpx": "0.28.1",
+      "uvicorn": "0.54.0",
+      "psycopg": "3.3.6",
+      "temporalio": "1.34.0",
+      "boto3": "1.43.109",
+      "torch": "2.14.1",
+      "numpy": "2.5.3",
+      "pytest": "9.1.1",
+      "ruff": "0.16.10"
+    },
+    "lockfile": "uv.lock",
+    "lock_sha256": "40f83da9fd62a2d6758f0a426f43bd284670e46c559c08776b2b50d54cd07e32",
+    "lock_changed": false
+  },
+  "source_manifest": {
+    "path": "research/production-review-source-manifest-2026-10-09.json",
+    "sha256": "14850b982a4d5c8279aa66abd847ec9d621218d973982dc6eeb5284499604b3a",
+    "files": 161
+  },
+  "baseline": {
+    "archive": ".runtime/review-2026-10-09/pre-review-source.zip",
+    "sha256": "55301e1ff5ad6b518ae6824435d1337cd14d2842eca90d81d14bd5636752fa63",
+    "digests": ".runtime/review-2026-10-09/pre-review-digests.json",
+    "files": 153,
+    "change_summary": ".runtime/review-2026-10-09/review-change-summary.json"
+  },
+  "tests": {
+    "command": ".venv/bin/python -m pytest tests -q --junitxml=runs/review-2026-10-09/full-suite.xml",
+    "integration_opt_ins": {
+      "postgresql": true,
+      "pinned_docker_linux": true,
+      "local_temporal": true
+    },
+    "passed_tests": 273,
+    "passed_subtests": 15,
+    "junit_total": 288,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "duration_seconds": 54.679,
+    "recorded_local_start": "2026-10-09T16:20:36.487222+07:00",
+    "source_changed_since_suite": false,
+    "python_source_files_hashed": 115,
+    "scope": "Runtime/test Python source; later documentation/anchor changes checked separately"
+  },
+  "static": {
+    "ruff": "passed service tests evals compute scripts workloads",
+    "compose_config": "passed"
+  },
+  "application_image": {
+    "tag": "cam-reference:2026-10-09",
+    "id": "sha256:047761aadd606c58d04f85acb421dc1b7f27d65f24682a9c9531472de4381dc8",
+    "platform": "linux/arm64",
+    "build": "passed",
+    "smoke": "passed nonroot/no-network/read-only/cap-drop/pids-and-memory-bounded TestClient and workload asset validation",
+    "uid": 65532,
+    "unconfigured_protected_route_status": 503,
+    "route": "/tasks/example",
+    "python_files_matched_to_tested_source": 94,
+    "hosted_deployment": false
+  },
+  "images": {
+    "python": "python@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f",
+    "postgres": "postgres@sha256:029660641a0cfc575b14f336ba448fb8a75fd595d42e1fa316b9fb4378742297"
+  },
+  "wheel": {
+    "build": "passed",
+    "isolated_validation": "passed",
+    "packaged_python_matches_tested_source": true,
+    "assets": {
+      "valid": true,
+      "tasks": 42,
+      "files": 82,
+      "registry_sha256": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+      "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+      "provenance": "AI-authored synthetic templates; one repository family"
+    },
+    "wheel": ".runtime/review-2026-10-09/dist/coding_agent_mastery-0.1.0-py3-none-any.whl",
+    "sha256": "8c4caed15c7d9073a8d6c104e9234ca263090b7b0425991b6c2ec01bbfaacb1a",
+    "probe_correction": "Initial smoke imported nonexistent migrate symbol; corrected to declared migrate_v1_to_v2 without source changes."
+  },
+  "final_scripted_run": {
+    "task_id": "9c3cb203e72141b98e92f0473262b75d",
+    "execution_state": "review_eligible",
+    "review_state": "pending",
+    "budget": {
+      "spent": 0,
+      "reserved": 0,
+      "limit": 1000
+    },
+    "counts": {
+      "nodes": 2,
+      "attempts": 2,
+      "dispatches": 12,
+      "sandboxes": 3,
+      "candidates": 3,
+      "checkpoints": 6,
+      "verifications": 1,
+      "reviews": 1
+    },
+    "all_environments_retired": true,
+    "backend": "PostgreSQL authority + pinned Docker external verifier + scripted model",
+    "worker_execution": "Guarded trusted file edits; candidate code executes only in separate Linux verifier",
+    "path": "runs/review-2026-10-09/postgres-linux"
+  },
+  "schema_compatibility": {
+    "current": 2,
+    "automatic_upgrade": false,
+    "historical_databases_migrated": false,
+    "migration": "service/migrations/002_identity-and-writer-protocol.md",
+    "required": "Offline quiescence, verified backup and disposable-copy validation; no mixed-version rolling upgrade"
+  },
+  "workloads": {
+    "valid": true,
+    "tasks": 42,
+    "files": 82,
+    "registry_sha256": "e17393f9a747f1ff2a5864925b4df0485a05bc1ae190db287cf6be39ca2c1685",
+    "asset_lock_sha256": "12f8b283e710e7e920395301826ceed61c5a019998b8ab39f911a7e11e4968e4",
+    "provenance": "AI-authored synthetic templates; one repository family"
+  },
+  "gpu": {
+    "backend": "CUDA",
+    "torch_version": "2.14.1",
+    "cuda_runtime": null,
+    "python": "3.12.11",
+    "fallback": null,
+    "status": "skipped",
+    "reason": "CUDA unavailable; no MPS or CPU benchmark substitution"
+  },
+  "paid_provider_calls": 0,
+  "gpu_rentals": 0,
+  "preservation": {
+    "preexisting_archive_references_lab_files_checked": 35,
+    "all_unchanged": true,
+    "human_mastery_tracker_unchanged": true,
+    "prior_delivery_evidence_files_checked": 6,
+    "prior_delivery_evidence_unchanged": true,
+    "prior_runs_preserved": true,
+    "sibling_projects_modified": false
+  },
+  "evidence": {
+    "runs/review-2026-10-09/full-suite.xml": "6972251908a016f28749578e44ab33eb0b47f5a5442eb347b39ba92895049faa",
+    "runs/review-2026-10-09/cpu-tensor-trace.json": "af58c7d5af25ecca22325bc877df9e5f41ae1375656537175067a5db2cb37cba",
+    "runs/review-2026-10-09/synthetic-evaluation.json": "22c56f7d95e10bd1f58a2f2957202776bc43be242d3d214d6bb445517f3592aa",
+    "runs/review-2026-10-09/cuda-preflight.json": "0ddf43c69c78b7bac3d05fe908e73516c1ccead445352a5e1e4547dd6e9487f3",
+    "runs/review-2026-10-09/wheel-smoke.json": "42d4fcc67fb3b8a33ab8b26d7967cc0a6232298a2d46bd7c880aadb469f668b5",
+    "runs/review-2026-10-09/image-smoke.json": "ee3508c3a14be4dcc671da5b6d73921823b33caa896c3d3e6ea631918e0814a4",
+    "runs/review-2026-10-09/postgres-linux/snapshot.json": "a5c60f0805e56aa5a13eac6de8867aab3129b56d7f4abca787c4110d05d7925d",
+    "runs/review-2026-10-09/postgres-linux/trace.json": "45ba31a7aacccd7513ed2be8e7d0be5af9469a8c4164c2be9b54a4bd7adc67c1",
+    "runs/review-2026-10-09/postgres-linux/trace.html": "2813d831f6a6d32c3a534e06f59aad3b9ce9aa42836569e26313cbcbd025c492"
+  },
+  "documentation_checks": {
+    "local_links_checked": 253,
+    "broken_links": 0,
+    "exact_source_symbol_anchors": 104,
+    "anchor_documents": [
+      "docs/06-reference-code-reading-guide.md",
+      "study/packets/H0-reference-runtime.md",
+      "compute/README.md",
+      "evals/README.md"
+    ],
+    "detailed_check": ".runtime/review-2026-10-09/documentation-check.json"
+  },
+  "cleanup": {
+    "task_owned_postgresql_container": "cam-review-postgres-20261009 stopped and automatically removed",
+    "task_owned_review_sandbox_package_containers_remaining": 0,
+    "application_images": "Prior and current images retained for reuse",
+    "other_user_containers": "Not modified"
+  },
+  "limitations": [
+    "Broader missing production contracts remain in coverage register: recovery/reconciliation supervisor, replanning/context rollover/fair queues/retention, general live repository runner and operated release/SLO/restore evidence",
+    "Scripted fixture and synthetic evaluation are not live model capability or held-out scaling results",
+    "CUDA hardware absent; no measured GPU timing/memory or fallback substitution",
+    "No hostile multi-tenant security certification; process-group cleanup is not process containment",
+    "AI independent review does not establish independent human reproduction or H0-H15 mastery"
+  ]
+}

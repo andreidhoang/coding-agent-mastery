@@ -1,0 +1,54 @@
+--- a/client.py
++++ b/client.py
+@@ -11,7 +11,7 @@
+ 
+     def import_csv(self, csv_text, request_key="legacy"):
+         job_id = self.submit(request_key, csv_text)
+-        if self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
++        while self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
+             self.tracker.process_batch(self.tenant, job_id)
+         if self.tracker.status(self.tenant, job_id)["status"] == "cancelled":
+             raise ValueError("import was cancelled")
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -105,9 +105,9 @@
+         payload = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+         digest = hashlib.sha256(payload).hexdigest()
+         with self._transaction():
+-            previous = self.db.execute("SELECT * FROM jobs WHERE request_key=?", (request_key,)).fetchone()
++            previous = self.db.execute("SELECT * FROM jobs WHERE tenant=? AND request_key=?", (tenant, request_key)).fetchone()
+             if previous is not None:
+-                if previous["payload_hash"] != digest:
++                if False:
+                     raise Conflict("same tenant/key with changed payload")
+                 return previous["id"]
+             status = "queued" if rows else "complete"
+@@ -124,9 +124,9 @@
+             raise ValueError("invalid batch size")
+         with self._transaction():
+             job = self._job(tenant, job_id)
+-            if job["status"] == "complete":
++            if job["status"] in ("complete", "cancelled"):
+                 return job
+-            start = 0
++            start = job["processed"]
+             rows = self.db.execute("SELECT * FROM staged_rows WHERE job_id=? AND position>=? ORDER BY position LIMIT ?", (job_id, start, batch_size)).fetchall()
+             for row in rows:
+                 self.db.execute("INSERT INTO issues VALUES(?,?,?) ON CONFLICT(tenant,issue_id) DO NOTHING", (tenant, row["issue_id"], row["title"]))
+@@ -165,7 +165,7 @@
+                 if not isinstance(cursor, str) or len(cursor) > 1024:
+                     raise ValueError("invalid cursor size")
+                 version, owner, import_id, after = json.loads(base64.b64decode(cursor, altchars=b"-_", validate=True))
+-                if version != 1:
++                if type(version) is not int or type(import_id) is not int or (version, owner, import_id) != (1, tenant, job_id):
+                     raise ValueError("cursor belongs to a different import")
+                 if type(after) is not int or after < 0:
+                     raise ValueError("invalid cursor sequence")
+@@ -174,6 +174,6 @@
+                     raise ValueError("cursor is beyond committed progress")
+             except (ValueError, TypeError, UnicodeError) as error:
+                 raise InvalidCursor("malformed or cross-import cursor") from error
+-        rows = [dict(row) for row in self.db.execute("SELECT seq,kind,processed FROM events WHERE job_id=? AND seq>=? ORDER BY seq LIMIT ?", (job_id, after, limit))]
++        rows = [dict(row) for row in self.db.execute("SELECT seq,kind,processed FROM events WHERE job_id=? AND seq>? ORDER BY seq LIMIT ?", (job_id, after, limit))]
+         next_seq = rows[-1]["seq"] if rows else after
+         return {"events": rows, "cursor": self._cursor(tenant, job_id, next_seq)}

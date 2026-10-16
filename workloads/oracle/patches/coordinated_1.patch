@@ -1,0 +1,22 @@
+--- a/client.py
++++ b/client.py
+@@ -11,7 +11,7 @@
+ 
+     def import_csv(self, csv_text, request_key="legacy"):
+         job_id = self.submit(request_key, csv_text)
+-        if self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
++        while self.tracker.status(self.tenant, job_id)["status"] not in ("complete", "cancelled"):
+             self.tracker.process_batch(self.tenant, job_id)
+         if self.tracker.status(self.tenant, job_id)["status"] == "cancelled":
+             raise ValueError("import was cancelled")
+--- a/issue_tracker.py
++++ b/issue_tracker.py
+@@ -105,7 +105,7 @@
+         payload = json.dumps(rows, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+         digest = hashlib.sha256(payload).hexdigest()
+         with self._transaction():
+-            previous = self.db.execute("SELECT * FROM jobs WHERE request_key=?", (request_key,)).fetchone()
++            previous = self.db.execute("SELECT * FROM jobs WHERE tenant=? AND request_key=?", (tenant, request_key)).fetchone()
+             if previous is not None:
+                 if previous["payload_hash"] != digest:
+                     raise Conflict("same tenant/key with changed payload")
